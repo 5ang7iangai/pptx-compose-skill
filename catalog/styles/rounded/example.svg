@@ -1,0 +1,133 @@
+<svg viewBox="0 0 1600 612" xmlns="http://www.w3.org/2000/svg" font-family="Microsoft YaHei, PingFang SC, Noto Sans SC, sans-serif">
+  <defs>
+    <filter id="s4" x="-8%" y="-8%" width="116%" height="124%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="rgba(4,72,70,.10)"/>
+    </filter>
+    <marker id="arr4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="11" markerHeight="11" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0 1.4 L9 5 L0 8.6 Z" fill="#007774"/>
+    </marker>
+    <g id="ic4-user">
+      <circle r="18" fill="#007774"/>
+      <circle cx="0" cy="-4.5" r="5" fill="#fff"/>
+      <path d="M-8 10 C-7 3.2, 7 3.2, 8 10" fill="none" stroke="#fff" stroke-width="1.8"/>
+    </g>
+    <g id="ic4-brain">
+      <circle r="18" fill="#007774"/>
+      <path d="M-6-4.5 C-8-9, 0-10, 2.2-6.5 C5.5-10, 9-5.5, 5.5-2 C9 1, 3.2 8, -1 5.5 C-7 9, -9 1, -5.5-2Z" fill="none" stroke="#fff" stroke-width="1.5"/>
+    </g>
+    <g id="ic4-doc">
+      <circle r="18" fill="#007774"/>
+      <rect x="-5.5" y="-8" width="11" height="15" rx="1.5" fill="none" stroke="#fff" stroke-width="1.4"/>
+      <path d="M-2.8-2.8 h5.6 M-2.8 1.2 h5.6 M-2.8 5.2 h3.4" stroke="#fff" stroke-width="1.2"/>
+    </g>
+    <g id="ic4-play">
+      <circle r="18" fill="#065a58"/>
+      <path d="M-3.5-6 L7 0 L-3.5 6 Z" fill="#fff"/>
+    </g>
+    <g id="ic4-edit">
+      <circle r="18" fill="#b8954a"/>
+      <path d="M-6 6 L-4.5-1 L4.5-8 L8-4.5 L-1 4.5 Z" fill="none" stroke="#fff" stroke-width="1.5"/>
+    </g>
+    <g id="ic4-mem">
+      <circle r="18" fill="#065a58"/>
+      <path d="M-5.5-7 h11 v15 l-5.5-3.4 -5.5 3.4 Z" fill="none" stroke="#fff" stroke-width="1.5"/>
+    </g>
+    <g id="ic4-ok">
+      <circle r="18" fill="#2f7d4a"/>
+      <path d="M-7 0 L-2 6 L8-7" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round"/>
+    </g>
+    <g id="ic4-tpl">
+      <circle r="15" fill="#007774"/>
+      <rect x="-5.5" y="-7" width="11" height="13.5" rx="1.3" fill="none" stroke="#fff" stroke-width="1.3"/>
+    </g>
+    <g id="ic4-link">
+      <circle r="15" fill="#007774"/>
+      <path d="M-3.5-2.2 a3.4 3.4 0 0 1 4.6 0 l1.1 1.1 M3.5 2.2 a3.4 3.4 0 0 1-4.6 0 l-1.1-1.1" fill="none" stroke="#fff" stroke-width="1.5"/>
+    </g>
+  </defs>
+  <g transform="translate(0,-62)">
+  <rect y="50" width="1600" height="1100" fill="#f4f8f7"/>
+  <rect x="0" y="50" width="10" height="1100" fill="#007774"/>
+
+  <!-- 阶段一 -->
+  <rect x="36" y="72" width="1528" height="268" rx="14" fill="#ffffff" stroke="#9ec9c6" stroke-width="1.8" filter="url(#s4)"/>
+  <rect x="52" y="82" width="210" height="32" rx="16" fill="#007774"/>
+  <text x="157" y="104" text-anchor="middle" fill="#fff" font-size="16" font-weight="700">阶段一 · 知识沉淀</text>
+  <text x="278" y="104" fill="#3d6b69" font-size="15">把专家报告变成可复用的模板、思维链和数据挂接</text>
+
+  <rect x="72" y="122" width="360" height="200" rx="12" fill="#cfe8e6"/>
+  <use href="#ic4-user" x="108" y="156"/>
+  <text x="258" y="164" fill="#065a58" font-size="18" font-weight="700">1  业务专家</text>
+  <text x="252" y="216" text-anchor="middle" fill="#163332" font-size="22" font-weight="700">上传分析报告</text>
+  <text x="252" y="248" text-anchor="middle" fill="#3d6b69" font-size="15">提供典型场景的真实分析文本</text>
+  <text x="252" y="272" text-anchor="middle" fill="#3d6b69" font-size="15">作为学习样本</text>
+
+  <path d="M432 222 L500 222" fill="none" stroke="#007774" stroke-width="2.8" marker-end="url(#arr4)"/>
+
+  <rect x="508" y="122" width="360" height="200" rx="12" fill="#cfe8e6"/>
+  <use href="#ic4-brain" x="544" y="156"/>
+  <text x="694" y="164" fill="#065a58" font-size="18" font-weight="700">2  大模型</text>
+  <text x="688" y="216" text-anchor="middle" fill="#163332" font-size="22" font-weight="700">理解、学习报告</text>
+  <text x="688" y="248" text-anchor="middle" fill="#3d6b69" font-size="15">把握章节结构、分析口径</text>
+  <text x="688" y="272" text-anchor="middle" fill="#3d6b69" font-size="15">与关键判断逻辑</text>
+
+  <path d="M868 222 L936 222" fill="none" stroke="#007774" stroke-width="2.8" marker-end="url(#arr4)"/>
+
+  <rect x="944" y="122" width="592" height="200" rx="12" fill="#cfe8e6"/>
+  <use href="#ic4-doc" x="980" y="156"/>
+  <text x="1176" y="164" fill="#065a58" font-size="18" font-weight="700">3  智能体自动提炼</text>
+  <rect x="972" y="182" width="172" height="122" rx="10" fill="#ffffff"/>
+  <use href="#ic4-tpl" x="1058" y="218"/>
+  <text x="1058" y="270" text-anchor="middle" fill="#163332" font-size="16" font-weight="700">报告模板</text>
+  <rect x="1156" y="182" width="172" height="122" rx="10" fill="#ffffff"/>
+  <use href="#ic4-link" x="1242" y="218"/>
+  <text x="1242" y="270" text-anchor="middle" fill="#163332" font-size="16" font-weight="700">生成思维链</text>
+  <rect x="1340" y="182" width="172" height="122" rx="10" fill="#ffffff"/>
+  <use href="#ic4-doc" x="1426" y="218"/>
+  <text x="1426" y="270" text-anchor="middle" fill="#163332" font-size="16" font-weight="700">完成数据挂接</text>
+
+  <line x1="800" y1="348" x2="800" y2="366" stroke="#007774" stroke-width="2.8"/>
+  <polygon points="791,364 800,380 809,364" fill="#007774"/>
+
+  <!-- 阶段二 -->
+  <rect x="36" y="386" width="1528" height="268" rx="14" fill="#ffffff" stroke="#9ec9c6" stroke-width="1.8" filter="url(#s4)"/>
+  <rect x="52" y="396" width="228" height="32" rx="16" fill="#065a58"/>
+  <text x="166" y="418" text-anchor="middle" fill="#fff" font-size="16" font-weight="700">阶段二 · 生成与纠偏</text>
+  <text x="296" y="418" fill="#3d6b69" font-size="15">针对逻辑错误、业务失准，业务人员在线标识，快速纠偏</text>
+
+  <g text-anchor="middle">
+    <rect x="60" y="436" width="250" height="200" rx="12" fill="#cfe8e6"/>
+    <use href="#ic4-play" x="185" y="476"/>
+    <text x="185" y="532" fill="#163332" font-size="17" font-weight="700">A  专家调用模板</text>
+    <text x="185" y="562" fill="#3d6b69" font-size="14">按日期 / 区域发起分析</text>
+
+    <path d="M310 536 L348 536" fill="none" stroke="#007774" stroke-width="2.8" marker-end="url(#arr4)"/>
+
+    <rect x="356" y="436" width="250" height="200" rx="12" fill="#cfe8e6"/>
+    <use href="#ic4-doc" x="481" y="476"/>
+    <text x="481" y="532" fill="#163332" font-size="17" font-weight="700">B  智能体生成报告</text>
+    <text x="481" y="562" fill="#3d6b69" font-size="14">统计、对比、组装成文</text>
+
+    <path d="M606 536 L644 536" fill="none" stroke="#007774" stroke-width="2.8" marker-end="url(#arr4)"/>
+
+    <rect x="652" y="436" width="270" height="200" rx="12" fill="#cfe8e6"/>
+    <use href="#ic4-edit" x="787" y="476"/>
+    <text x="787" y="532" fill="#163332" font-size="17" font-weight="700">C  在线标注、纠偏</text>
+    <text x="787" y="562" fill="#3d6b69" font-size="14">标出失准段落与口径</text>
+
+    <path d="M922 536 L960 536" fill="none" stroke="#007774" stroke-width="2.8" marker-end="url(#arr4)"/>
+
+    <rect x="968" y="436" width="250" height="200" rx="12" fill="#cfe8e6"/>
+    <use href="#ic4-mem" x="1093" y="476"/>
+    <text x="1093" y="532" fill="#163332" font-size="17" font-weight="700">D  智能体形成记忆</text>
+    <text x="1093" y="562" fill="#3d6b69" font-size="14">沉淀纠偏结果，避免重犯</text>
+
+    <path d="M1218 536 L1256 536" fill="none" stroke="#007774" stroke-width="2.8" marker-end="url(#arr4)"/>
+
+    <rect x="1264" y="436" width="276" height="200" rx="12" fill="#cfe8e6"/>
+    <use href="#ic4-ok" x="1402" y="476"/>
+    <text x="1402" y="532" fill="#163332" font-size="16" font-weight="700">E  再次生成恢复正常</text>
+    <text x="1402" y="562" fill="#3d6b69" font-size="14">同场景复用已校正经验</text>
+  </g>
+  </g>
+</svg>

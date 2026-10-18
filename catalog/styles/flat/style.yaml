@@ -1,0 +1,7 @@
+name: 扁平极简
+basis: shadcn/ui + Vercel Geist：白底发丝边、无阴影、主色只点缀
+use: 互联网风格、内容少的图
+look: 白底发丝边，几乎没有阴影，颜色只点一点点
+checks:
+  - type: no_shadow
+    hint: 扁平极简风格不用阴影，删掉所有 filter/feDropShadow

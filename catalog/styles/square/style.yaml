@@ -1,0 +1,9 @@
+name: 直角线框
+basis: IBM Carbon：零圆角、8 格网格、左侧色条卡片、细线
+use: 政务、公文、方案评审
+look: 直角细线，卡片左侧一条色条，像公文表格
+checks:
+  - type: max_radius
+    max_rx: 1
+    min_side: 16
+    hint: 直角线框风格不允许圆角，还有 {n} 个矩形带 rx，全部改成 rx=0

@@ -1,0 +1,196 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 610" font-family="Microsoft YaHei, PingFang SC, sans-serif">
+  <defs>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse" markerUnits="strokeWidth">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#0070C0"/></marker>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="610" fill="#FFFFFF"/>
+
+  <!-- 最左侧角色/云/边/端标签 -->
+  <rect x="16" y="48" width="44" height="44" rx="2" fill="#7F7F7F"/>
+  <text x="38" y="76" font-size="18" fill="#FFFFFF" font-weight="700" text-anchor="middle">角色</text>
+
+  <rect x="16" y="100" width="44" height="278" rx="2" fill="#7F7F7F"/>
+  <text x="38" y="249" font-size="18" fill="#FFFFFF" font-weight="700" text-anchor="middle">云</text>
+
+  <rect x="16" y="386" width="44" height="34" rx="2" fill="#7F7F7F"/>
+  <text x="38" y="408" font-size="18" fill="#FFFFFF" font-weight="700" text-anchor="middle">边</text>
+
+  <rect x="16" y="428" width="44" height="166" rx="2" fill="#7F7F7F"/>
+  <text x="38" y="519" font-size="18" fill="#FFFFFF" font-weight="700" text-anchor="middle">端</text>
+
+  <!-- 最右侧ERP/MES贯通条 -->
+  <rect x="1150" y="48" width="34" height="546" rx="2" fill="#7F7F7F"/>
+  <text x="1167" y="95" font-size="16" fill="#FFFFFF" font-weight="700" text-anchor="middle">E</text>
+  <text x="1167" y="117" font-size="16" fill="#FFFFFF" font-weight="700" text-anchor="middle">R</text>
+  <text x="1167" y="139" font-size="16" fill="#FFFFFF" font-weight="700" text-anchor="middle">P</text>
+  <text x="1167" y="161" font-size="16" fill="#FFFFFF" font-weight="700" text-anchor="middle">/</text>
+  <text x="1167" y="183" font-size="16" fill="#FFFFFF" font-weight="700" text-anchor="middle">M</text>
+  <text x="1167" y="205" font-size="16" fill="#FFFFFF" font-weight="700" text-anchor="middle">E</text>
+  <text x="1167" y="227" font-size="16" fill="#FFFFFF" font-weight="700" text-anchor="middle">S</text>
+
+  <!-- 角色层 -->
+  <g>
+    <rect x="68" y="48" width="354" height="44" rx="2" fill="#0070C0"/>
+    <text x="245" y="76" font-size="18" fill="#FFFFFF" font-weight="700" text-anchor="middle">政府</text>
+    <rect x="430" y="48" width="354" height="44" rx="2" fill="#0070C0"/>
+    <text x="607" y="76" font-size="18" fill="#FFFFFF" font-weight="700" text-anchor="middle">园区</text>
+    <rect x="792" y="48" width="350" height="44" rx="2" fill="#0070C0"/>
+    <text x="967" y="76" font-size="18" fill="#FFFFFF" font-weight="700" text-anchor="middle">企业</text>
+  </g>
+
+  <!-- 云层 -->
+  <g>
+    <!-- 统一驾驶舱通栏 -->
+    <rect x="68" y="100" width="1074" height="34" rx="2" fill="#0070C0"/>
+    <text x="605" y="122" font-size="18" fill="#FFFFFF" font-weight="700" text-anchor="middle">统一驾驶舱（能源+双碳+虚拟电厂）</text>
+
+    <!-- 双碳管理组 -->
+    <rect x="68" y="142" width="533" height="116" rx="2" fill="#F3F7F9" stroke="#A5C1D4" stroke-width="1" stroke-dasharray="4 3"/>
+    <rect x="68" y="142" width="533" height="28" rx="2" fill="#31859C"/>
+    <text x="334.5" y="161" font-size="16" fill="#FFFFFF" font-weight="700" text-anchor="middle">双碳管理</text>
+    <g font-size="14" fill="#FFFFFF" font-weight="700" text-anchor="middle">
+      <rect x="78" y="178" width="166" height="32" rx="2" fill="#31859C"/>
+      <text x="161" y="199">碳监测</text>
+      <rect x="252" y="178" width="166" height="32" rx="2" fill="#31859C"/>
+      <text x="335" y="199">碳足迹</text>
+      <rect x="426" y="178" width="166" height="32" rx="2" fill="#31859C"/>
+      <text x="509" y="199">碳排模型</text>
+      <rect x="78" y="218" width="166" height="32" rx="2" fill="#31859C"/>
+      <text x="161" y="239">碳资产</text>
+      <rect x="252" y="218" width="166" height="32" rx="2" fill="#31859C"/>
+      <text x="335" y="239">碳认证</text>
+      <rect x="426" y="218" width="166" height="32" rx="2" fill="#31859C"/>
+      <text x="509" y="239">碳减排</text>
+    </g>
+
+    <!-- 虚拟电厂组 -->
+    <rect x="609" y="142" width="533" height="116" rx="2" fill="#F3F7F9" stroke="#A5C1D4" stroke-width="1" stroke-dasharray="4 3"/>
+    <rect x="609" y="142" width="533" height="28" rx="2" fill="#C00000"/>
+    <text x="875.5" y="161" font-size="16" fill="#FFFFFF" font-weight="700" text-anchor="middle">虚拟电厂</text>
+    <g font-size="14" fill="#FFFFFF" font-weight="700" text-anchor="middle">
+      <rect x="619" y="178" width="166" height="32" rx="2" fill="#C00000"/>
+      <text x="702" y="199">资源管理</text>
+      <rect x="793" y="178" width="166" height="32" rx="2" fill="#C00000"/>
+      <text x="876" y="199">负荷预测</text>
+      <rect x="967" y="178" width="166" height="32" rx="2" fill="#C00000"/>
+      <text x="1050" y="199">需求响应</text>
+      <rect x="619" y="218" width="166" height="32" rx="2" fill="#C00000"/>
+      <text x="702" y="239">资源编排</text>
+      <rect x="793" y="218" width="166" height="32" rx="2" fill="#C00000"/>
+      <text x="876" y="239">业务模型</text>
+      <rect x="967" y="218" width="166" height="32" rx="2" fill="#C00000"/>
+      <text x="1050" y="239">业务协同</text>
+    </g>
+
+    <!-- 能源管理组 -->
+    <rect x="68" y="266" width="1074" height="64" rx="2" fill="#F3F7F9" stroke="#A5C1D4" stroke-width="1"/>
+    <rect x="68" y="266" width="1074" height="26" rx="2" fill="#0070C0"/>
+    <text x="605" y="284" font-size="16" fill="#FFFFFF" font-weight="700" text-anchor="middle">能源管理</text>
+    <g font-size="14" fill="#FFFFFF" font-weight="700" text-anchor="middle">
+      <rect x="78" y="298" width="109" height="26" rx="2" fill="#0070C0"/>
+      <text x="132.5" y="316">能耗分析</text>
+      <rect x="195" y="298" width="109" height="26" rx="2" fill="#0070C0"/>
+      <text x="249.5" y="316">能耗预测</text>
+      <rect x="312" y="298" width="109" height="26" rx="2" fill="#0070C0"/>
+      <text x="366.5" y="316">用能安全</text>
+      <rect x="429" y="298" width="109" height="26" rx="2" fill="#0070C0"/>
+      <text x="483.5" y="316">能效分析</text>
+      <rect x="546" y="298" width="109" height="26" rx="2" fill="#0070C0"/>
+      <text x="600.5" y="316">节能调控</text>
+      <rect x="663" y="298" width="109" height="26" rx="2" fill="#0070C0"/>
+      <text x="717.5" y="316">节能模型</text>
+      <rect x="780" y="298" width="109" height="26" rx="2" fill="#0070C0"/>
+      <text x="834.5" y="316">能源报告</text>
+      <rect x="897" y="298" width="109" height="26" rx="2" fill="#0070C0"/>
+      <text x="951.5" y="316">设备运维</text>
+      <rect x="1014" y="298" width="109" height="26" rx="2" fill="#0070C0"/>
+      <text x="1068.5" y="316">小程序</text>
+    </g>
+
+    <!-- 数据中台 -->
+    <rect x="68" y="338" width="1074" height="30" rx="2" fill="#7F7F7F"/>
+    <text x="605" y="358" font-size="16" fill="#FFFFFF" font-weight="700" text-anchor="middle">数据中台</text>
+  </g>
+
+  <!-- 边层 -->
+  <g>
+    <rect x="68" y="386" width="1074" height="34" rx="2" fill="#7F7F7F"/>
+    <text x="605" y="408" font-size="16" fill="#FFFFFF" font-weight="700" text-anchor="middle">4G/5G 工业网关</text>
+  </g>
+
+  <!-- 端层到边层向上的箭头（左右各一，避开文字） -->
+  <line x1="300" y1="420" x2="300" y2="388" stroke="#0070C0" stroke-width="3" marker-end="url(#arrowBlue)"/>
+  <line x1="900" y1="420" x2="900" y2="388" stroke="#0070C0" stroke-width="3" marker-end="url(#arrowBlue)"/>
+
+  <!-- 边层到数据中台向上的箭头（左右各一，避开文字） -->
+  <line x1="300" y1="376" x2="300" y2="370" stroke="#0070C0" stroke-width="3" marker-end="url(#arrowBlue)"/>
+  <line x1="900" y1="376" x2="900" y2="370" stroke="#0070C0" stroke-width="3" marker-end="url(#arrowBlue)"/>
+
+  <!-- 端层 -->
+  <g>
+    <!-- 生产数据组 -->
+    <rect x="68" y="428" width="238" height="166" rx="2" fill="#F3F7F9" stroke="#A5C1D4" stroke-width="1"/>
+    <rect x="68" y="428" width="30" height="166" rx="2" fill="#31859C"/>
+    <text x="83" y="505" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">生</text>
+    <text x="83" y="527" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">产</text>
+    <text x="83" y="549" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">数</text>
+    <text x="83" y="571" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">据</text>
+    <rect x="108" y="438" width="90" height="42" rx="2" fill="#DFEBFC"/>
+    <text x="153" y="464" font-size="15" fill="#152632" font-weight="700" text-anchor="middle">DCS</text>
+    <rect x="206" y="438" width="90" height="42" rx="2" fill="#DFEBFC"/>
+    <text x="251" y="464" font-size="15" fill="#152632" font-weight="700" text-anchor="middle">SCADA</text>
+
+    <!-- 能源数据组 -->
+    <rect x="314" y="428" width="512" height="166" rx="2" fill="#F3F7F9" stroke="#A5C1D4" stroke-width="1"/>
+    <rect x="314" y="428" width="30" height="166" rx="2" fill="#31859C"/>
+    <text x="329" y="505" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">能</text>
+    <text x="329" y="527" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">源</text>
+    <text x="329" y="549" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">数</text>
+    <text x="329" y="571" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">据</text>
+    <g font-size="14" fill="#152632" font-weight="700" text-anchor="middle">
+      <rect x="354" y="438" width="88" height="42" rx="2" fill="#DFEBFC"/>
+      <text x="398" y="464">水</text>
+      <rect x="450" y="438" width="88" height="42" rx="2" fill="#DFEBFC"/>
+      <text x="494" y="464">电</text>
+      <rect x="546" y="438" width="88" height="42" rx="2" fill="#DFEBFC"/>
+      <text x="590" y="464">燃气</text>
+      <rect x="642" y="438" width="88" height="42" rx="2" fill="#DFEBFC"/>
+      <text x="686" y="464">蒸汽</text>
+      <rect x="738" y="438" width="80" height="42" rx="2" fill="#DFEBFC"/>
+      <text x="778" y="464">氮气</text>
+      <rect x="354" y="488" width="88" height="42" rx="2" fill="#DFEBFC"/>
+      <text x="398" y="514">柴油</text>
+      <rect x="450" y="488" width="88" height="42" rx="2" fill="#DFEBFC"/>
+      <text x="494" y="514">汽油</text>
+      <rect x="546" y="488" width="88" height="42" rx="2" fill="#DFEBFC"/>
+      <text x="590" y="514">煤油</text>
+      <rect x="642" y="488" width="88" height="42" rx="2" fill="#DFEBFC"/>
+      <text x="686" y="514">液化气</text>
+      <rect x="738" y="488" width="80" height="42" rx="2" fill="#DFEBFC"/>
+      <text x="778" y="514">煤气</text>
+    </g>
+
+    <!-- 能源资源组 -->
+    <rect x="834" y="428" width="308" height="166" rx="2" fill="#F3F7F9" stroke="#A5C1D4" stroke-width="1"/>
+    <rect x="834" y="428" width="30" height="166" rx="2" fill="#31859C"/>
+    <text x="849" y="505" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">能</text>
+    <text x="849" y="527" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">源</text>
+    <text x="849" y="549" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">资</text>
+    <text x="849" y="571" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">源</text>
+    <g font-size="13" fill="#152632" font-weight="700" text-anchor="middle">
+      <rect x="874" y="438" width="86" height="42" rx="2" fill="#DFEBFC"/>
+      <text x="917" y="464">风电</text>
+      <rect x="968" y="438" width="86" height="42" rx="2" fill="#DFEBFC"/>
+      <text x="1011" y="464">光电</text>
+      <rect x="1062" y="438" width="80" height="42" rx="2" fill="#DFEBFC"/>
+      <text x="1102" y="464">分布式能源</text>
+      <rect x="874" y="488" width="86" height="42" rx="2" fill="#DFEBFC"/>
+      <text x="917" y="514">可控负荷</text>
+      <rect x="968" y="488" width="86" height="42" rx="2" fill="#DFEBFC"/>
+      <text x="1011" y="514">蓄热</text>
+      <rect x="1062" y="488" width="80" height="42" rx="2" fill="#DFEBFC"/>
+      <text x="1102" y="514">充电桩</text>
+    </g>
+  </g>
+</svg>

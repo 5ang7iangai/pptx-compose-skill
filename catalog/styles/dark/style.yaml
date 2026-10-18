@@ -1,0 +1,8 @@
+name: 深色科技
+basis: Microsoft Fluent 2 深色主题：中性深底分级、发光描边
+use: 发布会、科技展示、大屏
+look: 整页深色底、亮色字，适合发布会和大屏
+checks:
+  - type: dark_background
+    max_luminance: 60
+    hint: 深色科技风格要求第一个元素是铺满画布的深色底矩形（填色板里的深色底）

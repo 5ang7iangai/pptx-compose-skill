@@ -1,0 +1,221 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 417" font-family="Microsoft YaHei, PingFang SC, sans-serif">
+  <defs>
+    <marker id="arrow-gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse" markerUnits="strokeWidth">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#000000"/></marker>
+    <marker id="arrow-main" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse" markerUnits="strokeWidth">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#000000"/></marker>
+    <marker id="arrow-dark" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse" markerUnits="strokeWidth">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#000000"/></marker>
+
+    <g id="ic-doc">
+      <path d="M-7,-10 L7,-10 L7,10 L-7,10 Z" fill="none" stroke="#008883" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="-3" y1="-4" x2="3" y2="-4" stroke="#008883" stroke-width="1.75" stroke-linecap="round"/>
+      <line x1="-3" y1="0" x2="3" y2="0" stroke="#008883" stroke-width="1.75" stroke-linecap="round"/>
+      <line x1="-3" y1="4" x2="3" y2="4" stroke="#008883" stroke-width="1.75" stroke-linecap="round"/>
+    </g>
+
+    <g id="ic-ppt">
+      <rect x="-8" y="-10" width="16" height="20" rx="2" fill="none" stroke="#008883" stroke-width="1.75"/>
+      <line x1="-4" y1="-4" x2="4" y2="-4" stroke="#008883" stroke-width="1.75" stroke-linecap="round"/>
+      <line x1="-4" y1="1" x2="4" y2="1" stroke="#008883" stroke-width="1.75" stroke-linecap="round"/>
+      <line x1="-4" y1="6" x2="4" y2="6" stroke="#008883" stroke-width="1.75" stroke-linecap="round"/>
+    </g>
+
+    <g id="ic-meeting">
+      <circle cx="0" cy="0" r="10" fill="none" stroke="#008883" stroke-width="1.75"/>
+      <path d="M-4,-3 Q0,-8 4,-3" fill="none" stroke="#008883" stroke-width="1.75" stroke-linecap="round"/>
+      <line x1="-7" y1="5" x2="7" y2="5" stroke="#008883" stroke-width="1.75" stroke-linecap="round"/>
+    </g>
+
+    <g id="ic-xmind">
+      <circle cx="0" cy="0" r="3" fill="none" stroke="#008883" stroke-width="1.75"/>
+      <line x1="0" y1="0" x2="-6" y2="-7" stroke="#008883" stroke-width="1.75" stroke-linecap="round"/>
+      <line x1="0" y1="0" x2="7" y2="-7" stroke="#008883" stroke-width="1.75" stroke-linecap="round"/>
+      <line x1="0" y1="0" x2="-7" y2="6" stroke="#008883" stroke-width="1.75" stroke-linecap="round"/>
+      <line x1="0" y1="0" x2="7" y2="6" stroke="#008883" stroke-width="1.75" stroke-linecap="round"/>
+      <circle cx="-6" cy="-7" r="2" fill="#008883"/>
+      <circle cx="7" cy="-7" r="2" fill="#008883"/>
+      <circle cx="-7" cy="6" r="2" fill="#008883"/>
+      <circle cx="7" cy="6" r="2" fill="#008883"/>
+    </g>
+
+    <g id="ic-template">
+      <rect x="-9" y="-8" width="18" height="16" rx="2" fill="none" stroke="#008883" stroke-width="1.75"/>
+      <line x1="-9" y1="-2" x2="9" y2="-2" stroke="#008883" stroke-width="1.75"/>
+      <line x1="-9" y1="4" x2="9" y2="4" stroke="#008883" stroke-width="1.75"/>
+      <line x1="-4" y1="-8" x2="-4" y2="-2" stroke="#008883" stroke-width="1.75"/>
+      <line x1="4" y1="-2" x2="4" y2="4" stroke="#008883" stroke-width="1.75"/>
+    </g>
+
+    <g id="ic-understand">
+      <circle cx="0" cy="0" r="10" fill="none" stroke="#008883" stroke-width="1.75"/>
+      <circle cx="-3" cy="-1" r="1.5" fill="#008883"/>
+      <circle cx="3" cy="-1" r="1.5" fill="#008883"/>
+      <path d="M-4,5 Q0,8 4,5" fill="none" stroke="#008883" stroke-width="1.75" stroke-linecap="round"/>
+    </g>
+
+    <g id="ic-style">
+      <rect x="-9" y="-9" width="18" height="18" rx="3" fill="none" stroke="#008883" stroke-width="1.75"/>
+      <circle cx="0" cy="0" r="4" fill="none" stroke="#008883" stroke-width="1.75"/>
+      <line x1="0" y1="-9" x2="0" y2="-5" stroke="#008883" stroke-width="1.75"/>
+      <line x1="0" y1="5" x2="0" y2="9" stroke="#008883" stroke-width="1.75"/>
+      <line x1="-9" y1="0" x2="-5" y2="0" stroke="#008883" stroke-width="1.75"/>
+      <line x1="5" y1="0" x2="9" y2="0" stroke="#008883" stroke-width="1.75"/>
+    </g>
+
+    <g id="ic-write">
+      <path d="M-8,8 L-3,8 L8,-3 L3,-8 L-8,3 Z" fill="none" stroke="#008883" stroke-width="1.75" stroke-linejoin="round"/>
+      <line x1="-6" y1="1" x2="1" y2="-6" stroke="#008883" stroke-width="1.75" stroke-linecap="round"/>
+    </g>
+
+    <g id="ic-graphics">
+      <rect x="-9" y="-9" width="18" height="18" rx="2" fill="none" stroke="#008883" stroke-width="1.75"/>
+      <circle cx="-3" cy="-3" r="2.5" fill="none" stroke="#008883" stroke-width="1.75"/>
+      <line x1="3" y1="-5" x2="8" y2="-5" stroke="#008883" stroke-width="1.75" stroke-linecap="round"/>
+      <line x1="3" y1="0" x2="8" y2="0" stroke="#008883" stroke-width="1.75" stroke-linecap="round"/>
+      <line x1="3" y1="5" x2="8" y2="5" stroke="#008883" stroke-width="1.75" stroke-linecap="round"/>
+    </g>
+
+    <g id="ic-review">
+      <path d="M-9,0 L-3,6 L9,-8" fill="none" stroke="#008883" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+
+    <g id="ic-output-ppt">
+      <rect x="-9" y="-10" width="18" height="20" rx="2" fill="none" stroke="#008883" stroke-width="1.75"/>
+      <line x1="-5" y1="-4" x2="5" y2="-4" stroke="#008883" stroke-width="1.75" stroke-linecap="round"/>
+      <line x1="-5" y1="1" x2="5" y2="1" stroke="#008883" stroke-width="1.75" stroke-linecap="round"/>
+      <line x1="-5" y1="6" x2="5" y2="6" stroke="#008883" stroke-width="1.75" stroke-linecap="round"/>
+    </g>
+
+    <g id="ic-two-version">
+      <rect x="-9" y="-9" width="13" height="18" rx="2" fill="none" stroke="#008883" stroke-width="1.75"/>
+      <rect x="-4" y="-5" width="13" height="18" rx="2" fill="none" stroke="#008883" stroke-width="1.75"/>
+      <line x1="-6" y1="-2" x2="1" y2="-2" stroke="#008883" stroke-width="1.75" stroke-linecap="round"/>
+      <line x1="-6" y1="3" x2="1" y2="3" stroke="#008883" stroke-width="1.75" stroke-linecap="round"/>
+    </g>
+
+    <g id="ic-chapter">
+      <line x1="0" y1="-8" x2="0" y2="8" stroke="#008883" stroke-width="1.75" stroke-linecap="round"/>
+      <circle cx="-5" cy="-4" r="2" fill="none" stroke="#008883" stroke-width="1.75"/>
+      <circle cx="5" cy="-4" r="2" fill="none" stroke="#008883" stroke-width="1.75"/>
+      <circle cx="-5" cy="4" r="2" fill="none" stroke="#008883" stroke-width="1.75"/>
+      <circle cx="5" cy="4" r="2" fill="none" stroke="#008883" stroke-width="1.75"/>
+    </g>
+  </defs>
+
+  <rect x="0.0" y="0.0" width="1200.0" height="417.0" fill="#FFFFFF"/><!-- 左栏：输入 -->
+  <rect x="24" y="24" width="220" height="260" rx="12" fill="#FAFAFA" stroke="#E4E4E7" stroke-width="1"/>
+  <text x="44" y="52" font-size="17" font-weight="700" fill="#18181B">输入</text>
+  <text x="44" y="72" font-size="13" fill="#71717A">业务素材与企业模板</text>
+
+  <!-- 业务素材卡片 -->
+  <rect x="40" y="84" width="188" height="88" rx="8" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="1"/>
+  <use href="#ic-doc" x="56" y="96"/>
+  <text x="76" y="100" font-size="15" font-weight="700" fill="#18181B">业务素材</text>
+  <text x="56" y="126" font-size="13" fill="#71717A">Word 方案、旧版 PPT</text>
+  <text x="56" y="145" font-size="13" fill="#71717A">会议纪要、XMind 提纲</text>
+
+  <!-- 企业模板卡片 -->
+  <rect x="40" y="184" width="188" height="88" rx="8" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="1"/>
+  <use href="#ic-template" x="56" y="196"/>
+  <text x="76" y="200" font-size="15" font-weight="700" fill="#18181B">企业模板</text>
+  <text x="56" y="226" font-size="13" fill="#71717A">版式、配色、字体</text>
+  <text x="56" y="245" font-size="13" fill="#71717A">页面节奏</text>
+
+  <!-- 左到中箭头 -->
+  <path d="M252,154 L292,154" fill="none" stroke="#008883" stroke-width="1.75" marker-end="url(#arrow-main)"/>
+
+  <!-- 中栏：智能演示文稿助手 -->
+  <rect x="300" y="24" width="600" height="260" rx="12" fill="#FAFAFA" stroke="#E4E4E7" stroke-width="1"/>
+  <text x="320" y="52" font-size="17" font-weight="700" fill="#18181B">智能演示文稿助手</text>
+  <text x="320" y="72" font-size="13" fill="#71717A">从理解素材到生成成稿的四步处理</text>
+
+  <!-- 能力卡1：材料理解 -->
+  <rect x="320" y="84" width="128" height="120" rx="8" fill="#FFFFFF" stroke="#008883" stroke-width="1.5"/>
+  <use href="#ic-understand" x="340" y="100"/>
+  <text x="340" y="128" font-size="15" font-weight="700" fill="#18181B">材料理解</text>
+  <text x="340" y="150" font-size="13" fill="#71717A">提炼要点</text>
+  <text x="340" y="169" font-size="13" fill="#71717A">对齐口径</text>
+
+  <!-- 箭头1 -->
+  <path d="M452,144 L468,144" fill="none" stroke="#008883" stroke-width="1.75" marker-end="url(#arrow-main)"/>
+
+  <!-- 能力卡2：风格适配 -->
+  <rect x="476" y="84" width="128" height="120" rx="8" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="1"/>
+  <use href="#ic-style" x="496" y="100"/>
+  <text x="496" y="128" font-size="15" font-weight="700" fill="#18181B">风格适配</text>
+  <text x="496" y="150" font-size="13" fill="#71717A">识别模板版式</text>
+  <text x="496" y="169" font-size="13" fill="#71717A">与配色</text>
+
+  <!-- 箭头2 -->
+  <path d="M608,144 L624,144" fill="none" stroke="#008883" stroke-width="1.75" marker-end="url(#arrow-main)"/>
+
+  <!-- 能力卡3：内容撰写 -->
+  <rect x="632" y="84" width="128" height="120" rx="8" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="1"/>
+  <use href="#ic-write" x="652" y="100"/>
+  <text x="652" y="128" font-size="15" font-weight="700" fill="#18181B">内容撰写</text>
+  <text x="652" y="150" font-size="13" fill="#71717A">排大纲</text>
+  <text x="652" y="169" font-size="13" fill="#71717A">逐页写正文</text>
+
+  <!-- 箭头3 -->
+  <path d="M764,144 L780,144" fill="none" stroke="#008883" stroke-width="1.75" marker-end="url(#arrow-main)"/>
+
+  <!-- 能力卡4：图形生成 -->
+  <rect x="788" y="84" width="100" height="120" rx="8" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="1"/>
+  <use href="#ic-graphics" x="806" y="100"/>
+  <text x="806" y="128" font-size="15" font-weight="700" fill="#18181B">图形生成</text>
+  <text x="806" y="150" font-size="13" fill="#71717A">结构图出</text>
+  <text x="806" y="169" font-size="13" fill="#71717A">图片版与</text>
+  <text x="806" y="188" font-size="13" fill="#71717A">可编辑版</text>
+
+  <!-- 全文连贯审查横条 -->
+  <rect x="320" y="216" width="568" height="52" rx="8" fill="#F3F9F9" stroke="#A5D4D2" stroke-width="1"/>
+  <use href="#ic-review" x="340" y="236"/>
+  <text x="360" y="236" font-size="15" font-weight="700" fill="#00625E">全文连贯审查</text>
+  <text x="360" y="256" font-size="13" fill="#396A68">术语统一、数据前后一致</text>
+
+  <!-- 中到右箭头 -->
+  <path d="M908,154 L948,154" fill="none" stroke="#008883" stroke-width="1.75" marker-end="url(#arrow-main)"/>
+
+  <!-- 右栏：输出 -->
+  <rect x="956" y="24" width="220" height="260" rx="12" fill="#FAFAFA" stroke="#E4E4E7" stroke-width="1"/>
+  <text x="976" y="52" font-size="17" font-weight="700" fill="#18181B">输出</text>
+  <text x="976" y="72" font-size="13" fill="#71717A">成稿与结构化图形资产</text>
+
+  <!-- 输出卡1：成稿演示文稿 -->
+  <rect x="972" y="84" width="188" height="72" rx="8" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="1"/>
+  <use href="#ic-output-ppt" x="988" y="96"/>
+  <text x="1008" y="100" font-size="15" font-weight="700" fill="#18181B">成稿演示文稿</text>
+  <text x="988" y="128" font-size="13" fill="#71717A">保留模板原有风格</text>
+
+  <!-- 输出卡2：结构图两个版本 -->
+  <rect x="972" y="164" width="188" height="72" rx="8" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="1"/>
+  <use href="#ic-two-version" x="988" y="176"/>
+  <text x="1008" y="180" font-size="15" font-weight="700" fill="#18181B">结构图两个版本</text>
+  <text x="988" y="208" font-size="13" fill="#71717A">高清图片版 / 可编辑版</text>
+
+  <!-- 输出卡3：加页加章 -->
+  <rect x="972" y="244" width="188" height="40" rx="8" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="1"/>
+  <use href="#ic-chapter" x="988" y="254"/>
+  <text x="1008" y="258" font-size="15" font-weight="700" fill="#18181B">加页加章</text>
+  <text x="1008" y="278" font-size="13" fill="#71717A">目录、扉页自动联动</text>
+
+  <!-- 底部通栏底座 -->
+  <rect x="24" y="300" width="1152" height="84" rx="8" fill="#18181B"/>
+  <text x="44" y="332" font-size="17" font-weight="700" fill="#FFFFFF">人工智能平台 · 大模型</text>
+  <text x="44" y="358" font-size="13" fill="#A1A1AA">语义理解 / 文本生成 / 视觉理解</text>
+
+  <!-- 深色胶囊标签 -->
+  <rect x="280" y="324" width="110" height="36" rx="6" fill="none" stroke="#FFFFFF" stroke-opacity="0.35" stroke-width="1"/>
+  <text x="335" y="347" font-size="15" fill="#FFFFFF" text-anchor="middle">语义理解</text>
+
+  <rect x="406" y="324" width="110" height="36" rx="6" fill="none" stroke="#FFFFFF" stroke-opacity="0.35" stroke-width="1"/>
+  <text x="461" y="347" font-size="15" fill="#FFFFFF" text-anchor="middle">文本生成</text>
+
+  <rect x="532" y="324" width="110" height="36" rx="6" fill="none" stroke="#FFFFFF" stroke-opacity="0.35" stroke-width="1"/>
+  <text x="587" y="347" font-size="15" fill="#FFFFFF" text-anchor="middle">视觉理解</text>
+
+  <!-- 底座到中栏的细连线 -->
+  <line x1="600" y1="300" x2="600" y2="284" stroke="#71717A" stroke-width="1.25" stroke-dasharray="3,3"/>
+  <circle cx="600" cy="284" r="3" fill="#71717A"/>
+</svg>

@@ -1,0 +1,24 @@
+<svg viewBox="0 0 1200 640" xmlns="http://www.w3.org/2000/svg" font-family="Microsoft YaHei, PingFang SC, Noto Sans SC, sans-serif">
+  <rect x="0" y="0" width="1200" height="640" fill="#FFFFFF"/>
+  <text x="144" y="72" font-size="13" fill="#3D6B69">一个结论</text>
+  <text x="1056" y="72" text-anchor="end" font-size="13" fill="#3D6B69">四周对照</text>
+  <text x="600" y="132" text-anchor="middle" font-size="14" fill="#3D6B69">试点 · 四周</text>
+  <text x="579" y="268" text-anchor="middle" font-size="104" font-weight="700" fill="#007774">42</text>
+  <text x="664" y="228" font-size="40" font-weight="700" fill="#007774">%</text>
+  <text x="600" y="348" text-anchor="middle" font-size="22" fill="#163332">重复录入下降</text>
+  <text x="600" y="384" text-anchor="middle" font-size="15" fill="#3D6B69">口径：上线前后同一张表</text>
+  <text x="600" y="408" text-anchor="middle" font-size="15" fill="#3D6B69">统计区间为连续四周</text>
+  <line x1="168" y1="456" x2="1032" y2="456" stroke="#9EC9C6" stroke-width="1"/>
+  <text x="300" y="500" text-anchor="middle" font-size="16" font-weight="700" fill="#163332">一个场景</text>
+  <line x1="286" y1="512" x2="314" y2="512" stroke="#9EC9C6" stroke-width="1"/>
+  <text x="300" y="540" text-anchor="middle" font-size="14" fill="#3D6B69">不铺开全部业务</text>
+  <line x1="456" y1="486" x2="456" y2="548" stroke="#9EC9C6" stroke-width="1"/>
+  <text x="600" y="500" text-anchor="middle" font-size="16" font-weight="700" fill="#163332">同一口径</text>
+  <line x1="586" y1="512" x2="614" y2="512" stroke="#9EC9C6" stroke-width="1"/>
+  <text x="600" y="540" text-anchor="middle" font-size="14" fill="#3D6B69">前后可以对照</text>
+  <line x1="744" y1="486" x2="744" y2="548" stroke="#9EC9C6" stroke-width="1"/>
+  <text x="900" y="500" text-anchor="middle" font-size="16" font-weight="700" fill="#163332">再决定推广</text>
+  <line x1="886" y1="512" x2="914" y2="512" stroke="#9EC9C6" stroke-width="1"/>
+  <text x="900" y="540" text-anchor="middle" font-size="14" fill="#3D6B69">结束前不写成全量</text>
+  <text x="600" y="592" text-anchor="middle" font-size="13" fill="#3D6B69">只代表这一张表，不代表全部业务</text>
+</svg>

@@ -1,0 +1,1682 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>布局与风格</title>
+<style>
+  body { margin: 0; background: #f4f7f6; color: #163332; font: 15px/1.55 "Microsoft YaHei", sans-serif; }
+  main { max-width: 1080px; margin: 0 auto; padding: 32px 20px 64px; }
+  h1 { font-size: 28px; margin: 0 0 8px; }
+  h2 { font-size: 20px; margin: 36px 0 8px; }
+  .lead { color: #3d5c5a; margin: 0 0 8px; }
+  .grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+  @media (min-width: 860px) { .grid { grid-template-columns: 1fr 1fr; } }
+  .card { background: #fff; border: 1px solid #d5e4e3; padding: 16px 16px 12px; }
+  header { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  code { color: #5c7574; font-size: 12px; }
+  .look { margin: 8px 0 0; font-weight: 700; }
+  .use, ul { margin: 4px 0 10px; color: #3d5c5a; }
+  ul { padding-left: 18px; }
+  .preview { background: #f7fbfa; border: 1px solid #e6f0ef; overflow: hidden; }
+  .preview svg { display: block; width: 100%; height: auto; }
+  .sketch { background: #fff; }
+  table { width: 100%; border-collapse: collapse; background: #fff; }
+  th, td { border: 1px solid #d5e4e3; padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: #e6f3f2; }
+</style>
+</head>
+<body>
+<main>
+  <h1>布局与风格</h1>
+  <p class="lead">版式决定怎么摆，风格决定线、角和留白。颜色跟当次模板走，这一页上的青色只是示意，不会写进成稿。</p>
+  <p class="lead">整套新做时不必指定。改某一页、加一页、加一章时，用这里的中文名选择。</p>
+  <h2>每种版式用哪种风格</h2>
+  <p class="lead">新建用「新建时用」那一列。改的时候只能在右边几种里选。同一种版式全稿只用一种。</p>
+  <table><thead><tr><th>版式</th><th>新建时用</th><th>改的时候还能选</th></tr></thead><tbody><tr><td>流程/链路</td><td>圆角卡片</td><td>直角线框、扁平极简、行业报告、深色科技</td></tr><tr><td>时间轴</td><td>圆角卡片</td><td>直角线框、扁平极简、行业报告、深色科技</td></tr><tr><td>闭环</td><td>圆角卡片</td><td>直角线框、扁平极简、行业报告、深色科技</td></tr><tr><td>左右对照</td><td>咨询汇报</td><td>圆角卡片、直角线框、扁平极简、行业报告</td></tr><tr><td>能力阵列</td><td>咨询汇报</td><td>圆角卡片、直角线框、扁平极简、行业报告、实色模块</td></tr><tr><td>支柱</td><td>咨询汇报</td><td>圆角卡片、直角线框、扁平极简、行业报告</td></tr><tr><td>大数字</td><td>要点页</td><td>圆角卡片、直角线框、扁平极简、行业报告、深色科技</td></tr><tr><td>分层架构</td><td>分层色带</td><td>圆角卡片、直角线框、扁平极简、行业报告、实色模块、深色科技</td></tr><tr><td>分级部署</td><td>行业报告</td><td>圆角卡片、直角线框、扁平极简、分层色带</td></tr><tr><td>金字塔</td><td>行业报告</td><td>圆角卡片、直角线框、扁平极简、分层色带</td></tr><tr><td>漏斗</td><td>行业报告</td><td>圆角卡片、直角线框、扁平极简、分层色带</td></tr><tr><td>三栏对照</td><td>行业报告</td><td>圆角卡片、直角线框、扁平极简、实色模块</td></tr><tr><td>分类树</td><td>实色模块</td><td>圆角卡片、直角线框、扁平极简、行业报告</td></tr><tr><td>中心辐射</td><td>圆角卡片</td><td>直角线框、扁平极简、行业报告、深色科技</td></tr></tbody></table>
+  <h2>风格</h2>
+  <p class="lead">下面每张是该风格的范例。学它的形状和留白，不要学它的颜色。</p>
+  <div class="grid">
+<article class="card">
+  <header><b>圆角卡片</b><code>rounded</code></header>
+  <p class="look">白底大圆角卡片，重点的一块用模板深色涂满</p>
+  <p class="use">通用汇报、产品介绍</p>
+  <div class="preview"><svg viewBox="0 0 1600 612" xmlns="http://www.w3.org/2000/svg" font-family="Microsoft YaHei, PingFang SC, Noto Sans SC, sans-serif">
+  <defs>
+    <filter id="s4" x="-8%" y="-8%" width="116%" height="124%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="rgba(4,72,70,.10)"/>
+    </filter>
+    <marker id="arr4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="11" markerHeight="11" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0 1.4 L9 5 L0 8.6 Z" fill="#007774"/>
+    </marker>
+    <g id="ic4-user">
+      <circle r="18" fill="#007774"/>
+      <circle cx="0" cy="-4.5" r="5" fill="#fff"/>
+      <path d="M-8 10 C-7 3.2, 7 3.2, 8 10" fill="none" stroke="#fff" stroke-width="1.8"/>
+    </g>
+    <g id="ic4-brain">
+      <circle r="18" fill="#007774"/>
+      <path d="M-6-4.5 C-8-9, 0-10, 2.2-6.5 C5.5-10, 9-5.5, 5.5-2 C9 1, 3.2 8, -1 5.5 C-7 9, -9 1, -5.5-2Z" fill="none" stroke="#fff" stroke-width="1.5"/>
+    </g>
+    <g id="ic4-doc">
+      <circle r="18" fill="#007774"/>
+      <rect x="-5.5" y="-8" width="11" height="15" rx="1.5" fill="none" stroke="#fff" stroke-width="1.4"/>
+      <path d="M-2.8-2.8 h5.6 M-2.8 1.2 h5.6 M-2.8 5.2 h3.4" stroke="#fff" stroke-width="1.2"/>
+    </g>
+    <g id="ic4-play">
+      <circle r="18" fill="#065a58"/>
+      <path d="M-3.5-6 L7 0 L-3.5 6 Z" fill="#fff"/>
+    </g>
+    <g id="ic4-edit">
+      <circle r="18" fill="#b8954a"/>
+      <path d="M-6 6 L-4.5-1 L4.5-8 L8-4.5 L-1 4.5 Z" fill="none" stroke="#fff" stroke-width="1.5"/>
+    </g>
+    <g id="ic4-mem">
+      <circle r="18" fill="#065a58"/>
+      <path d="M-5.5-7 h11 v15 l-5.5-3.4 -5.5 3.4 Z" fill="none" stroke="#fff" stroke-width="1.5"/>
+    </g>
+    <g id="ic4-ok">
+      <circle r="18" fill="#2f7d4a"/>
+      <path d="M-7 0 L-2 6 L8-7" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round"/>
+    </g>
+    <g id="ic4-tpl">
+      <circle r="15" fill="#007774"/>
+      <rect x="-5.5" y="-7" width="11" height="13.5" rx="1.3" fill="none" stroke="#fff" stroke-width="1.3"/>
+    </g>
+    <g id="ic4-link">
+      <circle r="15" fill="#007774"/>
+      <path d="M-3.5-2.2 a3.4 3.4 0 0 1 4.6 0 l1.1 1.1 M3.5 2.2 a3.4 3.4 0 0 1-4.6 0 l-1.1-1.1" fill="none" stroke="#fff" stroke-width="1.5"/>
+    </g>
+  </defs>
+  <g transform="translate(0,-62)">
+  <rect y="50" width="1600" height="1100" fill="#f4f8f7"/>
+  <rect x="0" y="50" width="10" height="1100" fill="#007774"/>
+
+  <!-- 阶段一 -->
+  <rect x="36" y="72" width="1528" height="268" rx="14" fill="#ffffff" stroke="#9ec9c6" stroke-width="1.8" filter="url(#s4)"/>
+  <rect x="52" y="82" width="210" height="32" rx="16" fill="#007774"/>
+  <text x="157" y="104" text-anchor="middle" fill="#fff" font-size="16" font-weight="700">阶段一 · 知识沉淀</text>
+  <text x="278" y="104" fill="#3d6b69" font-size="15">把专家报告变成可复用的模板、思维链和数据挂接</text>
+
+  <rect x="72" y="122" width="360" height="200" rx="12" fill="#cfe8e6"/>
+  <use href="#ic4-user" x="108" y="156"/>
+  <text x="258" y="164" fill="#065a58" font-size="18" font-weight="700">1  业务专家</text>
+  <text x="252" y="216" text-anchor="middle" fill="#163332" font-size="22" font-weight="700">上传分析报告</text>
+  <text x="252" y="248" text-anchor="middle" fill="#3d6b69" font-size="15">提供典型场景的真实分析文本</text>
+  <text x="252" y="272" text-anchor="middle" fill="#3d6b69" font-size="15">作为学习样本</text>
+
+  <path d="M432 222 L500 222" fill="none" stroke="#007774" stroke-width="2.8" marker-end="url(#arr4)"/>
+
+  <rect x="508" y="122" width="360" height="200" rx="12" fill="#cfe8e6"/>
+  <use href="#ic4-brain" x="544" y="156"/>
+  <text x="694" y="164" fill="#065a58" font-size="18" font-weight="700">2  大模型</text>
+  <text x="688" y="216" text-anchor="middle" fill="#163332" font-size="22" font-weight="700">理解、学习报告</text>
+  <text x="688" y="248" text-anchor="middle" fill="#3d6b69" font-size="15">把握章节结构、分析口径</text>
+  <text x="688" y="272" text-anchor="middle" fill="#3d6b69" font-size="15">与关键判断逻辑</text>
+
+  <path d="M868 222 L936 222" fill="none" stroke="#007774" stroke-width="2.8" marker-end="url(#arr4)"/>
+
+  <rect x="944" y="122" width="592" height="200" rx="12" fill="#cfe8e6"/>
+  <use href="#ic4-doc" x="980" y="156"/>
+  <text x="1176" y="164" fill="#065a58" font-size="18" font-weight="700">3  智能体自动提炼</text>
+  <rect x="972" y="182" width="172" height="122" rx="10" fill="#ffffff"/>
+  <use href="#ic4-tpl" x="1058" y="218"/>
+  <text x="1058" y="270" text-anchor="middle" fill="#163332" font-size="16" font-weight="700">报告模板</text>
+  <rect x="1156" y="182" width="172" height="122" rx="10" fill="#ffffff"/>
+  <use href="#ic4-link" x="1242" y="218"/>
+  <text x="1242" y="270" text-anchor="middle" fill="#163332" font-size="16" font-weight="700">生成思维链</text>
+  <rect x="1340" y="182" width="172" height="122" rx="10" fill="#ffffff"/>
+  <use href="#ic4-doc" x="1426" y="218"/>
+  <text x="1426" y="270" text-anchor="middle" fill="#163332" font-size="16" font-weight="700">完成数据挂接</text>
+
+  <line x1="800" y1="348" x2="800" y2="366" stroke="#007774" stroke-width="2.8"/>
+  <polygon points="791,364 800,380 809,364" fill="#007774"/>
+
+  <!-- 阶段二 -->
+  <rect x="36" y="386" width="1528" height="268" rx="14" fill="#ffffff" stroke="#9ec9c6" stroke-width="1.8" filter="url(#s4)"/>
+  <rect x="52" y="396" width="228" height="32" rx="16" fill="#065a58"/>
+  <text x="166" y="418" text-anchor="middle" fill="#fff" font-size="16" font-weight="700">阶段二 · 生成与纠偏</text>
+  <text x="296" y="418" fill="#3d6b69" font-size="15">针对逻辑错误、业务失准，业务人员在线标识，快速纠偏</text>
+
+  <g text-anchor="middle">
+    <rect x="60" y="436" width="250" height="200" rx="12" fill="#cfe8e6"/>
+    <use href="#ic4-play" x="185" y="476"/>
+    <text x="185" y="532" fill="#163332" font-size="17" font-weight="700">A  专家调用模板</text>
+    <text x="185" y="562" fill="#3d6b69" font-size="14">按日期 / 区域发起分析</text>
+
+    <path d="M310 536 L348 536" fill="none" stroke="#007774" stroke-width="2.8" marker-end="url(#arr4)"/>
+
+    <rect x="356" y="436" width="250" height="200" rx="12" fill="#cfe8e6"/>
+    <use href="#ic4-doc" x="481" y="476"/>
+    <text x="481" y="532" fill="#163332" font-size="17" font-weight="700">B  智能体生成报告</text>
+    <text x="481" y="562" fill="#3d6b69" font-size="14">统计、对比、组装成文</text>
+
+    <path d="M606 536 L644 536" fill="none" stroke="#007774" stroke-width="2.8" marker-end="url(#arr4)"/>
+
+    <rect x="652" y="436" width="270" height="200" rx="12" fill="#cfe8e6"/>
+    <use href="#ic4-edit" x="787" y="476"/>
+    <text x="787" y="532" fill="#163332" font-size="17" font-weight="700">C  在线标注、纠偏</text>
+    <text x="787" y="562" fill="#3d6b69" font-size="14">标出失准段落与口径</text>
+
+    <path d="M922 536 L960 536" fill="none" stroke="#007774" stroke-width="2.8" marker-end="url(#arr4)"/>
+
+    <rect x="968" y="436" width="250" height="200" rx="12" fill="#cfe8e6"/>
+    <use href="#ic4-mem" x="1093" y="476"/>
+    <text x="1093" y="532" fill="#163332" font-size="17" font-weight="700">D  智能体形成记忆</text>
+    <text x="1093" y="562" fill="#3d6b69" font-size="14">沉淀纠偏结果，避免重犯</text>
+
+    <path d="M1218 536 L1256 536" fill="none" stroke="#007774" stroke-width="2.8" marker-end="url(#arr4)"/>
+
+    <rect x="1264" y="436" width="276" height="200" rx="12" fill="#cfe8e6"/>
+    <use href="#ic4-ok" x="1402" y="476"/>
+    <text x="1402" y="532" fill="#163332" font-size="16" font-weight="700">E  再次生成恢复正常</text>
+    <text x="1402" y="562" fill="#3d6b69" font-size="14">同场景复用已校正经验</text>
+  </g>
+  </g>
+</svg></div>
+</article>
+<article class="card">
+  <header><b>直角线框</b><code>square</code></header>
+  <p class="look">直角细线，卡片左侧一条色条，像公文表格</p>
+  <p class="use">政务、公文、方案评审</p>
+  <div class="preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 417" font-family="Microsoft YaHei, PingFang SC, sans-serif">
+  <defs>
+    <marker id="arrow-main" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse" markerUnits="strokeWidth">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#008883"/></marker>
+    <marker id="arrow-dark" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse" markerUnits="strokeWidth">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#153231"/></marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1" flood-color="#0F1F1E" flood-opacity="0.08"/>
+    </filter>
+
+    <!-- 图标：文档 -->
+    <g id="ic-doc">
+      <rect x="-12" y="-12" width="24" height="24" fill="#008883"/>
+      <line x1="-6" y1="-6" x2="6" y2="-6" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square"/>
+      <line x1="-6" y1="0" x2="6" y2="0" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square"/>
+      <line x1="-6" y1="6" x2="2" y2="6" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square"/>
+    </g>
+    <!-- 图标：模板 -->
+    <g id="ic-template">
+      <rect x="-12" y="-12" width="24" height="24" fill="#008883"/>
+      <rect x="-7" y="-7" width="14" height="14" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+      <line x1="-7" y1="-1" x2="7" y2="-1" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square"/>
+      <line x1="0" y1="-7" x2="0" y2="7" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square"/>
+    </g>
+    <!-- 图标：理解 -->
+    <g id="ic-understand">
+      <rect x="-12" y="-12" width="24" height="24" fill="#008883"/>
+      <circle cx="0" cy="0" r="5" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+      <line x1="0" y1="-12" x2="0" y2="-7" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square"/>
+      <line x1="0" y1="7" x2="0" y2="12" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square"/>
+      <line x1="-12" y1="0" x2="-7" y2="0" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square"/>
+      <line x1="7" y1="0" x2="12" y2="0" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square"/>
+    </g>
+    <!-- 图标：风格 -->
+    <g id="ic-style">
+      <rect x="-12" y="-12" width="24" height="24" fill="#008883"/>
+      <line x1="-7" y1="-7" x2="7" y2="7" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square"/>
+      <line x1="-7" y1="7" x2="7" y2="-7" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square"/>
+    </g>
+    <!-- 图标：撰写 -->
+    <g id="ic-write">
+      <rect x="-12" y="-12" width="24" height="24" fill="#008883"/>
+      <line x1="-7" y1="7" x2="7" y2="7" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square"/>
+      <line x1="-7" y1="2" x2="7" y2="2" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square"/>
+      <line x1="-7" y1="-3" x2="7" y2="-3" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square"/>
+      <line x1="-7" y1="-8" x2="3" y2="-8" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square"/>
+    </g>
+    <!-- 图标：图形 -->
+    <g id="ic-graphic">
+      <rect x="-12" y="-12" width="24" height="24" fill="#008883"/>
+      <rect x="-7" y="-7" width="14" height="14" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+      <line x1="-7" y1="0" x2="7" y2="0" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square"/>
+      <line x1="0" y1="-7" x2="0" y2="7" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square"/>
+    </g>
+    <!-- 图标：输出 -->
+    <g id="ic-output">
+      <rect x="-12" y="-12" width="24" height="24" fill="#008883"/>
+      <line x1="-7" y1="-7" x2="7" y2="-7" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square"/>
+      <line x1="-7" y1="0" x2="7" y2="0" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square"/>
+      <line x1="-7" y1="7" x2="3" y2="7" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square"/>
+    </g>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="1200" height="417" fill="#FFFFFF"/>
+
+  <!-- ==================== 左栏：输入 ==================== -->
+  <g>
+    <!-- 分区外框 -->
+    <rect x="16" y="24" width="264" height="328" fill="#FFFFFF" stroke="#A5D4D2" stroke-width="1"/>
+    <!-- 标题栏 -->
+    <rect x="16" y="24" width="264" height="36" fill="#008883"/>
+    <text x="32" y="47" font-size="18" font-weight="700" fill="#FFFFFF">输入</text>
+    <text x="80" y="47" font-size="13" fill="#D3EEED">业务素材与企业模板</text>
+
+    <!-- 卡片：业务素材 -->
+    <rect x="32" y="76" width="232" height="120" fill="#F3F9F9"/>
+    <rect x="32" y="76" width="4" height="120" fill="#008883"/>
+    <use href="#ic-doc" x="64" y="104"/>
+    <text x="84" y="101" font-size="17" font-weight="700" fill="#153231">业务素材</text>
+    <text x="84" y="126" font-size="14" fill="#396A68">Word 方案</text>
+    <text x="84" y="146" font-size="14" fill="#396A68">旧版 PPT</text>
+    <text x="84" y="166" font-size="14" fill="#396A68">会议纪要</text>
+    <text x="84" y="186" font-size="14" fill="#396A68">XMind 提纲</text>
+
+    <!-- 卡片：企业模板 -->
+    <rect x="32" y="212" width="232" height="120" fill="#F3F9F9"/>
+    <rect x="32" y="212" width="4" height="120" fill="#008883"/>
+    <use href="#ic-template" x="64" y="240"/>
+    <text x="84" y="237" font-size="17" font-weight="700" fill="#153231">企业模板</text>
+    <text x="84" y="262" font-size="14" fill="#396A68">版式</text>
+    <text x="84" y="282" font-size="14" fill="#396A68">配色</text>
+    <text x="84" y="302" font-size="14" fill="#396A68">字体</text>
+    <text x="84" y="322" font-size="14" fill="#396A68">页面节奏</text>
+  </g>
+
+  <!-- 左栏到中栏箭头 -->
+  <path d="M280,188 L316,188" stroke="#008883" stroke-width="3" marker-end="url(#arrow-main)"/>
+
+  <!-- ==================== 中栏：智能演示文稿助手 ==================== -->
+  <g>
+    <!-- 分区外框 -->
+    <rect x="320" y="24" width="560" height="328" fill="#FFFFFF" stroke="#A5D4D2" stroke-width="1"/>
+    <!-- 标题栏 -->
+    <rect x="320" y="24" width="560" height="36" fill="#00625E"/>
+    <text x="336" y="47" font-size="18" font-weight="700" fill="#FFFFFF">智能演示文稿助手</text>
+    <text x="544" y="47" font-size="13" fill="#D3EEED">核心处理能力</text>
+
+    <!-- 四张能力卡 -->
+    <!-- 卡1：材料理解 -->
+    <rect x="336" y="76" width="120" height="152" fill="#F3F9F9"/>
+    <rect x="336" y="76" width="4" height="152" fill="#008883"/>
+    <text x="352" y="104" font-size="16" font-weight="700" fill="#008883">01</text>
+    <use href="#ic-understand" x="364" y="128"/>
+    <text x="352" y="168" font-size="17" font-weight="700" fill="#153231">材料理解</text>
+    <text x="352" y="192" font-size="14" fill="#396A68">提炼要点</text>
+    <text x="352" y="212" font-size="14" fill="#396A68">对齐口径</text>
+
+    <!-- 箭头1 -->
+    <line x1="460" y1="152" x2="476" y2="152" stroke="#153231" stroke-width="1.5" marker-end="url(#arrow-dark)"/>
+
+    <!-- 卡2：风格适配 -->
+    <rect x="480" y="76" width="120" height="152" fill="#F3F9F9"/>
+    <rect x="480" y="76" width="4" height="152" fill="#008883"/>
+    <text x="496" y="104" font-size="16" font-weight="700" fill="#008883">02</text>
+    <use href="#ic-style" x="508" y="128"/>
+    <text x="496" y="168" font-size="17" font-weight="700" fill="#153231">风格适配</text>
+    <text x="496" y="192" font-size="14" fill="#396A68">识别模板版式</text>
+    <text x="496" y="212" font-size="14" fill="#396A68">与配色</text>
+
+    <!-- 箭头2 -->
+    <line x1="604" y1="152" x2="620" y2="152" stroke="#153231" stroke-width="1.5" marker-end="url(#arrow-dark)"/>
+
+    <!-- 卡3：内容撰写 -->
+    <rect x="624" y="76" width="120" height="152" fill="#F3F9F9"/>
+    <rect x="624" y="76" width="4" height="152" fill="#008883"/>
+    <text x="640" y="104" font-size="16" font-weight="700" fill="#008883">03</text>
+    <use href="#ic-write" x="652" y="128"/>
+    <text x="640" y="168" font-size="17" font-weight="700" fill="#153231">内容撰写</text>
+    <text x="640" y="192" font-size="14" fill="#396A68">排大纲</text>
+    <text x="640" y="212" font-size="14" fill="#396A68">逐页写正文</text>
+
+    <!-- 箭头3 -->
+    <line x1="748" y1="152" x2="764" y2="152" stroke="#153231" stroke-width="1.5" marker-end="url(#arrow-dark)"/>
+
+    <!-- 卡4：图形生成（加高到160，文字上移） -->
+    <rect x="768" y="76" width="96" height="160" fill="#F3F9F9"/>
+    <rect x="768" y="76" width="4" height="160" fill="#008883"/>
+    <text x="784" y="104" font-size="16" font-weight="700" fill="#008883">04</text>
+    <use href="#ic-graphic" x="796" y="128"/>
+    <text x="784" y="168" font-size="17" font-weight="700" fill="#153231">图形生成</text>
+    <text x="784" y="192" font-size="14" fill="#396A68">结构图出</text>
+    <text x="784" y="212" font-size="14" fill="#396A68">图片版与</text>
+    <text x="784" y="230" font-size="14" fill="#396A68">可编辑版</text>
+
+    <!-- 全文连贯审查横条 -->
+    <rect x="336" y="252" width="528" height="40" fill="#D3EEED"/>
+    <rect x="336" y="252" width="4" height="40" fill="#00625E"/>
+    <text x="352" y="277" font-size="16" font-weight="700" fill="#00625E">全文连贯审查</text>
+    <text x="464" y="277" font-size="14" fill="#396A68">术语统一 · 数据前后一致</text>
+
+    <!-- 底部说明 -->
+    <text x="336" y="324" font-size="13" fill="#396A68">四项能力按先后顺序执行，形成完整生成链路</text>
+  </g>
+
+  <!-- 中栏到右栏箭头 -->
+  <path d="M880,188 L916,188" stroke="#008883" stroke-width="3" marker-end="url(#arrow-main)"/>
+
+  <!-- ==================== 右栏：输出 ==================== -->
+  <g>
+    <!-- 分区外框 -->
+    <rect x="920" y="24" width="264" height="328" fill="#FFFFFF" stroke="#A5D4D2" stroke-width="1"/>
+    <!-- 标题栏 -->
+    <rect x="920" y="24" width="264" height="36" fill="#008883"/>
+    <text x="936" y="47" font-size="18" font-weight="700" fill="#FFFFFF">输出</text>
+    <text x="984" y="47" font-size="13" fill="#D3EEED">成稿与联动内容</text>
+
+    <!-- 卡片：成稿演示文稿 -->
+    <rect x="936" y="76" width="232" height="72" fill="#F3F9F9"/>
+    <rect x="936" y="76" width="4" height="72" fill="#008883"/>
+    <text x="952" y="104" font-size="16" font-weight="700" fill="#153231">成稿演示文稿</text>
+    <text x="952" y="128" font-size="14" fill="#396A68">保留模板原有风格</text>
+
+    <!-- 卡片：结构图两个版本 -->
+    <rect x="936" y="164" width="232" height="88" fill="#F3F9F9"/>
+    <rect x="936" y="164" width="4" height="88" fill="#008883"/>
+    <text x="952" y="192" font-size="16" font-weight="700" fill="#153231">结构图两个版本</text>
+    <text x="952" y="216" font-size="14" fill="#396A68">高清图片版</text>
+    <text x="952" y="236" font-size="14" fill="#396A68">可编辑版</text>
+
+    <!-- 卡片：加页加章 -->
+    <rect x="936" y="268" width="232" height="72" fill="#F3F9F9"/>
+    <rect x="936" y="268" width="4" height="72" fill="#008883"/>
+    <text x="952" y="296" font-size="16" font-weight="700" fill="#153231">加页加章</text>
+    <text x="952" y="320" font-size="14" fill="#396A68">目录、扉页自动联动</text>
+  </g>
+
+  <!-- ==================== 底部底座 ==================== -->
+  <g>
+    <rect x="16" y="368" width="1168" height="33" fill="#00625E"/>
+    <rect x="16" y="368" width="4" height="33" fill="#B8954A"/>
+    <text x="40" y="390" font-size="16" font-weight="700" fill="#FFFFFF">人工智能平台 · 大模型</text>
+    <text x="264" y="390" font-size="15" fill="#D3EEED">语义理解</text>
+    <text x="360" y="390" font-size="15" fill="#D3EEED">文本生成</text>
+    <text x="456" y="390" font-size="15" fill="#D3EEED">视觉理解</text>
+  </g>
+</svg></div>
+</article>
+<article class="card">
+  <header><b>扁平极简</b><code>flat</code></header>
+  <p class="look">白底发丝边，几乎没有阴影，颜色只点一点点</p>
+  <p class="use">互联网风格、内容少的图</p>
+  <div class="preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 417" font-family="Microsoft YaHei, PingFang SC, sans-serif">
+  <defs>
+    <marker id="arrow-gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse" markerUnits="strokeWidth">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#000000"/></marker>
+    <marker id="arrow-main" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse" markerUnits="strokeWidth">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#000000"/></marker>
+    <marker id="arrow-dark" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse" markerUnits="strokeWidth">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#000000"/></marker>
+
+    <g id="ic-doc">
+      <path d="M-7,-10 L7,-10 L7,10 L-7,10 Z" fill="none" stroke="#008883" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="-3" y1="-4" x2="3" y2="-4" stroke="#008883" stroke-width="1.75" stroke-linecap="round"/>
+      <line x1="-3" y1="0" x2="3" y2="0" stroke="#008883" stroke-width="1.75" stroke-linecap="round"/>
+      <line x1="-3" y1="4" x2="3" y2="4" stroke="#008883" stroke-width="1.75" stroke-linecap="round"/>
+    </g>
+
+    <g id="ic-ppt">
+      <rect x="-8" y="-10" width="16" height="20" rx="2" fill="none" stroke="#008883" stroke-width="1.75"/>
+      <line x1="-4" y1="-4" x2="4" y2="-4" stroke="#008883" stroke-width="1.75" stroke-linecap="round"/>
+      <line x1="-4" y1="1" x2="4" y2="1" stroke="#008883" stroke-width="1.75" stroke-linecap="round"/>
+      <line x1="-4" y1="6" x2="4" y2="6" stroke="#008883" stroke-width="1.75" stroke-linecap="round"/>
+    </g>
+
+    <g id="ic-meeting">
+      <circle cx="0" cy="0" r="10" fill="none" stroke="#008883" stroke-width="1.75"/>
+      <path d="M-4,-3 Q0,-8 4,-3" fill="none" stroke="#008883" stroke-width="1.75" stroke-linecap="round"/>
+      <line x1="-7" y1="5" x2="7" y2="5" stroke="#008883" stroke-width="1.75" stroke-linecap="round"/>
+    </g>
+
+    <g id="ic-xmind">
+      <circle cx="0" cy="0" r="3" fill="none" stroke="#008883" stroke-width="1.75"/>
+      <line x1="0" y1="0" x2="-6" y2="-7" stroke="#008883" stroke-width="1.75" stroke-linecap="round"/>
+      <line x1="0" y1="0" x2="7" y2="-7" stroke="#008883" stroke-width="1.75" stroke-linecap="round"/>
+      <line x1="0" y1="0" x2="-7" y2="6" stroke="#008883" stroke-width="1.75" stroke-linecap="round"/>
+      <line x1="0" y1="0" x2="7" y2="6" stroke="#008883" stroke-width="1.75" stroke-linecap="round"/>
+      <circle cx="-6" cy="-7" r="2" fill="#008883"/>
+      <circle cx="7" cy="-7" r="2" fill="#008883"/>
+      <circle cx="-7" cy="6" r="2" fill="#008883"/>
+      <circle cx="7" cy="6" r="2" fill="#008883"/>
+    </g>
+
+    <g id="ic-template">
+      <rect x="-9" y="-8" width="18" height="16" rx="2" fill="none" stroke="#008883" stroke-width="1.75"/>
+      <line x1="-9" y1="-2" x2="9" y2="-2" stroke="#008883" stroke-width="1.75"/>
+      <line x1="-9" y1="4" x2="9" y2="4" stroke="#008883" stroke-width="1.75"/>
+      <line x1="-4" y1="-8" x2="-4" y2="-2" stroke="#008883" stroke-width="1.75"/>
+      <line x1="4" y1="-2" x2="4" y2="4" stroke="#008883" stroke-width="1.75"/>
+    </g>
+
+    <g id="ic-understand">
+      <circle cx="0" cy="0" r="10" fill="none" stroke="#008883" stroke-width="1.75"/>
+      <circle cx="-3" cy="-1" r="1.5" fill="#008883"/>
+      <circle cx="3" cy="-1" r="1.5" fill="#008883"/>
+      <path d="M-4,5 Q0,8 4,5" fill="none" stroke="#008883" stroke-width="1.75" stroke-linecap="round"/>
+    </g>
+
+    <g id="ic-style">
+      <rect x="-9" y="-9" width="18" height="18" rx="3" fill="none" stroke="#008883" stroke-width="1.75"/>
+      <circle cx="0" cy="0" r="4" fill="none" stroke="#008883" stroke-width="1.75"/>
+      <line x1="0" y1="-9" x2="0" y2="-5" stroke="#008883" stroke-width="1.75"/>
+      <line x1="0" y1="5" x2="0" y2="9" stroke="#008883" stroke-width="1.75"/>
+      <line x1="-9" y1="0" x2="-5" y2="0" stroke="#008883" stroke-width="1.75"/>
+      <line x1="5" y1="0" x2="9" y2="0" stroke="#008883" stroke-width="1.75"/>
+    </g>
+
+    <g id="ic-write">
+      <path d="M-8,8 L-3,8 L8,-3 L3,-8 L-8,3 Z" fill="none" stroke="#008883" stroke-width="1.75" stroke-linejoin="round"/>
+      <line x1="-6" y1="1" x2="1" y2="-6" stroke="#008883" stroke-width="1.75" stroke-linecap="round"/>
+    </g>
+
+    <g id="ic-graphics">
+      <rect x="-9" y="-9" width="18" height="18" rx="2" fill="none" stroke="#008883" stroke-width="1.75"/>
+      <circle cx="-3" cy="-3" r="2.5" fill="none" stroke="#008883" stroke-width="1.75"/>
+      <line x1="3" y1="-5" x2="8" y2="-5" stroke="#008883" stroke-width="1.75" stroke-linecap="round"/>
+      <line x1="3" y1="0" x2="8" y2="0" stroke="#008883" stroke-width="1.75" stroke-linecap="round"/>
+      <line x1="3" y1="5" x2="8" y2="5" stroke="#008883" stroke-width="1.75" stroke-linecap="round"/>
+    </g>
+
+    <g id="ic-review">
+      <path d="M-9,0 L-3,6 L9,-8" fill="none" stroke="#008883" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+
+    <g id="ic-output-ppt">
+      <rect x="-9" y="-10" width="18" height="20" rx="2" fill="none" stroke="#008883" stroke-width="1.75"/>
+      <line x1="-5" y1="-4" x2="5" y2="-4" stroke="#008883" stroke-width="1.75" stroke-linecap="round"/>
+      <line x1="-5" y1="1" x2="5" y2="1" stroke="#008883" stroke-width="1.75" stroke-linecap="round"/>
+      <line x1="-5" y1="6" x2="5" y2="6" stroke="#008883" stroke-width="1.75" stroke-linecap="round"/>
+    </g>
+
+    <g id="ic-two-version">
+      <rect x="-9" y="-9" width="13" height="18" rx="2" fill="none" stroke="#008883" stroke-width="1.75"/>
+      <rect x="-4" y="-5" width="13" height="18" rx="2" fill="none" stroke="#008883" stroke-width="1.75"/>
+      <line x1="-6" y1="-2" x2="1" y2="-2" stroke="#008883" stroke-width="1.75" stroke-linecap="round"/>
+      <line x1="-6" y1="3" x2="1" y2="3" stroke="#008883" stroke-width="1.75" stroke-linecap="round"/>
+    </g>
+
+    <g id="ic-chapter">
+      <line x1="0" y1="-8" x2="0" y2="8" stroke="#008883" stroke-width="1.75" stroke-linecap="round"/>
+      <circle cx="-5" cy="-4" r="2" fill="none" stroke="#008883" stroke-width="1.75"/>
+      <circle cx="5" cy="-4" r="2" fill="none" stroke="#008883" stroke-width="1.75"/>
+      <circle cx="-5" cy="4" r="2" fill="none" stroke="#008883" stroke-width="1.75"/>
+      <circle cx="5" cy="4" r="2" fill="none" stroke="#008883" stroke-width="1.75"/>
+    </g>
+  </defs>
+
+  <rect x="0.0" y="0.0" width="1200.0" height="417.0" fill="#FFFFFF"/><!-- 左栏：输入 -->
+  <rect x="24" y="24" width="220" height="260" rx="12" fill="#FAFAFA" stroke="#E4E4E7" stroke-width="1"/>
+  <text x="44" y="52" font-size="17" font-weight="700" fill="#18181B">输入</text>
+  <text x="44" y="72" font-size="13" fill="#71717A">业务素材与企业模板</text>
+
+  <!-- 业务素材卡片 -->
+  <rect x="40" y="84" width="188" height="88" rx="8" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="1"/>
+  <use href="#ic-doc" x="56" y="96"/>
+  <text x="76" y="100" font-size="15" font-weight="700" fill="#18181B">业务素材</text>
+  <text x="56" y="126" font-size="13" fill="#71717A">Word 方案、旧版 PPT</text>
+  <text x="56" y="145" font-size="13" fill="#71717A">会议纪要、XMind 提纲</text>
+
+  <!-- 企业模板卡片 -->
+  <rect x="40" y="184" width="188" height="88" rx="8" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="1"/>
+  <use href="#ic-template" x="56" y="196"/>
+  <text x="76" y="200" font-size="15" font-weight="700" fill="#18181B">企业模板</text>
+  <text x="56" y="226" font-size="13" fill="#71717A">版式、配色、字体</text>
+  <text x="56" y="245" font-size="13" fill="#71717A">页面节奏</text>
+
+  <!-- 左到中箭头 -->
+  <path d="M252,154 L292,154" fill="none" stroke="#008883" stroke-width="1.75" marker-end="url(#arrow-main)"/>
+
+  <!-- 中栏：智能演示文稿助手 -->
+  <rect x="300" y="24" width="600" height="260" rx="12" fill="#FAFAFA" stroke="#E4E4E7" stroke-width="1"/>
+  <text x="320" y="52" font-size="17" font-weight="700" fill="#18181B">智能演示文稿助手</text>
+  <text x="320" y="72" font-size="13" fill="#71717A">从理解素材到生成成稿的四步处理</text>
+
+  <!-- 能力卡1：材料理解 -->
+  <rect x="320" y="84" width="128" height="120" rx="8" fill="#FFFFFF" stroke="#008883" stroke-width="1.5"/>
+  <use href="#ic-understand" x="340" y="100"/>
+  <text x="340" y="128" font-size="15" font-weight="700" fill="#18181B">材料理解</text>
+  <text x="340" y="150" font-size="13" fill="#71717A">提炼要点</text>
+  <text x="340" y="169" font-size="13" fill="#71717A">对齐口径</text>
+
+  <!-- 箭头1 -->
+  <path d="M452,144 L468,144" fill="none" stroke="#008883" stroke-width="1.75" marker-end="url(#arrow-main)"/>
+
+  <!-- 能力卡2：风格适配 -->
+  <rect x="476" y="84" width="128" height="120" rx="8" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="1"/>
+  <use href="#ic-style" x="496" y="100"/>
+  <text x="496" y="128" font-size="15" font-weight="700" fill="#18181B">风格适配</text>
+  <text x="496" y="150" font-size="13" fill="#71717A">识别模板版式</text>
+  <text x="496" y="169" font-size="13" fill="#71717A">与配色</text>
+
+  <!-- 箭头2 -->
+  <path d="M608,144 L624,144" fill="none" stroke="#008883" stroke-width="1.75" marker-end="url(#arrow-main)"/>
+
+  <!-- 能力卡3：内容撰写 -->
+  <rect x="632" y="84" width="128" height="120" rx="8" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="1"/>
+  <use href="#ic-write" x="652" y="100"/>
+  <text x="652" y="128" font-size="15" font-weight="700" fill="#18181B">内容撰写</text>
+  <text x="652" y="150" font-size="13" fill="#71717A">排大纲</text>
+  <text x="652" y="169" font-size="13" fill="#71717A">逐页写正文</text>
+
+  <!-- 箭头3 -->
+  <path d="M764,144 L780,144" fill="none" stroke="#008883" stroke-width="1.75" marker-end="url(#arrow-main)"/>
+
+  <!-- 能力卡4：图形生成 -->
+  <rect x="788" y="84" width="100" height="120" rx="8" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="1"/>
+  <use href="#ic-graphics" x="806" y="100"/>
+  <text x="806" y="128" font-size="15" font-weight="700" fill="#18181B">图形生成</text>
+  <text x="806" y="150" font-size="13" fill="#71717A">结构图出</text>
+  <text x="806" y="169" font-size="13" fill="#71717A">图片版与</text>
+  <text x="806" y="188" font-size="13" fill="#71717A">可编辑版</text>
+
+  <!-- 全文连贯审查横条 -->
+  <rect x="320" y="216" width="568" height="52" rx="8" fill="#F3F9F9" stroke="#A5D4D2" stroke-width="1"/>
+  <use href="#ic-review" x="340" y="236"/>
+  <text x="360" y="236" font-size="15" font-weight="700" fill="#00625E">全文连贯审查</text>
+  <text x="360" y="256" font-size="13" fill="#396A68">术语统一、数据前后一致</text>
+
+  <!-- 中到右箭头 -->
+  <path d="M908,154 L948,154" fill="none" stroke="#008883" stroke-width="1.75" marker-end="url(#arrow-main)"/>
+
+  <!-- 右栏：输出 -->
+  <rect x="956" y="24" width="220" height="260" rx="12" fill="#FAFAFA" stroke="#E4E4E7" stroke-width="1"/>
+  <text x="976" y="52" font-size="17" font-weight="700" fill="#18181B">输出</text>
+  <text x="976" y="72" font-size="13" fill="#71717A">成稿与结构化图形资产</text>
+
+  <!-- 输出卡1：成稿演示文稿 -->
+  <rect x="972" y="84" width="188" height="72" rx="8" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="1"/>
+  <use href="#ic-output-ppt" x="988" y="96"/>
+  <text x="1008" y="100" font-size="15" font-weight="700" fill="#18181B">成稿演示文稿</text>
+  <text x="988" y="128" font-size="13" fill="#71717A">保留模板原有风格</text>
+
+  <!-- 输出卡2：结构图两个版本 -->
+  <rect x="972" y="164" width="188" height="72" rx="8" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="1"/>
+  <use href="#ic-two-version" x="988" y="176"/>
+  <text x="1008" y="180" font-size="15" font-weight="700" fill="#18181B">结构图两个版本</text>
+  <text x="988" y="208" font-size="13" fill="#71717A">高清图片版 / 可编辑版</text>
+
+  <!-- 输出卡3：加页加章 -->
+  <rect x="972" y="244" width="188" height="40" rx="8" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="1"/>
+  <use href="#ic-chapter" x="988" y="254"/>
+  <text x="1008" y="258" font-size="15" font-weight="700" fill="#18181B">加页加章</text>
+  <text x="1008" y="278" font-size="13" fill="#71717A">目录、扉页自动联动</text>
+
+  <!-- 底部通栏底座 -->
+  <rect x="24" y="300" width="1152" height="84" rx="8" fill="#18181B"/>
+  <text x="44" y="332" font-size="17" font-weight="700" fill="#FFFFFF">人工智能平台 · 大模型</text>
+  <text x="44" y="358" font-size="13" fill="#A1A1AA">语义理解 / 文本生成 / 视觉理解</text>
+
+  <!-- 深色胶囊标签 -->
+  <rect x="280" y="324" width="110" height="36" rx="6" fill="none" stroke="#FFFFFF" stroke-opacity="0.35" stroke-width="1"/>
+  <text x="335" y="347" font-size="15" fill="#FFFFFF" text-anchor="middle">语义理解</text>
+
+  <rect x="406" y="324" width="110" height="36" rx="6" fill="none" stroke="#FFFFFF" stroke-opacity="0.35" stroke-width="1"/>
+  <text x="461" y="347" font-size="15" fill="#FFFFFF" text-anchor="middle">文本生成</text>
+
+  <rect x="532" y="324" width="110" height="36" rx="6" fill="none" stroke="#FFFFFF" stroke-opacity="0.35" stroke-width="1"/>
+  <text x="587" y="347" font-size="15" fill="#FFFFFF" text-anchor="middle">视觉理解</text>
+
+  <!-- 底座到中栏的细连线 -->
+  <line x1="600" y1="300" x2="600" y2="284" stroke="#71717A" stroke-width="1.25" stroke-dasharray="3,3"/>
+  <circle cx="600" cy="284" r="3" fill="#71717A"/>
+</svg></div>
+</article>
+<article class="card">
+  <header><b>咨询汇报</b><code>consult</code></header>
+  <p class="look">白底，结论在上，序号下各一条短横线，几列依据，底部一行「所以」</p>
+  <p class="use">给领导的结论、问题拆解、建议与依据</p>
+  <div class="preview"><svg viewBox="0 0 1200 520" xmlns="http://www.w3.org/2000/svg" font-family="Microsoft YaHei, PingFang SC, Noto Sans SC, sans-serif">
+  <rect x="0" y="0" width="1200" height="520" fill="#FFFFFF"/>
+  <rect x="72" y="40" width="4" height="28" fill="#007774"/>
+  <text x="92" y="64" font-size="22" font-weight="700" fill="#163332">先把范围收窄，再谈全面建设</text>
+  <line x1="72" y1="96" x2="1128" y2="96" stroke="#9EC9C6" stroke-width="1"/>
+  <text x="72" y="148" font-size="20" font-weight="700" fill="#007774">01</text>
+  <line x1="72" y1="162" x2="112" y2="162" stroke="#007774" stroke-width="1.5"/>
+  <text x="72" y="206" font-size="18" font-weight="700" fill="#163332">范围一次铺开</text>
+  <text x="72" y="244" font-size="15" fill="#3D6B69">所有场景同时开工</text>
+  <text x="72" y="268" font-size="15" fill="#3D6B69">试点没有对照基线</text>
+  <line x1="400" y1="120" x2="400" y2="300" stroke="#9EC9C6" stroke-width="1"/>
+  <text x="448" y="148" font-size="20" font-weight="700" fill="#007774">02</text>
+  <line x1="448" y1="162" x2="488" y2="162" stroke="#007774" stroke-width="1.5"/>
+  <text x="448" y="206" font-size="18" font-weight="700" fill="#163332">依据停在定性</text>
+  <text x="448" y="244" font-size="15" fill="#3D6B69">只有感觉，没有前后数</text>
+  <text x="448" y="268" font-size="15" fill="#3D6B69">无法判断该不该继续</text>
+  <line x1="776" y1="120" x2="776" y2="300" stroke="#9EC9C6" stroke-width="1"/>
+  <text x="824" y="148" font-size="20" font-weight="700" fill="#007774">03</text>
+  <line x1="824" y1="162" x2="864" y2="162" stroke="#007774" stroke-width="1.5"/>
+  <text x="824" y="206" font-size="18" font-weight="700" fill="#163332">先做一个闭环</text>
+  <text x="824" y="244" font-size="15" fill="#3D6B69">选已有数据的一条业务</text>
+  <text x="824" y="268" font-size="15" fill="#3D6B69">四周后用同一指标复盘</text>
+  <line x1="72" y1="328" x2="1128" y2="328" stroke="#9EC9C6" stroke-width="1"/>
+  <text x="72" y="380" font-size="13" fill="#3D6B69">所以</text>
+  <text x="128" y="380" font-size="16" font-weight="700" fill="#163332">本阶段只承诺</text>
+  <text x="256" y="380" font-size="16" font-weight="700" fill="#007774">一个场景</text>
+  <text x="344" y="380" font-size="16" font-weight="700" fill="#163332">跑通，不承诺全量上线</text>
+  <text x="1128" y="448" text-anchor="end" font-size="13" fill="#3D6B69">口径：同一张表，上线前后各四周</text>
+</svg></div>
+</article>
+<article class="card">
+  <header><b>要点页</b><code>keynote</code></header>
+  <p class="look">大数字居中，百分号抬高半级，四周留白，底部最多三条小注</p>
+  <p class="use">封面后的结论页、一个关键指标、一句要记住的话</p>
+  <div class="preview"><svg viewBox="0 0 1200 640" xmlns="http://www.w3.org/2000/svg" font-family="Microsoft YaHei, PingFang SC, Noto Sans SC, sans-serif">
+  <rect x="0" y="0" width="1200" height="640" fill="#FFFFFF"/>
+  <text x="144" y="72" font-size="13" fill="#3D6B69">一个结论</text>
+  <text x="1056" y="72" text-anchor="end" font-size="13" fill="#3D6B69">四周对照</text>
+  <text x="600" y="132" text-anchor="middle" font-size="14" fill="#3D6B69">试点 · 四周</text>
+  <text x="579" y="268" text-anchor="middle" font-size="104" font-weight="700" fill="#007774">42</text>
+  <text x="664" y="228" font-size="40" font-weight="700" fill="#007774">%</text>
+  <text x="600" y="348" text-anchor="middle" font-size="22" fill="#163332">重复录入下降</text>
+  <text x="600" y="384" text-anchor="middle" font-size="15" fill="#3D6B69">口径：上线前后同一张表</text>
+  <text x="600" y="408" text-anchor="middle" font-size="15" fill="#3D6B69">统计区间为连续四周</text>
+  <line x1="168" y1="456" x2="1032" y2="456" stroke="#9EC9C6" stroke-width="1"/>
+  <text x="300" y="500" text-anchor="middle" font-size="16" font-weight="700" fill="#163332">一个场景</text>
+  <line x1="286" y1="512" x2="314" y2="512" stroke="#9EC9C6" stroke-width="1"/>
+  <text x="300" y="540" text-anchor="middle" font-size="14" fill="#3D6B69">不铺开全部业务</text>
+  <line x1="456" y1="486" x2="456" y2="548" stroke="#9EC9C6" stroke-width="1"/>
+  <text x="600" y="500" text-anchor="middle" font-size="16" font-weight="700" fill="#163332">同一口径</text>
+  <line x1="586" y1="512" x2="614" y2="512" stroke="#9EC9C6" stroke-width="1"/>
+  <text x="600" y="540" text-anchor="middle" font-size="14" fill="#3D6B69">前后可以对照</text>
+  <line x1="744" y1="486" x2="744" y2="548" stroke="#9EC9C6" stroke-width="1"/>
+  <text x="900" y="500" text-anchor="middle" font-size="16" font-weight="700" fill="#163332">再决定推广</text>
+  <line x1="886" y1="512" x2="914" y2="512" stroke="#9EC9C6" stroke-width="1"/>
+  <text x="900" y="540" text-anchor="middle" font-size="14" fill="#3D6B69">结束前不写成全量</text>
+  <text x="600" y="592" text-anchor="middle" font-size="13" fill="#3D6B69">只代表这一张表，不代表全部业务</text>
+</svg></div>
+</article>
+<article class="card">
+  <header><b>行业报告</b><code>report</code></header>
+  <p class="look">浅底细边，不同类别各用一种颜色，箭头较粗</p>
+  <p class="use">平台建设情况、分级部署、数据分类、政策解读</p>
+  <div class="preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 492" font-family="Microsoft YaHei, PingFang SC, sans-serif">
+  <defs>
+    <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0D2C4C" flood-opacity="0.10"/>
+    </filter>
+    <marker id="arrowDark" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="2.60" markerHeight="2.60" orient="auto-start-reverse" markerUnits="strokeWidth">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#123D6A"/></marker>
+    <marker id="arrowTeal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.00" markerHeight="6.00" orient="auto-start-reverse" markerUnits="strokeWidth">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#0E7A6E"/></marker>
+    <marker id="arrowCyan" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.00" markerHeight="6.00" orient="auto-start-reverse" markerUnits="strokeWidth">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1C9FA9"/></marker>
+    <marker id="arrowOrange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.00" markerHeight="6.00" orient="auto-start-reverse" markerUnits="strokeWidth">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#F0A04B"/></marker>
+
+    <!-- 水滴图标：国家级 -->
+    <g id="drop-national">
+      <path d="M64,34 A38,38 0 1,0 102,72 L102,34 Z" fill="#0E7A6E"/>
+      <circle cx="64" cy="72" r="20" fill="#FFFFFF"/>
+      <path d="M56,78 L64,64 L72,78" stroke="#0E7A6E" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="54" y1="82" x2="74" y2="82" stroke="#0E7A6E" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+    <!-- 水滴图标：集团级 -->
+    <g id="drop-group">
+      <path d="M64,194 A38,38 0 1,0 102,232 L102,194 Z" fill="#1C9FA9"/>
+      <circle cx="64" cy="232" r="20" fill="#FFFFFF"/>
+      <rect x="56" y="224" width="7" height="7" fill="none" stroke="#1C9FA9" stroke-width="2.5"/>
+      <rect x="65" y="224" width="7" height="7" fill="none" stroke="#1C9FA9" stroke-width="2.5"/>
+      <rect x="56" y="233" width="7" height="7" fill="none" stroke="#1C9FA9" stroke-width="2.5"/>
+      <rect x="65" y="233" width="7" height="7" fill="none" stroke="#1C9FA9" stroke-width="2.5"/>
+    </g>
+    <!-- 水滴图标：电站级 -->
+    <g id="drop-station">
+      <path d="M64,354 A38,38 0 1,0 102,392 L102,354 Z" fill="#F0A04B"/>
+      <circle cx="64" cy="392" r="20" fill="#FFFFFF"/>
+      <path d="M57,398 L64,384 L71,398" stroke="#F0A04B" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="55" y1="402" x2="73" y2="402" stroke="#F0A04B" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+
+    <!-- 小线条图标：国家级 -->
+    <g id="ic-national-small">
+      <path d="M-8,4 L-4,-4 L0,0 L4,-4 L8,4" stroke="#0E7A6E" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="-8" y1="8" x2="8" y2="8" stroke="#0E7A6E" stroke-width="2" stroke-linecap="round"/>
+    </g>
+    <!-- 小线条图标：集团级 -->
+    <g id="ic-group-small">
+      <rect x="-8" y="-8" width="16" height="16" rx="2" fill="none" stroke="#1C9FA9" stroke-width="2"/>
+      <circle cx="0" cy="0" r="3" fill="#1C9FA9"/>
+      <line x1="-4" y1="-4" x2="-8" y2="-8" stroke="#1C9FA9" stroke-width="1.5"/>
+      <line x1="4" y1="-4" x2="8" y2="-8" stroke="#1C9FA9" stroke-width="1.5"/>
+      <line x1="-4" y1="4" x2="-8" y2="8" stroke="#1C9FA9" stroke-width="1.5"/>
+      <line x1="4" y1="4" x2="8" y2="8" stroke="#1C9FA9" stroke-width="1.5"/>
+    </g>
+    <!-- 小线条图标：电站级 -->
+    <g id="ic-station-small">
+      <rect x="-8" y="-8" width="16" height="16" rx="2" fill="none" stroke="#F0A04B" stroke-width="2"/>
+      <path d="M-4,4 L0,-4 L4,4" stroke="#F0A04B" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="-8" y1="4" x2="8" y2="4" stroke="#F0A04B" stroke-width="2"/>
+    </g>
+
+    <!-- 设备图标 -->
+    <g id="ic-battery">
+      <rect x="-6" y="-8" width="12" height="16" rx="2" fill="none" stroke="#2E75B6" stroke-width="2"/>
+      <rect x="-3" y="-5" width="6" height="10" fill="#2E75B6"/>
+      <line x1="-2" y1="-11" x2="2" y2="-11" stroke="#2E75B6" stroke-width="2"/>
+    </g>
+    <g id="ic-bms">
+      <rect x="-8" y="-8" width="16" height="16" rx="2" fill="none" stroke="#2E75B6" stroke-width="2"/>
+      <circle cx="0" cy="0" r="3" fill="#2E75B6"/>
+      <line x1="-4" y1="-4" x2="-8" y2="-8" stroke="#2E75B6" stroke-width="1.5"/>
+      <line x1="4" y1="-4" x2="8" y2="-8" stroke="#2E75B6" stroke-width="1.5"/>
+      <line x1="-4" y1="4" x2="-8" y2="8" stroke="#2E75B6" stroke-width="1.5"/>
+      <line x1="4" y1="4" x2="8" y2="8" stroke="#2E75B6" stroke-width="1.5"/>
+    </g>
+    <g id="ic-pcs">
+      <rect x="-8" y="-8" width="16" height="16" rx="2" fill="none" stroke="#2E75B6" stroke-width="2"/>
+      <path d="M-4,4 L0,-4 L4,4" stroke="#2E75B6" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="-8" y1="4" x2="8" y2="4" stroke="#2E75B6" stroke-width="2"/>
+    </g>
+    <g id="ic-fire">
+      <path d="M0,-8 C3,-3 7,-2 6,2 C5,6 2,8 0,8 C-2,8 -5,6 -6,2 C-7,-2 -3,-3 0,-8 Z" fill="none" stroke="#2E75B6" stroke-width="2"/>
+      <path d="M-2,0 C-1,-2 1,-2 2,0 C3,2 1,4 0,4 C-1,4 -3,2 -2,0 Z" fill="#2E75B6"/>
+    </g>
+    <g id="ic-ac">
+      <circle cx="0" cy="0" r="8" fill="none" stroke="#2E75B6" stroke-width="2"/>
+      <line x1="-5" y1="0" x2="5" y2="0" stroke="#2E75B6" stroke-width="2"/>
+      <line x1="0" y1="-5" x2="0" y2="5" stroke="#2E75B6" stroke-width="2"/>
+      <path d="M-3,-3 C-1,-1 -1,-1 1,-1" stroke="#2E75B6" stroke-width="1.5" fill="none"/>
+      <path d="M3,3 C1,1 1,1 -1,1" stroke="#2E75B6" stroke-width="1.5" fill="none"/>
+    </g>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="1200" height="492" fill="#FFFFFF"/>
+
+  <!-- ==================== 左侧说明列 ==================== -->
+  <!-- 国家级 y0=8 -->
+  <use href="#drop-national" x="0" y="0"/>
+  <line x1="64" y1="110" x2="64" y2="126" stroke="#0E7A6E" stroke-width="2"/>
+  <line x1="50" y1="126" x2="78" y2="126" stroke="#0E7A6E" stroke-width="2"/>
+  <text x="205" y="66" font-size="20" font-weight="700" fill="#0E7A6E" text-anchor="middle">国家级平台</text>
+  <text x="205" y="94" font-size="16" fill="#0E7A6E" text-anchor="middle">（核心层级）</text>
+
+  <use href="#ic-national-small" x="316" y="24"/>
+  <text x="334" y="32" font-size="18" font-weight="700" fill="#0E7A6E">数据的调用和使用方</text>
+  <line x1="312" y1="44" x2="596" y2="44" stroke="#0E7A6E" stroke-width="1.2"/>
+  <text x="314" y="68" font-size="16" fill="#1A232E"><tspan fill="#0E7A6E" font-weight="700">•</tspan><tspan dx="8">由行业协会牵头，委托成员机构建</tspan></text>
+  <text x="330" y="91" font-size="16" fill="#1A232E">投资建设，聚焦服务政府辅助决策、</text>
+  <text x="330" y="114" font-size="16" fill="#1A232E">服务行业高质量发展，</text>
+  <text x="330" y="137" font-size="16" fill="#1A232E"><tspan fill="#0E7A6E" font-weight="700">存储电站行业统计数据、安全汇总数</tspan></text>
+  <text x="330" y="160" font-size="16" fill="#1A232E"><tspan fill="#0E7A6E" font-weight="700">据等静态信息，并根据需要调用电站</tspan></text>
+  <text x="330" y="183" font-size="16" fill="#1A232E"><tspan fill="#0E7A6E" font-weight="700">实时数据</tspan></text>
+
+  <!-- 集团级 y0=196 -->
+  <use href="#drop-group" x="0" y="0"/>
+  <line x1="64" y1="270" x2="64" y2="286" stroke="#1C9FA9" stroke-width="2"/>
+  <line x1="50" y1="286" x2="78" y2="286" stroke="#1C9FA9" stroke-width="2"/>
+  <text x="205" y="254" font-size="20" font-weight="700" fill="#1C9FA9" text-anchor="middle">集团级（区域级）平台</text>
+  <text x="205" y="282" font-size="16" fill="#1C9FA9" text-anchor="middle">（中坚层级）</text>
+
+  <use href="#ic-group-small" x="316" y="212"/>
+  <text x="334" y="220" font-size="18" font-weight="700" fill="#1C9FA9">数据的存储和调用方</text>
+  <line x1="312" y1="232" x2="596" y2="232" stroke="#1C9FA9" stroke-width="1.2"/>
+  <text x="314" y="256" font-size="16" fill="#1A232E"><tspan fill="#1C9FA9" font-weight="700">•</tspan><tspan dx="8">由电站业主投资建设，聚焦服务企业</tspan></text>
+  <text x="330" y="279" font-size="16" fill="#1A232E">或区域站点的建设运行及运维运营，</text>
+  <text x="330" y="302" font-size="16" fill="#1A232E">服务生产经营管理，</text>
+  <text x="330" y="325" font-size="16" fill="#1A232E"><tspan fill="#1C9FA9" font-weight="700">实时存储电站安全生产信息</tspan></text>
+
+  <!-- 电站级 y0=346 -->
+  <use href="#drop-station" x="0" y="0"/>
+  <line x1="64" y1="430" x2="64" y2="446" stroke="#F0A04B" stroke-width="2"/>
+  <line x1="50" y1="446" x2="78" y2="446" stroke="#F0A04B" stroke-width="2"/>
+  <text x="205" y="404" font-size="20" font-weight="700" fill="#F0A04B" text-anchor="middle">电站级平台</text>
+  <text x="205" y="432" font-size="16" fill="#F0A04B" text-anchor="middle">（基础层级）</text>
+
+  <use href="#ic-station-small" x="316" y="362"/>
+  <text x="334" y="370" font-size="18" font-weight="700" fill="#F0A04B">数据的发源端</text>
+  <line x1="312" y1="382" x2="596" y2="382" stroke="#F0A04B" stroke-width="1.2"/>
+  <text x="314" y="406" font-size="16" fill="#1A232E"><tspan fill="#F0A04B" font-weight="700">•</tspan><tspan dx="8">由电站业主投资建设，聚焦服务电站</tspan></text>
+  <text x="330" y="429" font-size="16" fill="#1A232E">电池及能量管理、安全防控，</text>
+  <text x="330" y="452" font-size="16" fill="#1A232E"><tspan fill="#F0A04B" font-weight="700">实现实时数据就地采集、处理与存储</tspan></text>
+
+  <!-- ==================== 右侧架构 ==================== -->
+  <!-- 外部系统 -->
+  <rect x="620" y="12" width="270" height="50" rx="6" fill="#DCE9F5" stroke="#2E75B6" stroke-width="1.2" filter="url(#shadow)"/>
+  <text x="755" y="42" font-size="19" fill="#1A232E" text-anchor="middle">政府部门应用信息系统</text>
+
+  <rect x="914" y="12" width="270" height="50" rx="6" fill="#DCE9F5" stroke="#2E75B6" stroke-width="1.2" filter="url(#shadow)"/>
+  <text x="1049" y="42" font-size="19" fill="#1A232E" text-anchor="middle">行业公共信息平台</text>
+
+  <!-- 国家级平台 -->
+  <rect x="620" y="102" width="564" height="50" rx="6" fill="#FFFFFF" stroke="#0E7A6E" stroke-width="1.2" filter="url(#shadow)"/>
+  <text x="902" y="132" font-size="19" fill="#1A232E" text-anchor="middle">国家级平台</text>
+
+  <!-- 国家级到外部系统箭头 -->
+  <line x1="755" y1="102" x2="755" y2="62" stroke="#123D6A" stroke-width="8" marker-end="url(#arrowDark)"/>
+  <text x="767" y="86" font-size="13" fill="#405163">保持接口兼容性</text>
+  <line x1="1049" y1="102" x2="1049" y2="62" stroke="#123D6A" stroke-width="8" marker-end="url(#arrowDark)"/>
+  <text x="1061" y="86" font-size="13" fill="#405163">信息联通</text>
+
+  <!-- 集团级平台 -->
+  <rect x="620" y="192" width="340" height="50" rx="6" fill="#E2EFDA" stroke="#1C9FA9" stroke-width="1.2" filter="url(#shadow)"/>
+  <text x="790" y="222" font-size="19" fill="#1A232E" text-anchor="middle">集团级/区域级平台</text>
+
+  <!-- 集团级到国家级箭头 -->
+  <line x1="790" y1="192" x2="790" y2="152" stroke="#123D6A" stroke-width="8" marker-end="url(#arrowDark)"/>
+  <text x="802" y="176" font-size="13" fill="#405163">档案数据、运行数据、告警数据</text>
+
+  <!-- 电站级平台1 -->
+  <rect x="750" y="292" width="210" height="50" rx="6" fill="#FFF2CC" stroke="#F0A04B" stroke-width="1.2" filter="url(#shadow)"/>
+  <text x="855" y="322" font-size="19" fill="#1A232E" text-anchor="middle">电站级平台</text>
+
+  <!-- 电站级平台2 -->
+  <rect x="984" y="292" width="200" height="50" rx="6" fill="#FFF2CC" stroke="#F0A04B" stroke-width="1.2" filter="url(#shadow)"/>
+  <text x="1084" y="322" font-size="19" fill="#1A232E" text-anchor="middle">电站级平台</text>
+
+  <!-- 右侧电站级直达国家级 -->
+  <line x1="1084" y1="292" x2="1084" y2="152" stroke="#123D6A" stroke-width="8" marker-end="url(#arrowDark)"/>
+
+  <!-- 左侧电站级到集团级 -->
+  <line x1="855" y1="292" x2="855" y2="242" stroke="#123D6A" stroke-width="8" marker-end="url(#arrowDark)"/>
+
+  <!-- 设备框 -->
+  <rect x="620" y="382" width="564" height="98" rx="6" fill="#FAFAFA" stroke="#2E75B6" stroke-width="1.2"/>
+  <use href="#ic-battery" x="676" y="414"/>
+  <text x="676" y="466" font-size="16" fill="#1A232E" text-anchor="middle">电池</text>
+  <use href="#ic-bms" x="789" y="414"/>
+  <text x="789" y="466" font-size="16" fill="#1A232E" text-anchor="middle">BMS</text>
+  <use href="#ic-pcs" x="902" y="414"/>
+  <text x="902" y="466" font-size="16" fill="#1A232E" text-anchor="middle">PCS</text>
+  <use href="#ic-fire" x="1015" y="414"/>
+  <text x="1015" y="466" font-size="16" fill="#1A232E" text-anchor="middle">消防系统</text>
+  <use href="#ic-ac" x="1128" y="414"/>
+  <text x="1128" y="466" font-size="16" fill="#1A232E" text-anchor="middle">空调系统</text>
+
+  <!-- 设备到左侧电站级 -->
+  <line x1="855" y1="382" x2="855" y2="342" stroke="#123D6A" stroke-width="8" marker-end="url(#arrowDark)"/>
+  <text x="867" y="366" font-size="13" fill="#405163">档案数据、运行数据、告警数据</text>
+
+  <!-- 设备到右侧电站级 -->
+  <line x1="1084" y1="382" x2="1084" y2="342" stroke="#123D6A" stroke-width="8" marker-end="url(#arrowDark)"/>
+
+  <!-- 设备直达集团级 -->
+  <line x1="660" y1="382" x2="660" y2="242" stroke="#123D6A" stroke-width="8" marker-end="url(#arrowDark)"/>
+  <text x="672" y="280" font-size="13" fill="#405163">档案数据、</text>
+  <text x="672" y="298" font-size="13" fill="#405163">运行数据、</text>
+  <text x="672" y="316" font-size="13" fill="#405163">告警数据</text>
+</svg></div>
+</article>
+<article class="card">
+  <header><b>实色模块</b><code>blocks</code></header>
+  <p class="look">小色块只写名称，整齐排成行列，像系统模块图</p>
+  <p class="use">云边端架构、功能清单式框图</p>
+  <div class="preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 610" font-family="Microsoft YaHei, PingFang SC, sans-serif">
+  <defs>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse" markerUnits="strokeWidth">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#0070C0"/></marker>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="610" fill="#FFFFFF"/>
+
+  <!-- 最左侧角色/云/边/端标签 -->
+  <rect x="16" y="48" width="44" height="44" rx="2" fill="#7F7F7F"/>
+  <text x="38" y="76" font-size="18" fill="#FFFFFF" font-weight="700" text-anchor="middle">角色</text>
+
+  <rect x="16" y="100" width="44" height="278" rx="2" fill="#7F7F7F"/>
+  <text x="38" y="249" font-size="18" fill="#FFFFFF" font-weight="700" text-anchor="middle">云</text>
+
+  <rect x="16" y="386" width="44" height="34" rx="2" fill="#7F7F7F"/>
+  <text x="38" y="408" font-size="18" fill="#FFFFFF" font-weight="700" text-anchor="middle">边</text>
+
+  <rect x="16" y="428" width="44" height="166" rx="2" fill="#7F7F7F"/>
+  <text x="38" y="519" font-size="18" fill="#FFFFFF" font-weight="700" text-anchor="middle">端</text>
+
+  <!-- 最右侧ERP/MES贯通条 -->
+  <rect x="1150" y="48" width="34" height="546" rx="2" fill="#7F7F7F"/>
+  <text x="1167" y="95" font-size="16" fill="#FFFFFF" font-weight="700" text-anchor="middle">E</text>
+  <text x="1167" y="117" font-size="16" fill="#FFFFFF" font-weight="700" text-anchor="middle">R</text>
+  <text x="1167" y="139" font-size="16" fill="#FFFFFF" font-weight="700" text-anchor="middle">P</text>
+  <text x="1167" y="161" font-size="16" fill="#FFFFFF" font-weight="700" text-anchor="middle">/</text>
+  <text x="1167" y="183" font-size="16" fill="#FFFFFF" font-weight="700" text-anchor="middle">M</text>
+  <text x="1167" y="205" font-size="16" fill="#FFFFFF" font-weight="700" text-anchor="middle">E</text>
+  <text x="1167" y="227" font-size="16" fill="#FFFFFF" font-weight="700" text-anchor="middle">S</text>
+
+  <!-- 角色层 -->
+  <g>
+    <rect x="68" y="48" width="354" height="44" rx="2" fill="#0070C0"/>
+    <text x="245" y="76" font-size="18" fill="#FFFFFF" font-weight="700" text-anchor="middle">政府</text>
+    <rect x="430" y="48" width="354" height="44" rx="2" fill="#0070C0"/>
+    <text x="607" y="76" font-size="18" fill="#FFFFFF" font-weight="700" text-anchor="middle">园区</text>
+    <rect x="792" y="48" width="350" height="44" rx="2" fill="#0070C0"/>
+    <text x="967" y="76" font-size="18" fill="#FFFFFF" font-weight="700" text-anchor="middle">企业</text>
+  </g>
+
+  <!-- 云层 -->
+  <g>
+    <!-- 统一驾驶舱通栏 -->
+    <rect x="68" y="100" width="1074" height="34" rx="2" fill="#0070C0"/>
+    <text x="605" y="122" font-size="18" fill="#FFFFFF" font-weight="700" text-anchor="middle">统一驾驶舱（能源+双碳+虚拟电厂）</text>
+
+    <!-- 双碳管理组 -->
+    <rect x="68" y="142" width="533" height="116" rx="2" fill="#F3F7F9" stroke="#A5C1D4" stroke-width="1" stroke-dasharray="4 3"/>
+    <rect x="68" y="142" width="533" height="28" rx="2" fill="#31859C"/>
+    <text x="334.5" y="161" font-size="16" fill="#FFFFFF" font-weight="700" text-anchor="middle">双碳管理</text>
+    <g font-size="14" fill="#FFFFFF" font-weight="700" text-anchor="middle">
+      <rect x="78" y="178" width="166" height="32" rx="2" fill="#31859C"/>
+      <text x="161" y="199">碳监测</text>
+      <rect x="252" y="178" width="166" height="32" rx="2" fill="#31859C"/>
+      <text x="335" y="199">碳足迹</text>
+      <rect x="426" y="178" width="166" height="32" rx="2" fill="#31859C"/>
+      <text x="509" y="199">碳排模型</text>
+      <rect x="78" y="218" width="166" height="32" rx="2" fill="#31859C"/>
+      <text x="161" y="239">碳资产</text>
+      <rect x="252" y="218" width="166" height="32" rx="2" fill="#31859C"/>
+      <text x="335" y="239">碳认证</text>
+      <rect x="426" y="218" width="166" height="32" rx="2" fill="#31859C"/>
+      <text x="509" y="239">碳减排</text>
+    </g>
+
+    <!-- 虚拟电厂组 -->
+    <rect x="609" y="142" width="533" height="116" rx="2" fill="#F3F7F9" stroke="#A5C1D4" stroke-width="1" stroke-dasharray="4 3"/>
+    <rect x="609" y="142" width="533" height="28" rx="2" fill="#C00000"/>
+    <text x="875.5" y="161" font-size="16" fill="#FFFFFF" font-weight="700" text-anchor="middle">虚拟电厂</text>
+    <g font-size="14" fill="#FFFFFF" font-weight="700" text-anchor="middle">
+      <rect x="619" y="178" width="166" height="32" rx="2" fill="#C00000"/>
+      <text x="702" y="199">资源管理</text>
+      <rect x="793" y="178" width="166" height="32" rx="2" fill="#C00000"/>
+      <text x="876" y="199">负荷预测</text>
+      <rect x="967" y="178" width="166" height="32" rx="2" fill="#C00000"/>
+      <text x="1050" y="199">需求响应</text>
+      <rect x="619" y="218" width="166" height="32" rx="2" fill="#C00000"/>
+      <text x="702" y="239">资源编排</text>
+      <rect x="793" y="218" width="166" height="32" rx="2" fill="#C00000"/>
+      <text x="876" y="239">业务模型</text>
+      <rect x="967" y="218" width="166" height="32" rx="2" fill="#C00000"/>
+      <text x="1050" y="239">业务协同</text>
+    </g>
+
+    <!-- 能源管理组 -->
+    <rect x="68" y="266" width="1074" height="64" rx="2" fill="#F3F7F9" stroke="#A5C1D4" stroke-width="1"/>
+    <rect x="68" y="266" width="1074" height="26" rx="2" fill="#0070C0"/>
+    <text x="605" y="284" font-size="16" fill="#FFFFFF" font-weight="700" text-anchor="middle">能源管理</text>
+    <g font-size="14" fill="#FFFFFF" font-weight="700" text-anchor="middle">
+      <rect x="78" y="298" width="109" height="26" rx="2" fill="#0070C0"/>
+      <text x="132.5" y="316">能耗分析</text>
+      <rect x="195" y="298" width="109" height="26" rx="2" fill="#0070C0"/>
+      <text x="249.5" y="316">能耗预测</text>
+      <rect x="312" y="298" width="109" height="26" rx="2" fill="#0070C0"/>
+      <text x="366.5" y="316">用能安全</text>
+      <rect x="429" y="298" width="109" height="26" rx="2" fill="#0070C0"/>
+      <text x="483.5" y="316">能效分析</text>
+      <rect x="546" y="298" width="109" height="26" rx="2" fill="#0070C0"/>
+      <text x="600.5" y="316">节能调控</text>
+      <rect x="663" y="298" width="109" height="26" rx="2" fill="#0070C0"/>
+      <text x="717.5" y="316">节能模型</text>
+      <rect x="780" y="298" width="109" height="26" rx="2" fill="#0070C0"/>
+      <text x="834.5" y="316">能源报告</text>
+      <rect x="897" y="298" width="109" height="26" rx="2" fill="#0070C0"/>
+      <text x="951.5" y="316">设备运维</text>
+      <rect x="1014" y="298" width="109" height="26" rx="2" fill="#0070C0"/>
+      <text x="1068.5" y="316">小程序</text>
+    </g>
+
+    <!-- 数据中台 -->
+    <rect x="68" y="338" width="1074" height="30" rx="2" fill="#7F7F7F"/>
+    <text x="605" y="358" font-size="16" fill="#FFFFFF" font-weight="700" text-anchor="middle">数据中台</text>
+  </g>
+
+  <!-- 边层 -->
+  <g>
+    <rect x="68" y="386" width="1074" height="34" rx="2" fill="#7F7F7F"/>
+    <text x="605" y="408" font-size="16" fill="#FFFFFF" font-weight="700" text-anchor="middle">4G/5G 工业网关</text>
+  </g>
+
+  <!-- 端层到边层向上的箭头（左右各一，避开文字） -->
+  <line x1="300" y1="420" x2="300" y2="388" stroke="#0070C0" stroke-width="3" marker-end="url(#arrowBlue)"/>
+  <line x1="900" y1="420" x2="900" y2="388" stroke="#0070C0" stroke-width="3" marker-end="url(#arrowBlue)"/>
+
+  <!-- 边层到数据中台向上的箭头（左右各一，避开文字） -->
+  <line x1="300" y1="376" x2="300" y2="370" stroke="#0070C0" stroke-width="3" marker-end="url(#arrowBlue)"/>
+  <line x1="900" y1="376" x2="900" y2="370" stroke="#0070C0" stroke-width="3" marker-end="url(#arrowBlue)"/>
+
+  <!-- 端层 -->
+  <g>
+    <!-- 生产数据组 -->
+    <rect x="68" y="428" width="238" height="166" rx="2" fill="#F3F7F9" stroke="#A5C1D4" stroke-width="1"/>
+    <rect x="68" y="428" width="30" height="166" rx="2" fill="#31859C"/>
+    <text x="83" y="505" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">生</text>
+    <text x="83" y="527" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">产</text>
+    <text x="83" y="549" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">数</text>
+    <text x="83" y="571" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">据</text>
+    <rect x="108" y="438" width="90" height="42" rx="2" fill="#DFEBFC"/>
+    <text x="153" y="464" font-size="15" fill="#152632" font-weight="700" text-anchor="middle">DCS</text>
+    <rect x="206" y="438" width="90" height="42" rx="2" fill="#DFEBFC"/>
+    <text x="251" y="464" font-size="15" fill="#152632" font-weight="700" text-anchor="middle">SCADA</text>
+
+    <!-- 能源数据组 -->
+    <rect x="314" y="428" width="512" height="166" rx="2" fill="#F3F7F9" stroke="#A5C1D4" stroke-width="1"/>
+    <rect x="314" y="428" width="30" height="166" rx="2" fill="#31859C"/>
+    <text x="329" y="505" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">能</text>
+    <text x="329" y="527" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">源</text>
+    <text x="329" y="549" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">数</text>
+    <text x="329" y="571" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">据</text>
+    <g font-size="14" fill="#152632" font-weight="700" text-anchor="middle">
+      <rect x="354" y="438" width="88" height="42" rx="2" fill="#DFEBFC"/>
+      <text x="398" y="464">水</text>
+      <rect x="450" y="438" width="88" height="42" rx="2" fill="#DFEBFC"/>
+      <text x="494" y="464">电</text>
+      <rect x="546" y="438" width="88" height="42" rx="2" fill="#DFEBFC"/>
+      <text x="590" y="464">燃气</text>
+      <rect x="642" y="438" width="88" height="42" rx="2" fill="#DFEBFC"/>
+      <text x="686" y="464">蒸汽</text>
+      <rect x="738" y="438" width="80" height="42" rx="2" fill="#DFEBFC"/>
+      <text x="778" y="464">氮气</text>
+      <rect x="354" y="488" width="88" height="42" rx="2" fill="#DFEBFC"/>
+      <text x="398" y="514">柴油</text>
+      <rect x="450" y="488" width="88" height="42" rx="2" fill="#DFEBFC"/>
+      <text x="494" y="514">汽油</text>
+      <rect x="546" y="488" width="88" height="42" rx="2" fill="#DFEBFC"/>
+      <text x="590" y="514">煤油</text>
+      <rect x="642" y="488" width="88" height="42" rx="2" fill="#DFEBFC"/>
+      <text x="686" y="514">液化气</text>
+      <rect x="738" y="488" width="80" height="42" rx="2" fill="#DFEBFC"/>
+      <text x="778" y="514">煤气</text>
+    </g>
+
+    <!-- 能源资源组 -->
+    <rect x="834" y="428" width="308" height="166" rx="2" fill="#F3F7F9" stroke="#A5C1D4" stroke-width="1"/>
+    <rect x="834" y="428" width="30" height="166" rx="2" fill="#31859C"/>
+    <text x="849" y="505" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">能</text>
+    <text x="849" y="527" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">源</text>
+    <text x="849" y="549" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">资</text>
+    <text x="849" y="571" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">源</text>
+    <g font-size="13" fill="#152632" font-weight="700" text-anchor="middle">
+      <rect x="874" y="438" width="86" height="42" rx="2" fill="#DFEBFC"/>
+      <text x="917" y="464">风电</text>
+      <rect x="968" y="438" width="86" height="42" rx="2" fill="#DFEBFC"/>
+      <text x="1011" y="464">光电</text>
+      <rect x="1062" y="438" width="80" height="42" rx="2" fill="#DFEBFC"/>
+      <text x="1102" y="464">分布式能源</text>
+      <rect x="874" y="488" width="86" height="42" rx="2" fill="#DFEBFC"/>
+      <text x="917" y="514">可控负荷</text>
+      <rect x="968" y="488" width="86" height="42" rx="2" fill="#DFEBFC"/>
+      <text x="1011" y="514">蓄热</text>
+      <rect x="1062" y="488" width="80" height="42" rx="2" fill="#DFEBFC"/>
+      <text x="1102" y="514">充电桩</text>
+    </g>
+  </g>
+</svg></div>
+</article>
+<article class="card">
+  <header><b>分层色带</b><code>bands</code></header>
+  <p class="look">横向色带从上往下叠，每一层一种深浅</p>
+  <p class="use">分层架构、平台能力总览</p>
+  <div class="preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 417" font-family="Microsoft YaHei, PingFang SC, sans-serif">
+  <defs>
+    <filter id="bandShadow" x="-2%" y="-2%" width="104%" height="104%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#00625E" flood-opacity="0.06"/>
+    </filter>
+    <marker id="arrowUp" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse" markerUnits="strokeWidth">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#000000"/></marker>
+    <marker id="arrowRight" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse" markerUnits="strokeWidth">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#000000"/></marker>
+
+    <!-- 图标定义 -->
+    <g id="ic-doc">
+      <path d="M-7,-9 L7,-9 L7,9 L-7,9 Z" fill="none" stroke="#008883" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="-4" y1="-4" x2="4" y2="-4" stroke="#008883" stroke-width="2" stroke-linecap="round"/>
+      <line x1="-4" y1="0" x2="4" y2="0" stroke="#008883" stroke-width="2" stroke-linecap="round"/>
+      <line x1="-4" y1="4" x2="2" y2="4" stroke="#008883" stroke-width="2" stroke-linecap="round"/>
+    </g>
+    <g id="ic-template">
+      <rect x="-8" y="-8" width="16" height="16" rx="2" fill="none" stroke="#008883" stroke-width="2"/>
+      <line x1="-8" y1="-2" x2="8" y2="-2" stroke="#008883" stroke-width="2" stroke-linecap="round"/>
+      <line x1="-8" y1="4" x2="8" y2="4" stroke="#008883" stroke-width="2" stroke-linecap="round"/>
+    </g>
+    <g id="ic-understand">
+      <circle cx="0" cy="0" r="8" fill="none" stroke="#008883" stroke-width="2"/>
+      <circle cx="-2.5" cy="-1" r="1.5" fill="#008883"/>
+      <circle cx="2.5" cy="-1" r="1.5" fill="#008883"/>
+      <path d="M-5,4 Q0,8 5,4" fill="none" stroke="#008883" stroke-width="2" stroke-linecap="round"/>
+    </g>
+    <g id="ic-style">
+      <path d="M-8,8 L0,-8 L8,8 Z" fill="none" stroke="#008883" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="0" cy="1" r="2" fill="#008883"/>
+    </g>
+    <g id="ic-write">
+      <path d="M-8,8 L-4,-4 L0,4 L4,-6 L8,8 Z" fill="none" stroke="#008883" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <g id="ic-graphic">
+      <rect x="-7" y="-7" width="14" height="14" rx="2" fill="none" stroke="#008883" stroke-width="2"/>
+      <circle cx="0" cy="0" r="3" fill="none" stroke="#008883" stroke-width="2"/>
+      <line x1="0" y1="-7" x2="0" y2="-3" stroke="#008883" stroke-width="2" stroke-linecap="round"/>
+      <line x1="0" y1="3" x2="0" y2="7" stroke="#008883" stroke-width="2" stroke-linecap="round"/>
+    </g>
+    <g id="ic-review">
+      <path d="M-8,0 L-3,5 L8,-5" fill="none" stroke="#008883" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <g id="ic-output">
+      <rect x="-8" y="-7" width="16" height="14" rx="2" fill="none" stroke="#008883" stroke-width="2"/>
+      <line x1="-4" y1="-7" x2="-4" y2="-3" stroke="#008883" stroke-width="2" stroke-linecap="round"/>
+      <line x1="4" y1="-7" x2="4" y2="-3" stroke="#008883" stroke-width="2" stroke-linecap="round"/>
+      <line x1="-4" y1="3" x2="-4" y2="7" stroke="#008883" stroke-width="2" stroke-linecap="round"/>
+      <line x1="4" y1="3" x2="4" y2="7" stroke="#008883" stroke-width="2" stroke-linecap="round"/>
+    </g>
+    <g id="ic-version">
+      <rect x="-8" y="-7" width="16" height="14" rx="2" fill="none" stroke="#008883" stroke-width="2"/>
+      <path d="M-5,2 L-2,-1 L2,1 L5,-2" fill="none" stroke="#008883" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <g id="ic-chapter">
+      <path d="M-7,-8 L7,-8 L7,8 L-7,8 Z" fill="none" stroke="#008883" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="-7" y1="-2" x2="7" y2="-2" stroke="#008883" stroke-width="2" stroke-linecap="round"/>
+      <line x1="-7" y1="3" x2="7" y2="3" stroke="#008883" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  </defs>
+
+  <!-- 底部支撑平台 -->
+  <rect x="16" y="352" width="1168" height="49" rx="8" fill="#00625E"/>
+  <text x="36" y="382" font-size="18" fill="#FFFFFF" font-weight="700">人工智能平台</text>
+  <rect x="210" y="366" width="100" height="22" rx="11" fill="#008883"/>
+  <text x="260" y="381" font-size="14" fill="#FFFFFF" text-anchor="middle">大模型</text>
+  <rect x="322" y="366" width="112" height="22" rx="11" fill="#008883"/>
+  <text x="378" y="381" font-size="14" fill="#FFFFFF" text-anchor="middle">语义理解</text>
+  <rect x="446" y="366" width="112" height="22" rx="11" fill="#008883"/>
+  <text x="502" y="381" font-size="14" fill="#FFFFFF" text-anchor="middle">文本生成</text>
+  <rect x="570" y="366" width="112" height="22" rx="11" fill="#008883"/>
+  <text x="626" y="381" font-size="14" fill="#FFFFFF" text-anchor="middle">视觉理解</text>
+
+  <!-- 层间箭头：底部平台 -> 输入层 -->
+  <line x1="600" y1="352" x2="600" y2="340" stroke="#008883" stroke-width="2" marker-end="url(#arrowUp)"/>
+
+  <!-- 输入层 -->
+  <rect x="16" y="204" width="1168" height="124" rx="8" fill="#F3F9F9" filter="url(#bandShadow)"/>
+  <rect x="16" y="204" width="150" height="124" rx="8" fill="#008883"/>
+  <text x="91" y="250" font-size="21" fill="#FFFFFF" font-weight="700" text-anchor="middle">输入</text>
+  <text x="91" y="276" font-size="14" fill="#FFFFFF" text-anchor="middle">业务素材与模板</text>
+
+  <!-- 业务素材卡片 -->
+  <rect x="186" y="218" width="295" height="96" rx="6" fill="#FFFFFF" stroke="#A5D4D2" stroke-width="1"/>
+  <use href="#ic-doc" x="222" y="252"/>
+  <text x="248" y="246" font-size="19" fill="#153231" font-weight="700">业务素材</text>
+  <text x="248" y="270" font-size="15" fill="#396A68">Word 方案、旧版 PPT</text>
+  <text x="248" y="292" font-size="15" fill="#396A68">会议纪要、XMind 提纲</text>
+
+  <!-- 企业模板卡片 -->
+  <rect x="503" y="218" width="295" height="96" rx="6" fill="#FFFFFF" stroke="#A5D4D2" stroke-width="1"/>
+  <use href="#ic-template" x="539" y="252"/>
+  <text x="565" y="246" font-size="19" fill="#153231" font-weight="700">企业模板</text>
+  <text x="565" y="270" font-size="15" fill="#396A68">版式、配色、字体</text>
+  <text x="565" y="292" font-size="15" fill="#396A68">页面节奏</text>
+
+  <!-- 输入层到中间层箭头 -->
+  <line x1="600" y1="204" x2="600" y2="190" stroke="#008883" stroke-width="2" marker-end="url(#arrowUp)"/>
+
+  <!-- 中间智能助手层 -->
+  <rect x="16" y="76" width="1168" height="102" rx="8" fill="#D3EEED" filter="url(#bandShadow)"/>
+  <rect x="16" y="76" width="150" height="102" rx="8" fill="#00625E"/>
+  <text x="91" y="118" font-size="21" fill="#FFFFFF" font-weight="700" text-anchor="middle">智能演示</text>
+  <text x="91" y="144" font-size="14" fill="#FFFFFF" text-anchor="middle">文稿助手</text>
+
+  <!-- 四张能力卡 -->
+  <rect x="186" y="88" width="196" height="78" rx="6" fill="#FFFFFF" stroke="#A5D4D2" stroke-width="1"/>
+  <use href="#ic-understand" x="222" y="116"/>
+  <text x="246" y="112" font-size="19" fill="#153231" font-weight="700">材料理解</text>
+  <text x="246" y="134" font-size="15" fill="#396A68">提炼要点</text>
+  <text x="246" y="152" font-size="15" fill="#396A68">对齐口径</text>
+
+  <line x1="382" y1="127" x2="398" y2="127" stroke="#008883" stroke-width="2" marker-end="url(#arrowRight)"/>
+
+  <rect x="398" y="88" width="196" height="78" rx="6" fill="#FFFFFF" stroke="#A5D4D2" stroke-width="1"/>
+  <use href="#ic-style" x="434" y="116"/>
+  <text x="458" y="112" font-size="19" fill="#153231" font-weight="700">风格适配</text>
+  <text x="458" y="134" font-size="15" fill="#396A68">识别模板版式配色</text>
+
+  <line x1="594" y1="127" x2="610" y2="127" stroke="#008883" stroke-width="2" marker-end="url(#arrowRight)"/>
+
+  <rect x="610" y="88" width="196" height="78" rx="6" fill="#FFFFFF" stroke="#A5D4D2" stroke-width="1"/>
+  <use href="#ic-write" x="646" y="116"/>
+  <text x="670" y="112" font-size="19" fill="#153231" font-weight="700">内容撰写</text>
+  <text x="670" y="134" font-size="15" fill="#396A68">排大纲</text>
+  <text x="670" y="152" font-size="15" fill="#396A68">逐页写正文</text>
+
+  <line x1="806" y1="127" x2="822" y2="127" stroke="#008883" stroke-width="2" marker-end="url(#arrowRight)"/>
+
+  <rect x="822" y="88" width="196" height="78" rx="6" fill="#FFFFFF" stroke="#A5D4D2" stroke-width="1"/>
+  <use href="#ic-graphic" x="858" y="116"/>
+  <text x="882" y="112" font-size="19" fill="#153231" font-weight="700">图形生成</text>
+  <text x="882" y="134" font-size="15" fill="#396A68">结构图双版本输出</text>
+
+  <!-- 全文连贯审查横条 -->
+  <rect x="186" y="170" width="832" height="30" rx="6" fill="#F3F9F9" stroke="#A5D4D2" stroke-width="1"/>
+  <use href="#ic-review" x="240" y="185"/>
+  <text x="262" y="190" font-size="16" fill="#153231" font-weight="700">全文连贯审查</text>
+  <text x="405" y="190" font-size="15" fill="#396A68">术语统一、数据前后一致</text>
+
+  <!-- 中间层到输出层箭头 -->
+  <line x1="600" y1="76" x2="600" y2="62" stroke="#008883" stroke-width="2" marker-end="url(#arrowUp)"/>
+
+  <!-- 输出层 -->
+  <rect x="16" y="16" width="1168" height="46" rx="8" fill="#F3F9F9" filter="url(#bandShadow)"/>
+  <rect x="16" y="16" width="150" height="46" rx="8" fill="#008883"/>
+  <text x="91" y="44" font-size="21" fill="#FFFFFF" font-weight="700" text-anchor="middle">输出</text>
+
+  <!-- 输出卡片：三张卡片加宽到 325 -->
+  <rect x="186" y="24" width="325" height="30" rx="6" fill="#FFFFFF" stroke="#A5D4D2" stroke-width="1"/>
+  <use href="#ic-output" x="220" y="39"/>
+  <text x="244" y="43" font-size="18" fill="#153231" font-weight="700">成稿演示文稿</text>
+  <text x="390" y="43" font-size="15" fill="#396A68">保留模板风格</text>
+
+  <rect x="527" y="24" width="325" height="30" rx="6" fill="#FFFFFF" stroke="#A5D4D2" stroke-width="1"/>
+  <use href="#ic-version" x="561" y="39"/>
+  <text x="585" y="43" font-size="18" fill="#153231" font-weight="700">结构图两个版本</text>
+  <text x="731" y="43" font-size="15" fill="#396A68">图片版/可编辑版</text>
+
+  <rect x="868" y="24" width="301" height="30" rx="6" fill="#FFFFFF" stroke="#A5D4D2" stroke-width="1"/>
+  <use href="#ic-chapter" x="902" y="39"/>
+  <text x="926" y="43" font-size="18" fill="#153231" font-weight="700">加页加章</text>
+  <text x="1023" y="43" font-size="15" fill="#396A68">目录、扉页自动联动</text>
+</svg></div>
+</article>
+<article class="card">
+  <header><b>深色科技</b><code>dark</code></header>
+  <p class="look">整页深色底、亮色字，适合发布会和大屏</p>
+  <p class="use">发布会、科技展示、大屏</p>
+  <div class="preview"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 417" font-family="Microsoft YaHei, PingFang SC, sans-serif">
+  <defs>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#5AD8D4" flood-opacity="0.45"/>
+    </filter>
+    <marker id="arrowMain" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse" markerUnits="strokeWidth">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#5AD8D4"/></marker>
+    <marker id="arrowFlow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse" markerUnits="strokeWidth">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#5AD8D4"/></marker>
+
+    <!-- 图标定义 -->
+    <g id="ic-doc">
+      <path d="M-7,-9 L7,-9 L7,9 L-7,9 z" fill="none" stroke="#5AD8D4" stroke-width="2" stroke-linejoin="round"/>
+      <line x1="-4" y1="-3" x2="4" y2="-3" stroke="#5AD8D4" stroke-width="2" stroke-linecap="round"/>
+      <line x1="-4" y1="1" x2="4" y2="1" stroke="#5AD8D4" stroke-width="2" stroke-linecap="round"/>
+      <line x1="-4" y1="5" x2="2" y2="5" stroke="#5AD8D4" stroke-width="2" stroke-linecap="round"/>
+    </g>
+    <g id="ic-template">
+      <rect x="-8" y="-9" width="16" height="18" rx="2" fill="none" stroke="#5AD8D4" stroke-width="2"/>
+      <line x1="-4" y1="-4" x2="4" y2="-4" stroke="#5AD8D4" stroke-width="2" stroke-linecap="round"/>
+      <line x1="-4" y1="0" x2="4" y2="0" stroke="#5AD8D4" stroke-width="2" stroke-linecap="round"/>
+      <line x1="-4" y1="4" x2="2" y2="4" stroke="#5AD8D4" stroke-width="2" stroke-linecap="round"/>
+    </g>
+    <g id="ic-understand">
+      <circle cx="0" cy="0" r="9" fill="none" stroke="#5AD8D4" stroke-width="2"/>
+      <circle cx="-3.5" cy="-1" r="1.5" fill="#5AD8D4"/>
+      <circle cx="3.5" cy="-1" r="1.5" fill="#5AD8D4"/>
+      <path d="M-4,4 Q0,7 4,4" fill="none" stroke="#5AD8D4" stroke-width="2" stroke-linecap="round"/>
+    </g>
+    <g id="ic-style">
+      <circle cx="0" cy="0" r="9" fill="none" stroke="#5AD8D4" stroke-width="2"/>
+      <path d="M-4,-4 Q0,-6 4,-4" fill="none" stroke="#5AD8D4" stroke-width="2" stroke-linecap="round"/>
+      <path d="M-4,1 Q0,3 4,1" fill="none" stroke="#5AD8D4" stroke-width="2" stroke-linecap="round"/>
+      <path d="M-4,6 Q0,8 4,6" fill="none" stroke="#5AD8D4" stroke-width="2" stroke-linecap="round"/>
+    </g>
+    <g id="ic-write">
+      <path d="M-7,-9 L5,-9 L7,-7 L7,9 L-7,9 z" fill="none" stroke="#5AD8D4" stroke-width="2" stroke-linejoin="round"/>
+      <line x1="-4" y1="-3" x2="4" y2="-3" stroke="#5AD8D4" stroke-width="2" stroke-linecap="round"/>
+      <line x1="-4" y1="1" x2="4" y2="1" stroke="#5AD8D4" stroke-width="2" stroke-linecap="round"/>
+      <line x1="-4" y1="5" x2="2" y2="5" stroke="#5AD8D4" stroke-width="2" stroke-linecap="round"/>
+    </g>
+    <g id="ic-graphic">
+      <rect x="-8" y="-9" width="16" height="18" rx="2" fill="none" stroke="#5AD8D4" stroke-width="2"/>
+      <rect x="-4" y="-5" width="8" height="5" rx="1" fill="none" stroke="#5AD8D4" stroke-width="2"/>
+      <line x1="-4" y1="3" x2="4" y2="3" stroke="#5AD8D4" stroke-width="2" stroke-linecap="round"/>
+      <line x1="-4" y1="7" x2="2" y2="7" stroke="#5AD8D4" stroke-width="2" stroke-linecap="round"/>
+    </g>
+    <g id="ic-check">
+      <circle cx="0" cy="0" r="9" fill="none" stroke="#5AD8D4" stroke-width="2"/>
+      <path d="M-4,0 L-1.5,3 L4,-3" fill="none" stroke="#5AD8D4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <g id="ic-output">
+      <rect x="-8" y="-9" width="16" height="18" rx="2" fill="none" stroke="#5AD8D4" stroke-width="2"/>
+      <path d="M-4,-4 L-1,-1 L4,-5" fill="none" stroke="#5AD8D4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="-4" y1="3" x2="4" y2="3" stroke="#5AD8D4" stroke-width="2" stroke-linecap="round"/>
+      <line x1="-4" y1="7" x2="2" y2="7" stroke="#5AD8D4" stroke-width="2" stroke-linecap="round"/>
+    </g>
+    <g id="ic-versions">
+      <rect x="-8" y="-9" width="16" height="18" rx="2" fill="none" stroke="#5AD8D4" stroke-width="2"/>
+      <rect x="-4" y="-5" width="8" height="5" rx="1" fill="none" stroke="#5AD8D4" stroke-width="2"/>
+      <path d="M-4,3 L4,3" stroke="#5AD8D4" stroke-width="2" stroke-linecap="round"/>
+      <path d="M-2,7 L2,7" stroke="#5AD8D4" stroke-width="2" stroke-linecap="round"/>
+    </g>
+    <g id="ic-chapter">
+      <path d="M-7,-9 L7,-9 L7,9 L-7,9 z" fill="none" stroke="#5AD8D4" stroke-width="2" stroke-linejoin="round"/>
+      <line x1="-4" y1="-3" x2="4" y2="-3" stroke="#5AD8D4" stroke-width="2" stroke-linecap="round"/>
+      <line x1="-4" y1="1" x2="4" y2="1" stroke="#5AD8D4" stroke-width="2" stroke-linecap="round"/>
+      <line x1="-4" y1="5" x2="2" y2="5" stroke="#5AD8D4" stroke-width="2" stroke-linecap="round"/>
+    </g>
+    <g id="ic-ai">
+      <circle cx="0" cy="0" r="10" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+      <path d="M-4,-3 L-1.5,0 L-4,3" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M4,-3 L1.5,0 L4,3" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="-1" y1="0" x2="1" y2="0" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  </defs>
+
+  <!-- 深色底 -->
+  <rect x="0" y="0" width="1200" height="417" rx="12" fill="#0F1F1E"/>
+
+  <!-- ============ 左栏「输入」 ============ -->
+  <rect x="24" y="24" width="300" height="300" rx="8" fill="#1B3231" stroke="#325D5B" stroke-width="1"/>
+  <rect x="24" y="24" width="4" height="22" fill="#5AD8D4"/>
+  <text x="36" y="42" font-size="18" fill="#5AD8D4" font-weight="700">输入</text>
+  <text x="86" y="42" font-size="14" fill="#A5D4D2">业务素材与企业模板</text>
+
+  <!-- 业务素材卡片 -->
+  <rect x="36" y="58" width="276" height="118" rx="6" fill="#1F3A39" stroke="#325D5B" stroke-width="1"/>
+  <text x="50" y="80" font-size="15" fill="#FFFFFF" font-weight="700">业务素材</text>
+  <use href="#ic-doc" x="50" y="104"/>
+  <text x="66" y="100" font-size="14" fill="#D3EEED">Word 方案</text>
+  <text x="66" y="120" font-size="14" fill="#D3EEED">旧版 PPT</text>
+  <text x="66" y="140" font-size="14" fill="#D3EEED">会议纪要</text>
+  <text x="66" y="160" font-size="14" fill="#D3EEED">XMind 提纲</text>
+
+  <!-- 企业模板卡片 -->
+  <rect x="36" y="186" width="276" height="118" rx="6" fill="#1F3A39" stroke="#325D5B" stroke-width="1"/>
+  <text x="50" y="208" font-size="15" fill="#FFFFFF" font-weight="700">企业模板</text>
+  <use href="#ic-template" x="50" y="232"/>
+  <text x="66" y="228" font-size="14" fill="#D3EEED">版式</text>
+  <text x="66" y="248" font-size="14" fill="#D3EEED">配色</text>
+  <text x="66" y="268" font-size="14" fill="#D3EEED">字体</text>
+  <text x="66" y="288" font-size="14" fill="#D3EEED">页面节奏</text>
+
+  <!-- 左到中箭头 -->
+  <path d="M324,174 L448,174" stroke="#5AD8D4" stroke-width="2" marker-end="url(#arrowMain)" fill="none"/>
+
+  <!-- ============ 中栏「智能演示文稿助手」 ============ -->
+  <rect x="452" y="24" width="420" height="300" rx="8" fill="#1B3231" stroke="#5AD8D4" stroke-width="1.5" filter="url(#glow)"/>
+  <rect x="452" y="24" width="4" height="22" fill="#5AD8D4"/>
+  <text x="464" y="42" font-size="18" fill="#5AD8D4" font-weight="700">智能演示文稿助手</text>
+  <text x="636" y="42" font-size="14" fill="#A5D4D2">核心能力链</text>
+
+  <!-- 四张能力卡 -->
+  <!-- 材料理解 -->
+  <rect x="464" y="58" width="94" height="130" rx="6" fill="#1F3A39" stroke="#325D5B" stroke-width="1"/>
+  <use href="#ic-understand" x="511" y="80"/>
+  <text x="511" y="104" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">材料理解</text>
+  <text x="511" y="124" font-size="13" fill="#D3EEED" text-anchor="middle">提炼要点</text>
+  <text x="511" y="142" font-size="13" fill="#D3EEED" text-anchor="middle">对齐口径</text>
+
+  <!-- 箭头 -->
+  <path d="M558,123 L572,123" stroke="#5AD8D4" stroke-width="2" marker-end="url(#arrowFlow)" fill="none"/>
+
+  <!-- 风格适配（焦点卡） -->
+  <rect x="576" y="58" width="94" height="130" rx="6" fill="#1F3A39" stroke="#5AD8D4" stroke-width="1.5" filter="url(#glow)"/>
+  <use href="#ic-style" x="623" y="80"/>
+  <text x="623" y="104" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">风格适配</text>
+  <text x="623" y="124" font-size="13" fill="#D3EEED" text-anchor="middle">识别模板</text>
+  <text x="623" y="142" font-size="13" fill="#D3EEED" text-anchor="middle">版式与配色</text>
+
+  <!-- 箭头 -->
+  <path d="M670,123 L684,123" stroke="#5AD8D4" stroke-width="2" marker-end="url(#arrowFlow)" fill="none"/>
+
+  <!-- 内容撰写 -->
+  <rect x="688" y="58" width="94" height="130" rx="6" fill="#1F3A39" stroke="#325D5B" stroke-width="1"/>
+  <use href="#ic-write" x="735" y="80"/>
+  <text x="735" y="104" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">内容撰写</text>
+  <text x="735" y="124" font-size="13" fill="#D3EEED" text-anchor="middle">排大纲</text>
+  <text x="735" y="142" font-size="13" fill="#D3EEED" text-anchor="middle">逐页写正文</text>
+
+  <!-- 箭头 -->
+  <path d="M782,123 L796,123" stroke="#5AD8D4" stroke-width="2" marker-end="url(#arrowFlow)" fill="none"/>
+
+  <!-- 图形生成 -->
+  <rect x="800" y="58" width="60" height="130" rx="6" fill="#1F3A39" stroke="#325D5B" stroke-width="1"/>
+  <use href="#ic-graphic" x="830" y="80"/>
+  <text x="830" y="104" font-size="14" fill="#FFFFFF" font-weight="700" text-anchor="middle">图形生成</text>
+  <text x="830" y="124" font-size="12" fill="#D3EEED" text-anchor="middle">结构图</text>
+  <text x="830" y="140" font-size="12" fill="#D3EEED" text-anchor="middle">两版本</text>
+
+  <!-- 全文连贯审查横条 -->
+  <rect x="464" y="200" width="396" height="52" rx="6" fill="#1F3A39" stroke="#325D5B" stroke-width="1"/>
+  <use href="#ic-check" x="488" y="226"/>
+  <text x="504" y="222" font-size="15" fill="#FFFFFF" font-weight="700">全文连贯审查</text>
+  <text x="504" y="242" font-size="13" fill="#D3EEED">术语统一 · 数据前后一致</text>
+
+  <!-- 中到右箭头 -->
+  <path d="M872,174 L996,174" stroke="#5AD8D4" stroke-width="2" marker-end="url(#arrowMain)" fill="none"/>
+
+  <!-- ============ 右栏「输出」 ============ -->
+  <rect x="1000" y="24" width="176" height="300" rx="8" fill="#1B3231" stroke="#325D5B" stroke-width="1"/>
+  <rect x="1000" y="24" width="4" height="22" fill="#5AD8D4"/>
+  <text x="1012" y="42" font-size="18" fill="#5AD8D4" font-weight="700">输出</text>
+  <text x="1064" y="42" font-size="14" fill="#A5D4D2">成稿与联动</text>
+
+  <!-- 成稿演示文稿 -->
+  <rect x="1012" y="58" width="152" height="78" rx="6" fill="#1F3A39" stroke="#325D5B" stroke-width="1"/>
+  <use href="#ic-output" x="1028" y="78"/>
+  <text x="1044" y="74" font-size="14" fill="#FFFFFF" font-weight="700">成稿演示文稿</text>
+  <text x="1044" y="94" font-size="12" fill="#D3EEED">保留模板原有风格</text>
+
+  <!-- 结构图两个版本 -->
+  <rect x="1012" y="146" width="152" height="78" rx="6" fill="#1F3A39" stroke="#325D5B" stroke-width="1"/>
+  <use href="#ic-versions" x="1028" y="166"/>
+  <text x="1044" y="162" font-size="14" fill="#FFFFFF" font-weight="700">结构图两个版本</text>
+  <text x="1044" y="182" font-size="12" fill="#D3EEED">高清图片版</text>
+  <text x="1044" y="198" font-size="12" fill="#D3EEED">可编辑版</text>
+
+  <!-- 加页加章 -->
+  <rect x="1012" y="234" width="152" height="78" rx="6" fill="#1F3A39" stroke="#325D5B" stroke-width="1"/>
+  <use href="#ic-chapter" x="1028" y="254"/>
+  <text x="1044" y="250" font-size="14" fill="#FFFFFF" font-weight="700">加页加章</text>
+  <text x="1044" y="270" font-size="12" fill="#D3EEED">目录、扉页自动联动</text>
+
+  <!-- ============ 底部通栏底座 ============ -->
+  <rect x="24" y="340" width="1152" height="53" rx="6" fill="#008883"/>
+  <use href="#ic-ai" x="72" y="366"/>
+  <text x="92" y="362" font-size="16" fill="#FFFFFF" font-weight="700">人工智能平台 · 大模型</text>
+  <text x="92" y="382" font-size="13" fill="#D3EEED">语义理解 / 文本生成 / 视觉理解</text>
+
+  <!-- 底座胶囊标签 -->
+  <rect x="760" y="352" width="96" height="28" rx="14" fill="#00625E"/>
+  <text x="808" y="371" font-size="14" fill="#FFFFFF" font-weight="700" text-anchor="middle">语义理解</text>
+  <rect x="866" y="352" width="96" height="28" rx="14" fill="#00625E"/>
+  <text x="914" y="371" font-size="14" fill="#FFFFFF" font-weight="700" text-anchor="middle">文本生成</text>
+  <rect x="972" y="352" width="96" height="28" rx="14" fill="#00625E"/>
+  <text x="1020" y="371" font-size="14" fill="#FFFFFF" font-weight="700" text-anchor="middle">视觉理解</text>
+</svg></div>
+</article>
+  </div>
+  <h2>版式</h2>
+  <p class="lead">下面是结构示意。颜色仍跟当次模板，不跟这张示意。</p>
+  <div class="grid">
+<article class="card">
+  <header><b>流程/链路</b><code>flow</code></header>
+  <p class="look">流程/链路（有先后或上下游的若干环节）</p>
+  <ul><li>环节从左到右横向排列（环节多于 5 个时可折成两行，第二行从右到左或另起一行并在行尾画转折箭头）。</li><li>每个环节一个块：名称（粗体）+ 一两行说明或责任主体；块下方可写该环节的动作（小字）。</li><li>相邻环节之间画箭头；双向交互用两端都带箭头的线。</li></ul>
+  <div class="preview sketch"><svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" font-family="Microsoft YaHei, sans-serif">
+      <defs><marker id="flow-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 1.5 L8 5 L0 8.5 Z" fill="#007774"/></marker></defs>
+      <rect x="16" y="70" width="90" height="52" rx="6" fill="#E6F3F2" stroke="#007774"/>
+      <rect x="136" y="70" width="90" height="52" rx="6" fill="#E6F3F2" stroke="#007774"/>
+      <rect x="256" y="70" width="90" height="52" rx="6" fill="#007774"/>
+      <text x="61" y="101" text-anchor="middle" font-size="14" fill="#163332">步骤一</text>
+      <text x="181" y="101" text-anchor="middle" font-size="14" fill="#163332">步骤二</text>
+      <text x="301" y="101" text-anchor="middle" font-size="14" fill="#fff">步骤三</text>
+      <path d="M110 96 H128" stroke="#007774" stroke-width="2" marker-end="url(#flow-arrow)"/>
+      <path d="M230 96 H248" stroke="#007774" stroke-width="2" marker-end="url(#flow-arrow)"/>
+    </svg></div>
+</article>
+<article class="card">
+  <header><b>时间轴</b><code>timeline</code></header>
+  <p class="look">时间轴（按时间先后的里程碑，强调年份或阶段，不强调每步的输入输出）</p>
+  <ul><li>一条横线贯穿画布中部，线上等距放圆点。</li><li>节点上下交替：奇数在线上方，偶数在线下方。每个节点写时间（粗体）+ 事件名 + 一行结果。</li><li>节点多于 6 个时，只保留图意里的关键节点，不要挤成看不清的一排。</li></ul>
+  <div class="preview sketch"><svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" font-family="Microsoft YaHei, sans-serif">
+      <line x1="24" y1="100" x2="336" y2="100" stroke="#D5E4E3" stroke-width="2"/>
+      <circle cx="70" cy="100" r="7" fill="#007774"/>
+      <circle cx="180" cy="100" r="7" fill="#fff" stroke="#007774" stroke-width="2"/>
+      <circle cx="290" cy="100" r="7" fill="#fff" stroke="#007774" stroke-width="2"/>
+      <text x="70" y="78" text-anchor="middle" font-size="13" fill="#163332">今年</text>
+      <text x="180" y="132" text-anchor="middle" font-size="13" fill="#163332">明年</text>
+      <text x="290" y="78" text-anchor="middle" font-size="13" fill="#163332">后年</text>
+    </svg></div>
+</article>
+<article class="card">
+  <header><b>闭环</b><code>cycle</code></header>
+  <p class="look">闭环（几步做完又回到起点，如计划、执行、检查、改进）</p>
+  <ul><li>4–6 步围成一圈，顺时针。每步一个块：序号 + 名称（粗体）+ 一行说明。</li><li>块与块之间用弧线或折线箭头，箭头方向一致。中心留白，写这一圈的总称（一个词或一句短话）。</li><li>步数是 4 时放在四角；5 或 6 时均匀绕圈，不要挤成一行。</li></ul>
+  <div class="preview sketch"><svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" font-family="Microsoft YaHei, sans-serif">
+      <circle cx="180" cy="100" r="28" fill="none" stroke="#007774" stroke-width="1.5"/>
+      <text x="180" y="105" text-anchor="middle" font-size="13" fill="#007774">闭环</text>
+      <rect x="130" y="16" width="100" height="32" rx="4" fill="#E6F3F2" stroke="#007774"/>
+      <rect x="250" y="78" width="90" height="32" rx="4" fill="#E6F3F2" stroke="#007774"/>
+      <rect x="130" y="150" width="100" height="32" rx="4" fill="#E6F3F2" stroke="#007774"/>
+      <rect x="20" y="78" width="90" height="32" rx="4" fill="#E6F3F2" stroke="#007774"/>
+      <text x="180" y="37" text-anchor="middle" font-size="13" fill="#163332">计划</text>
+      <text x="295" y="99" text-anchor="middle" font-size="13" fill="#163332">执行</text>
+      <text x="180" y="171" text-anchor="middle" font-size="13" fill="#163332">改进</text>
+      <text x="65" y="99" text-anchor="middle" font-size="13" fill="#163332">检查</text>
+    </svg></div>
+</article>
+<article class="card">
+  <header><b>左右对照</b><code>compare</code></header>
+  <p class="look">左右对照（两边对同一件事的两种做法、两种对象或前后变化）</p>
+  <ul><li>中间一条竖线或一个「对比」小标签，左右各占约一半。</li><li>两侧结构对称：顶部各一个标题（实底白字或左侧色条），下面 3–5 条对齐的要点。同一行左右两句说的是同一维度。</li><li>每条要点一行，过长就拆成两行，不要缩小到看不清。</li></ul>
+  <div class="preview sketch"><svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" font-family="Microsoft YaHei, sans-serif">
+      <line x1="180" y1="24" x2="180" y2="176" stroke="#D5E4E3"/>
+      <text x="90" y="44" text-anchor="middle" font-size="14" font-weight="700" fill="#163332">改前</text>
+      <text x="270" y="44" text-anchor="middle" font-size="14" font-weight="700" fill="#007774">改后</text>
+      <text x="90" y="84" text-anchor="middle" font-size="13" fill="#5C7574">口径不统一</text>
+      <text x="270" y="84" text-anchor="middle" font-size="13" fill="#163332">同一张表</text>
+      <text x="90" y="118" text-anchor="middle" font-size="13" fill="#5C7574">范围一次铺开</text>
+      <text x="270" y="118" text-anchor="middle" font-size="13" fill="#163332">先做一个场景</text>
+    </svg></div>
+</article>
+<article class="card">
+  <header><b>能力阵列</b><code>matrix</code></header>
+  <p class="look">能力阵列（并列的特色、能力、成效，没有先后）</p>
+  <ul><li>等宽卡片排成一行（3–5 张）或网格（2 行 × 3 等），卡片等高、间距一致、整体撑满画布。</li><li>每张卡片：图标 + 粗体标题 + 两三行说明；需要时卡片底部加一个小标签（如「解决：…」「已完成」）。</li><li>可在卡片上方加一条带编号圆点的细时间轴/序号线，表示第 1、2、3 项。</li></ul>
+  <div class="preview sketch"><svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" font-family="Microsoft YaHei, sans-serif">
+      <rect x="20" y="28" width="100" height="64" rx="6" fill="#E6F3F2" stroke="#007774"/>
+      <rect x="130" y="28" width="100" height="64" rx="6" fill="#E6F3F2" stroke="#007774"/>
+      <rect x="240" y="28" width="100" height="64" rx="6" fill="#E6F3F2" stroke="#007774"/>
+      <rect x="20" y="106" width="100" height="64" rx="6" fill="#E6F3F2" stroke="#007774"/>
+      <rect x="130" y="106" width="100" height="64" rx="6" fill="#E6F3F2" stroke="#007774"/>
+      <rect x="240" y="106" width="100" height="64" rx="6" fill="#007774"/>
+      <text x="70" y="65" text-anchor="middle" font-size="13" fill="#163332">甲</text>
+      <text x="180" y="65" text-anchor="middle" font-size="13" fill="#163332">乙</text>
+      <text x="290" y="65" text-anchor="middle" font-size="13" fill="#163332">丙</text>
+      <text x="70" y="143" text-anchor="middle" font-size="13" fill="#163332">丁</text>
+      <text x="180" y="143" text-anchor="middle" font-size="13" fill="#163332">戊</text>
+      <text x="290" y="143" text-anchor="middle" font-size="13" fill="#fff">重点</text>
+    </svg></div>
+</article>
+<article class="card">
+  <header><b>支柱</b><code>pillars</code></header>
+  <p class="look">支柱（顶部一句结论，下面 2–4 根并列的支撑）</p>
+  <ul><li>顶部一条通栏结论（实底白字，或白底加一条主色下划线）。</li><li>结论下方 2–4 根等高的柱或卡片，等宽、间距相同。每根：序号或图标 + 名称（粗体）+ 两行说明。</li><li>底部一条细通栏，写这些支柱共同支撑的结果，可省略。</li></ul>
+  <div class="preview sketch"><svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" font-family="Microsoft YaHei, sans-serif">
+      <rect x="20" y="22" width="320" height="36" fill="#007774"/>
+      <text x="180" y="45" text-anchor="middle" font-size="14" fill="#fff">一句结论</text>
+      <rect x="28" y="78" width="90" height="96" fill="#E6F3F2" stroke="#007774"/>
+      <rect x="136" y="78" width="90" height="96" fill="#007774"/>
+      <rect x="244" y="78" width="90" height="96" fill="#E6F3F2" stroke="#007774"/>
+      <text x="73" y="132" text-anchor="middle" font-size="13" fill="#163332">支柱一</text>
+      <text x="181" y="132" text-anchor="middle" font-size="13" fill="#fff">主支柱</text>
+      <text x="289" y="132" text-anchor="middle" font-size="13" fill="#163332">支柱三</text>
+    </svg></div>
+</article>
+<article class="card">
+  <header><b>大数字</b><code>kpi</code></header>
+  <p class="look">大数字（3–4 个指标横排，数字是主角）</p>
+  <ul><li>指标等宽并排，中间用细竖线或留白分开，不要套一圈大卡片。</li><li>每个指标：一行口径（小字、灰色）+ 一个大数字（主色，字号约为说明的 3 倍）+ 一行说明或对比（如较上期）。</li><li>单位紧跟数字，字号小于数字。没有的对比不要编。</li></ul>
+  <div class="preview sketch"><svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" font-family="Microsoft YaHei, sans-serif">
+      <text x="70" y="78" text-anchor="middle" font-size="12" fill="#5C7574">完成率</text>
+      <text x="180" y="78" text-anchor="middle" font-size="12" fill="#5C7574">周期</text>
+      <text x="290" y="78" text-anchor="middle" font-size="12" fill="#5C7574">覆盖</text>
+      <text x="70" y="124" text-anchor="middle" font-size="32" font-weight="700" fill="#007774">86%</text>
+      <text x="180" y="124" text-anchor="middle" font-size="32" font-weight="700" fill="#007774">12</text>
+      <text x="290" y="124" text-anchor="middle" font-size="32" font-weight="700" fill="#007774">4</text>
+      <line x1="120" y1="60" x2="120" y2="150" stroke="#D5E4E3"/>
+      <line x1="240" y1="60" x2="240" y2="150" stroke="#D5E4E3"/>
+    </svg></div>
+</article>
+<article class="card">
+  <header><b>分层架构</b><code>layers</code></header>
+  <p class="look">分层架构（自上而下的应用/能力/数据/接入/设备等层，层内是并列模块）</p>
+  <ul><li>每层一条通栏，左侧一列层名标签，层名与层等高对齐；层内模块等宽等高排满一行（模块多时两行）。</li><li>最上层是用户/角色或门户，最下层是设备/数据源；公共底座（数据中台、网关、网络）用细通栏。</li><li>贯穿各层的内容（安全、标准、对接系统）放在最右侧竖条。</li></ul>
+  <div class="preview sketch"><svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" font-family="Microsoft YaHei, sans-serif">
+      <rect x="20" y="24" width="320" height="40" fill="#007774"/>
+      <rect x="20" y="72" width="320" height="40" fill="#5C7574"/>
+      <rect x="20" y="120" width="320" height="40" fill="#E6F3F2" stroke="#007774"/>
+      <text x="40" y="49" font-size="14" fill="#fff">应用</text>
+      <text x="40" y="97" font-size="14" fill="#fff">能力</text>
+      <text x="40" y="145" font-size="14" fill="#163332">数据与设备</text>
+    </svg></div>
+</article>
+<article class="card">
+  <header><b>分级部署</b><code>tiers</code></header>
+  <p class="look">分级部署（上下级汇聚：现场、区域、总站，或设备、平台、外部系统）</p>
+  <ul><li>自下而上排列各级：最底部是数据源/设备一行，往上依次是低级到高级，最上方是对接的外部系统。同一级有多个实例时并排画（如两个同级节点）。</li><li>级与级之间用向上的粗箭头表示数据上送，箭头旁写传输内容；可跨级直传时画一条跨级的长箭头（例如某一现场没有中间级，直接送到总站）。</li><li>如果图意要求「左侧说明 + 右侧架构」：画布左侧约 42% 是说明列，每一级一段，与右侧对应的级**同一种编码色**、自上而下顺序一致；每段是「圆形图标 + 级名（粗体）+ 副标题（括号，如核心层级）+ 一行小标题（职责）+ 2–3 行要点」。右侧约 55% 是架构图。</li></ul>
+  <div class="preview sketch"><svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" font-family="Microsoft YaHei, sans-serif">
+      <rect x="110" y="20" width="140" height="36" fill="#007774"/>
+      <rect x="70" y="78" width="220" height="36" fill="#5C7574"/>
+      <rect x="24" y="136" width="312" height="36" fill="#E6F3F2" stroke="#007774"/>
+      <text x="180" y="43" text-anchor="middle" font-size="13" fill="#fff">总站</text>
+      <text x="180" y="101" text-anchor="middle" font-size="13" fill="#fff">区域</text>
+      <text x="180" y="159" text-anchor="middle" font-size="13" fill="#163332">现场</text>
+    </svg></div>
+</article>
+<article class="card">
+  <header><b>金字塔</b><code>pyramid</code></header>
+  <p class="look">金字塔（上面少、下面多，表示层级或优先级）</p>
+  <ul><li>3–4 层，上窄下宽，层与层居中对齐，层间留一条缝。</li><li>最上一层是结论或最高一级（实底白字）；往下每层变宽，写这一层的名称和一行说明。</li><li>最宽的一层可以在层内再分成 2–4 个等宽小块。</li></ul>
+  <div class="preview sketch"><svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" font-family="Microsoft YaHei, sans-serif">
+      <polygon points="180,18 230,70 130,70" fill="#007774"/>
+      <polygon points="120,82 240,82 270,128 90,128" fill="#5C7574"/>
+      <polygon points="80,140 280,140 320,182 40,182" fill="#E6F3F2" stroke="#007774"/>
+      <text x="180" y="112" text-anchor="middle" font-size="13" fill="#fff">中层</text>
+      <text x="180" y="168" text-anchor="middle" font-size="13" fill="#163332">基层</text>
+    </svg></div>
+</article>
+<article class="card">
+  <header><b>漏斗</b><code>funnel</code></header>
+  <p class="look">漏斗（上宽下窄，表示筛选、转化或逐级收窄）</p>
+  <ul><li>3–5 层，上宽下窄，整体居中。每层写阶段名（粗体）和这一阶段留下的对象或数量。</li><li>层与层之间可画一条向下的短箭头，箭头旁写「筛掉什么」或「留下什么」，没有就不要写。</li><li>最底层是结果，用主色实底白字。</li></ul>
+  <div class="preview sketch"><svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" font-family="Microsoft YaHei, sans-serif">
+      <polygon points="40,24 320,24 290,72 70,72" fill="#E6F3F2" stroke="#007774"/>
+      <polygon points="70,84 290,84 250,132 110,132" fill="#5C7574"/>
+      <polygon points="110,144 250,144 210,184 150,184" fill="#007774"/>
+      <text x="180" y="54" text-anchor="middle" font-size="13" fill="#163332">进入</text>
+      <text x="180" y="114" text-anchor="middle" font-size="13" fill="#fff">筛选</text>
+      <text x="180" y="172" text-anchor="middle" font-size="13" fill="#fff">留下</text>
+    </svg></div>
+</article>
+<article class="card">
+  <header><b>三栏对照</b><code>pipeline</code></header>
+  <p class="look">三栏对照（类型 → 内容 → 用途，每行一条记录）</p>
+  <ul><li>三个竖向大栏从左到右，每栏是白底细边圆角面板，栏底部（或顶部）写栏名（粗体，如「数据类型」「数据内容」「应用场景」）。栏宽约 20% / 45% / 30%。</li><li>每一行是一条记录，三栏里同一行的块**等高、上下对齐**：</li><li>第一栏：强调块（实底白字粗体，或立体圆柱/胶囊造型），行与行之间可用「+」号连接表示合在一起；</li></ul>
+  <div class="preview sketch"><svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" font-family="Microsoft YaHei, sans-serif">
+      <rect x="16" y="28" width="96" height="144" fill="#fff" stroke="#D5E4E3"/>
+      <rect x="132" y="28" width="96" height="144" fill="#fff" stroke="#D5E4E3"/>
+      <rect x="248" y="28" width="96" height="144" fill="#fff" stroke="#D5E4E3"/>
+      <text x="64" y="156" text-anchor="middle" font-size="13" fill="#163332">类型</text>
+      <text x="180" y="156" text-anchor="middle" font-size="13" fill="#163332">内容</text>
+      <text x="296" y="156" text-anchor="middle" font-size="13" fill="#163332">用途</text>
+      <rect x="28" y="48" width="72" height="28" fill="#007774"/>
+      <rect x="144" y="48" width="72" height="28" fill="#E6F3F2" stroke="#007774"/>
+      <rect x="260" y="48" width="72" height="28" fill="#E6F3F2" stroke="#007774"/>
+    </svg></div>
+</article>
+<article class="card">
+  <header><b>分类树</b><code>tree</code></header>
+  <p class="look">分类树（一个总类下分若干类，每类下列具体条目）</p>
+  <ul><li>顶部居中一个根节点（实底白字粗体，宽约画布 20%）。根节点下引一条竖线到一条横向总线，总线向每个分类各引一条竖线，连到分类标题顶部中点（直角连线，线宽 1.5–2）。</li><li>下方各分类并排，每类是一个虚线框（rx 8），框顶部是分类标题条（实底、白字或深字粗体）；框内是该类的条目，浅色底细边小框，文字居中，可两行。</li><li>分类宽度按条目数分配：条目多的类用两列条目，条目少的用一列；所有分类框**同高**、顶部对齐，条目从上往下排，同一行的条目高度一致。</li></ul>
+  <div class="preview sketch"><svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" font-family="Microsoft YaHei, sans-serif">
+      <rect x="130" y="16" width="100" height="32" fill="#007774"/>
+      <text x="180" y="37" text-anchor="middle" font-size="13" fill="#fff">总类</text>
+      <path d="M180 48 V70 H70 V86 M180 70 H180 V86 M180 70 H290 V86" fill="none" stroke="#007774" stroke-width="1.5"/>
+      <rect x="20" y="86" width="100" height="88" fill="none" stroke="#007774" stroke-dasharray="4 3"/>
+      <rect x="130" y="86" width="100" height="88" fill="none" stroke="#007774" stroke-dasharray="4 3"/>
+      <rect x="240" y="86" width="100" height="88" fill="none" stroke="#007774" stroke-dasharray="4 3"/>
+      <text x="70" y="112" text-anchor="middle" font-size="13" fill="#163332">甲类</text>
+      <text x="180" y="112" text-anchor="middle" font-size="13" fill="#163332">乙类</text>
+      <text x="290" y="112" text-anchor="middle" font-size="13" fill="#163332">丙类</text>
+    </svg></div>
+</article>
+<article class="card">
+  <header><b>中心辐射</b><code>hub</code></header>
+  <p class="look">中心辐射（一个平台/主体服务多个对象，引出若干目标或成效）</p>
+  <ul><li>画布中部偏左放一个大圆作为中心主体（直径约画布高的 55–65%），圆内是主体名称（粗体白字，放在圆下部）和一个大号线条图标或简洁示意图形；圆用 {dominant} 或第二编码色实底，可加一圈浅色外环。</li><li>左侧一列服务对象（4–6 个），每个是「图标 + 名称」的浅色圆角小框，等距竖排；每个对象用一条平滑曲线（path 三次贝塞尔）连到中心圆的左边缘，线色 {line}，线宽 1.5。</li><li>右侧一列要点卡片（2–4 张），白底细边圆角、可淡阴影，等高等距竖排，宽约画布 45%；每张卡片是「◆ + 两三行说明，关键词加粗变色」。中心圆右边缘用曲线箭头分别指向每张卡片的左边缘。</li></ul>
+  <div class="preview sketch"><svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" font-family="Microsoft YaHei, sans-serif">
+      <rect x="16" y="36" width="84" height="36" rx="4" fill="#E6F3F2" stroke="#007774"/>
+      <rect x="16" y="84" width="84" height="36" rx="4" fill="#E6F3F2" stroke="#007774"/>
+      <rect x="16" y="132" width="84" height="36" rx="4" fill="#E6F3F2" stroke="#007774"/>
+      <circle cx="180" cy="102" r="36" fill="#007774"/>
+      <text x="180" y="107" text-anchor="middle" font-size="13" fill="#fff">主体</text>
+      <rect x="250" y="40" width="96" height="40" rx="4" fill="#fff" stroke="#007774"/>
+      <rect x="250" y="96" width="96" height="40" rx="4" fill="#fff" stroke="#007774"/>
+      <rect x="250" y="152" width="96" height="28" rx="4" fill="#fff" stroke="#007774"/>
+      <text x="58" y="59" text-anchor="middle" font-size="12" fill="#163332">对象</text>
+    </svg></div>
+</article>
+  </div>
+</main>
+</body>
+</html>

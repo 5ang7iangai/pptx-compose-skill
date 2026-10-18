@@ -1,0 +1,11 @@
+name: 要点页
+basis: 苹果发布会和董事会材料的一页一结论：大数字或一句话，四周留白，底部最多三条注释
+use: 封面后的结论页、一个关键指标、一句要记住的话
+look: 大数字居中，百分号抬高半级，四周留白，底部最多三条小注
+checks:
+  - type: no_shadow
+    hint: 要点页不用阴影，删掉所有 filter/feDropShadow
+  - type: max_radius
+    max_rx: 0
+    min_side: 16
+    hint: 要点页不用圆角，还有 {n} 个矩形带 rx，全部改成 rx=0

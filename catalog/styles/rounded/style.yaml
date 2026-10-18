@@ -1,0 +1,5 @@
+name: 圆角卡片
+basis: Google Material Design 3：圆角分级 16/12、色调表达层次
+use: 通用汇报、产品介绍
+look: 白底大圆角卡片，重点的一块用模板深色涂满
+checks: []

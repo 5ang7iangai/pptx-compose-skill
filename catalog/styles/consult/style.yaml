@@ -1,0 +1,11 @@
+name: 咨询汇报
+basis: 麦肯锡、BCG 常用的行动标题页：白底、一条强调色、灰色正文、细线分割，一块图只论证一个结论
+use: 给领导的结论、问题拆解、建议与依据
+look: 白底，结论在上，序号下各一条短横线，几列依据，底部一行「所以」
+checks:
+  - type: no_shadow
+    hint: 咨询汇报不用阴影，删掉所有 filter/feDropShadow
+  - type: max_radius
+    max_rx: 2
+    min_side: 16
+    hint: 咨询汇报几乎不用圆角，还有 {n} 个矩形 rx 偏大，改成 rx=0

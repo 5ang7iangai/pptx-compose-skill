@@ -1,0 +1,29 @@
+<svg viewBox="0 0 1200 520" xmlns="http://www.w3.org/2000/svg" font-family="Microsoft YaHei, PingFang SC, Noto Sans SC, sans-serif">
+  <rect x="0" y="0" width="1200" height="520" fill="#FFFFFF"/>
+  <rect x="72" y="40" width="4" height="28" fill="#007774"/>
+  <text x="92" y="64" font-size="22" font-weight="700" fill="#163332">先把范围收窄，再谈全面建设</text>
+  <line x1="72" y1="96" x2="1128" y2="96" stroke="#9EC9C6" stroke-width="1"/>
+  <text x="72" y="148" font-size="20" font-weight="700" fill="#007774">01</text>
+  <line x1="72" y1="162" x2="112" y2="162" stroke="#007774" stroke-width="1.5"/>
+  <text x="72" y="206" font-size="18" font-weight="700" fill="#163332">范围一次铺开</text>
+  <text x="72" y="244" font-size="15" fill="#3D6B69">所有场景同时开工</text>
+  <text x="72" y="268" font-size="15" fill="#3D6B69">试点没有对照基线</text>
+  <line x1="400" y1="120" x2="400" y2="300" stroke="#9EC9C6" stroke-width="1"/>
+  <text x="448" y="148" font-size="20" font-weight="700" fill="#007774">02</text>
+  <line x1="448" y1="162" x2="488" y2="162" stroke="#007774" stroke-width="1.5"/>
+  <text x="448" y="206" font-size="18" font-weight="700" fill="#163332">依据停在定性</text>
+  <text x="448" y="244" font-size="15" fill="#3D6B69">只有感觉，没有前后数</text>
+  <text x="448" y="268" font-size="15" fill="#3D6B69">无法判断该不该继续</text>
+  <line x1="776" y1="120" x2="776" y2="300" stroke="#9EC9C6" stroke-width="1"/>
+  <text x="824" y="148" font-size="20" font-weight="700" fill="#007774">03</text>
+  <line x1="824" y1="162" x2="864" y2="162" stroke="#007774" stroke-width="1.5"/>
+  <text x="824" y="206" font-size="18" font-weight="700" fill="#163332">先做一个闭环</text>
+  <text x="824" y="244" font-size="15" fill="#3D6B69">选已有数据的一条业务</text>
+  <text x="824" y="268" font-size="15" fill="#3D6B69">四周后用同一指标复盘</text>
+  <line x1="72" y1="328" x2="1128" y2="328" stroke="#9EC9C6" stroke-width="1"/>
+  <text x="72" y="380" font-size="13" fill="#3D6B69">所以</text>
+  <text x="128" y="380" font-size="16" font-weight="700" fill="#163332">本阶段只承诺</text>
+  <text x="256" y="380" font-size="16" font-weight="700" fill="#007774">一个场景</text>
+  <text x="344" y="380" font-size="16" font-weight="700" fill="#163332">跑通，不承诺全量上线</text>
+  <text x="1128" y="448" text-anchor="end" font-size="13" fill="#3D6B69">口径：同一张表，上线前后各四周</text>
+</svg>

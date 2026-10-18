@@ -1,0 +1,46 @@
+# 每种版式用一种风格。default 必须出现在 styles 里。
+# 新建不指定风格时用 default。改一页、加一页、加一章只能从 styles 里选，选定后这一版式的所有页一起用它。
+fallback: rounded
+layouts:
+  flow:
+    default: rounded
+    styles: [rounded, square, flat, report, dark]
+  timeline:
+    default: rounded
+    styles: [rounded, square, flat, report, dark]
+  cycle:
+    default: rounded
+    styles: [rounded, square, flat, report, dark]
+  hub:
+    default: rounded
+    styles: [rounded, square, flat, report, dark]
+  compare:
+    default: consult
+    styles: [consult, rounded, square, flat, report]
+  matrix:
+    default: consult
+    styles: [consult, rounded, square, flat, report, blocks]
+  pillars:
+    default: consult
+    styles: [consult, rounded, square, flat, report]
+  kpi:
+    default: keynote
+    styles: [keynote, rounded, square, flat, report, dark]
+  layers:
+    default: bands
+    styles: [bands, rounded, square, flat, report, blocks, dark]
+  tiers:
+    default: report
+    styles: [report, rounded, square, flat, bands]
+  pyramid:
+    default: report
+    styles: [report, rounded, square, flat, bands]
+  funnel:
+    default: report
+    styles: [report, rounded, square, flat, bands]
+  pipeline:
+    default: report
+    styles: [report, rounded, square, flat, blocks]
+  tree:
+    default: blocks
+    styles: [blocks, rounded, square, flat, report]
