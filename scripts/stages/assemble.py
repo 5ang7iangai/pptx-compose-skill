@@ -80,6 +80,43 @@ def _short_tab(chapter: str) -> str:
     return label or (chapter or "")
 
 
+_NAV_TITLE_SUFFIXES = ("计算流程", "流程图", "流程", "四维框架", "框架")
+
+
+def _nav_label(pg: dict, content: dict) -> str:
+    """章内二级导航短名：优先 pages/outline 的 nav，否则从标题去后缀推导，再回退到去编号章名。
+
+    顶栏页签是「当前一级章内部」的二级导航，不是整稿一级目录的复刻。
+    """
+    for src in (content.get("nav"), pg.get("nav")):
+        if isinstance(src, str) and src.strip():
+            return src.strip()
+    title = (content.get("title") or pg.get("title") or "").strip()
+    if title:
+        t = re.sub(r"^[一二三四五六七八九十\d]+[、.．]\s*", "", title)
+        for suf in _NAV_TITLE_SUFFIXES:
+            if t.endswith(suf) and len(t) > len(suf):
+                t = t[: -len(suf)]
+                break
+        if t:
+            return t
+    return _short_tab(pg.get("section") or "")
+
+
+def _chapter_nav_labels(plan: list) -> dict[str, list[str]]:
+    """按一级章收集有序、去重的二级导航短名（页序）。"""
+    out: dict[str, list[str]] = {}
+    for pg, content in plan:
+        sec = pg.get("section") or ""
+        if not sec:
+            continue
+        lab = _nav_label(pg, content)
+        bucket = out.setdefault(sec, [])
+        if lab not in bucket:
+            bucket.append(lab)
+    return out
+
+
 def _page_chrome(pic: dict, slide_w: float, slide_h: float) -> bool:
     x, y, w, h = pic.get("x", 0), pic.get("y", 0), pic.get("w", 0), pic.get("h", 0)
     cx, cy = x + w / 2, y + h / 2
@@ -277,7 +314,8 @@ def assemble(template: Path, card: dict, outline: dict, pages: list[dict], fig_d
         if len(filled_tocs) > 1:
             report["toc"]["also"] = [item["slide"] for item in filled_tocs[1:]]
 
-    tab_labels = [_short_tab(c) for c in chapters]
+    chapter_navs = _chapter_nav_labels(plan)
+    report["chapter_navs"] = chapter_navs
     hi, rest = _tab_highlight(card), _tab_rest(card)
     jobs: list[dict] = []
     for n, (pg, content) in enumerate(plan):
@@ -305,15 +343,19 @@ def assemble(template: Path, card: dict, outline: dict, pages: list[dict], fig_d
         if has_old:
             clear_region(parts, index, "bbox", bbox, [])
 
-        if tab_labels and pg.get("section"):
+        # 顶栏 = 当前一级章的二级导航（非整稿一级目录复刻）
+        tab_labels = chapter_navs.get(pg.get("section") or "", [])
+        if tab_labels:
+            cur_lab = _nav_label(pg, content)
             try:
-                cur = chapters.index(pg["section"])
+                cur = tab_labels.index(cur_lab)
             except ValueError:
                 cur = 0
             tab_res = relayout_section_tabs(
                 parts, index, tab_labels, cur,
                 highlight_fill=hi, rest_text=rest, by_chars=True, gap=0.0,
             )
+            tab_res = {**tab_res, "nav": tab_labels, "current_nav": cur_lab}
             report["tabs"].append(tab_res)
 
         if not dgs or not with_diagrams:

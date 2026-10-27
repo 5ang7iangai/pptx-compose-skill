@@ -41,67 +41,67 @@
 
   <!-- 云层 -->
   <g>
-    <!-- 统一驾驶舱通栏 -->
+    <!-- 统一工作台通栏 -->
     <rect x="68" y="100" width="1074" height="34" rx="2" fill="#0070C0"/>
-    <text x="605" y="122" font-size="18" fill="#FFFFFF" font-weight="700" text-anchor="middle">统一驾驶舱（能源+双碳+虚拟电厂）</text>
+    <text x="605" y="122" font-size="18" fill="#FFFFFF" font-weight="700" text-anchor="middle">统一工作台（协作+数据+应用）</text>
 
-    <!-- 双碳管理组 -->
+    <!-- 合规管理组 -->
     <rect x="68" y="142" width="533" height="116" rx="2" fill="#F3F7F9" stroke="#A5C1D4" stroke-width="1" stroke-dasharray="4 3"/>
     <rect x="68" y="142" width="533" height="28" rx="2" fill="#31859C"/>
-    <text x="334.5" y="161" font-size="16" fill="#FFFFFF" font-weight="700" text-anchor="middle">双碳管理</text>
+    <text x="334.5" y="161" font-size="16" fill="#FFFFFF" font-weight="700" text-anchor="middle">合规管理</text>
     <g font-size="14" fill="#FFFFFF" font-weight="700" text-anchor="middle">
       <rect x="78" y="178" width="166" height="32" rx="2" fill="#31859C"/>
-      <text x="161" y="199">碳监测</text>
+      <text x="161" y="199">指标监测</text>
       <rect x="252" y="178" width="166" height="32" rx="2" fill="#31859C"/>
-      <text x="335" y="199">碳足迹</text>
+      <text x="335" y="199">链路追踪</text>
       <rect x="426" y="178" width="166" height="32" rx="2" fill="#31859C"/>
-      <text x="509" y="199">碳排模型</text>
+      <text x="509" y="199">评估模型</text>
       <rect x="78" y="218" width="166" height="32" rx="2" fill="#31859C"/>
-      <text x="161" y="239">碳资产</text>
+      <text x="161" y="239">资源台账</text>
       <rect x="252" y="218" width="166" height="32" rx="2" fill="#31859C"/>
-      <text x="335" y="239">碳认证</text>
+      <text x="335" y="239">资质认证</text>
       <rect x="426" y="218" width="166" height="32" rx="2" fill="#31859C"/>
-      <text x="509" y="239">碳减排</text>
+      <text x="509" y="239">改进闭环</text>
     </g>
 
-    <!-- 虚拟电厂组 -->
+    <!-- 资源池组 -->
     <rect x="609" y="142" width="533" height="116" rx="2" fill="#F3F7F9" stroke="#A5C1D4" stroke-width="1" stroke-dasharray="4 3"/>
     <rect x="609" y="142" width="533" height="28" rx="2" fill="#C00000"/>
-    <text x="875.5" y="161" font-size="16" fill="#FFFFFF" font-weight="700" text-anchor="middle">虚拟电厂</text>
+    <text x="875.5" y="161" font-size="16" fill="#FFFFFF" font-weight="700" text-anchor="middle">资源池</text>
     <g font-size="14" fill="#FFFFFF" font-weight="700" text-anchor="middle">
       <rect x="619" y="178" width="166" height="32" rx="2" fill="#C00000"/>
       <text x="702" y="199">资源管理</text>
       <rect x="793" y="178" width="166" height="32" rx="2" fill="#C00000"/>
-      <text x="876" y="199">负荷预测</text>
+      <text x="876" y="199">用量预测</text>
       <rect x="967" y="178" width="166" height="32" rx="2" fill="#C00000"/>
-      <text x="1050" y="199">需求响应</text>
+      <text x="1050" y="199">弹性响应</text>
       <rect x="619" y="218" width="166" height="32" rx="2" fill="#C00000"/>
-      <text x="702" y="239">资源调度</text>
+      <text x="702" y="239">任务编排</text>
       <rect x="793" y="218" width="166" height="32" rx="2" fill="#C00000"/>
-      <text x="876" y="239">调度模型</text>
+      <text x="876" y="239">编排模型</text>
       <rect x="967" y="218" width="166" height="32" rx="2" fill="#C00000"/>
-      <text x="1050" y="239">电力交易</text>
+      <text x="1050" y="239">额度交易</text>
     </g>
 
-    <!-- 能源管理组 -->
+    <!-- 运营管理组 -->
     <rect x="68" y="266" width="1074" height="64" rx="2" fill="#F3F7F9" stroke="#A5C1D4" stroke-width="1"/>
     <rect x="68" y="266" width="1074" height="26" rx="2" fill="#0070C0"/>
-    <text x="605" y="284" font-size="16" fill="#FFFFFF" font-weight="700" text-anchor="middle">能源管理</text>
+    <text x="605" y="284" font-size="16" fill="#FFFFFF" font-weight="700" text-anchor="middle">运营管理</text>
     <g font-size="14" fill="#FFFFFF" font-weight="700" text-anchor="middle">
       <rect x="78" y="298" width="109" height="26" rx="2" fill="#0070C0"/>
-      <text x="132.5" y="316">能耗分析</text>
+      <text x="132.5" y="316">用量分析</text>
       <rect x="195" y="298" width="109" height="26" rx="2" fill="#0070C0"/>
-      <text x="249.5" y="316">能耗预测</text>
+      <text x="249.5" y="316">用量预测</text>
       <rect x="312" y="298" width="109" height="26" rx="2" fill="#0070C0"/>
-      <text x="366.5" y="316">用能安全</text>
+      <text x="366.5" y="316">运行安全</text>
       <rect x="429" y="298" width="109" height="26" rx="2" fill="#0070C0"/>
-      <text x="483.5" y="316">能效分析</text>
+      <text x="483.5" y="316">效率分析</text>
       <rect x="546" y="298" width="109" height="26" rx="2" fill="#0070C0"/>
-      <text x="600.5" y="316">节能调控</text>
+      <text x="600.5" y="316">自动调控</text>
       <rect x="663" y="298" width="109" height="26" rx="2" fill="#0070C0"/>
-      <text x="717.5" y="316">节能模型</text>
+      <text x="717.5" y="316">调控模型</text>
       <rect x="780" y="298" width="109" height="26" rx="2" fill="#0070C0"/>
-      <text x="834.5" y="316">能源报告</text>
+      <text x="834.5" y="316">运营报告</text>
       <rect x="897" y="298" width="109" height="26" rx="2" fill="#0070C0"/>
       <text x="951.5" y="316">设备运维</text>
       <rect x="1014" y="298" width="109" height="26" rx="2" fill="#0070C0"/>
@@ -116,7 +116,7 @@
   <!-- 边层 -->
   <g>
     <rect x="68" y="386" width="1074" height="34" rx="2" fill="#7F7F7F"/>
-    <text x="605" y="408" font-size="16" fill="#FFFFFF" font-weight="700" text-anchor="middle">4G/5G 工业网关</text>
+    <text x="605" y="408" font-size="16" fill="#FFFFFF" font-weight="700" text-anchor="middle">边缘网关</text>
   </g>
 
   <!-- 端层到边层向上的箭头（左右各一，避开文字） -->
@@ -129,7 +129,7 @@
 
   <!-- 端层 -->
   <g>
-    <!-- 生产数据组 -->
+    <!-- 业务数据组 -->
     <rect x="68" y="428" width="238" height="166" rx="2" fill="#F3F7F9" stroke="#A5C1D4" stroke-width="1"/>
     <rect x="68" y="428" width="30" height="166" rx="2" fill="#31859C"/>
     <text x="83" y="505" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">生</text>
@@ -141,7 +141,7 @@
     <rect x="206" y="438" width="90" height="42" rx="2" fill="#DFEBFC"/>
     <text x="251" y="464" font-size="15" fill="#152632" font-weight="700" text-anchor="middle">SCADA</text>
 
-    <!-- 能源数据组 -->
+    <!-- 运行数据组 -->
     <rect x="314" y="428" width="512" height="166" rx="2" fill="#F3F7F9" stroke="#A5C1D4" stroke-width="1"/>
     <rect x="314" y="428" width="30" height="166" rx="2" fill="#31859C"/>
     <text x="329" y="505" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">能</text>
@@ -154,24 +154,24 @@
       <rect x="450" y="438" width="88" height="42" rx="2" fill="#DFEBFC"/>
       <text x="494" y="464">电</text>
       <rect x="546" y="438" width="88" height="42" rx="2" fill="#DFEBFC"/>
-      <text x="590" y="464">燃气</text>
+      <text x="590" y="464">物料A</text>
       <rect x="642" y="438" width="88" height="42" rx="2" fill="#DFEBFC"/>
-      <text x="686" y="464">蒸汽</text>
+      <text x="686" y="464">物料B</text>
       <rect x="738" y="438" width="80" height="42" rx="2" fill="#DFEBFC"/>
-      <text x="778" y="464">氮气</text>
+      <text x="778" y="464">物料C</text>
       <rect x="354" y="488" width="88" height="42" rx="2" fill="#DFEBFC"/>
-      <text x="398" y="514">柴油</text>
+      <text x="398" y="514">物料D</text>
       <rect x="450" y="488" width="88" height="42" rx="2" fill="#DFEBFC"/>
-      <text x="494" y="514">汽油</text>
+      <text x="494" y="514">物料E</text>
       <rect x="546" y="488" width="88" height="42" rx="2" fill="#DFEBFC"/>
-      <text x="590" y="514">煤油</text>
+      <text x="590" y="514">物料F</text>
       <rect x="642" y="488" width="88" height="42" rx="2" fill="#DFEBFC"/>
-      <text x="686" y="514">液化气</text>
+      <text x="686" y="514">物料G</text>
       <rect x="738" y="488" width="80" height="42" rx="2" fill="#DFEBFC"/>
-      <text x="778" y="514">煤气</text>
+      <text x="778" y="514">物料H</text>
     </g>
 
-    <!-- 能源资源组 -->
+    <!-- 供给资源组 -->
     <rect x="834" y="428" width="308" height="166" rx="2" fill="#F3F7F9" stroke="#A5C1D4" stroke-width="1"/>
     <rect x="834" y="428" width="30" height="166" rx="2" fill="#31859C"/>
     <text x="849" y="505" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">能</text>
@@ -180,17 +180,17 @@
     <text x="849" y="571" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">源</text>
     <g font-size="13" fill="#152632" font-weight="700" text-anchor="middle">
       <rect x="874" y="438" width="86" height="42" rx="2" fill="#DFEBFC"/>
-      <text x="917" y="464">风电</text>
+      <text x="917" y="464">来源甲</text>
       <rect x="968" y="438" width="86" height="42" rx="2" fill="#DFEBFC"/>
-      <text x="1011" y="464">光电</text>
+      <text x="1011" y="464">来源乙</text>
       <rect x="1062" y="438" width="80" height="42" rx="2" fill="#DFEBFC"/>
-      <text x="1102" y="464">分布式能源</text>
+      <text x="1102" y="464">分布式节点</text>
       <rect x="874" y="488" width="86" height="42" rx="2" fill="#DFEBFC"/>
-      <text x="917" y="514">可控负荷</text>
+      <text x="917" y="514">可控单元</text>
       <rect x="968" y="488" width="86" height="42" rx="2" fill="#DFEBFC"/>
-      <text x="1011" y="514">蓄热</text>
+      <text x="1011" y="514">缓冲</text>
       <rect x="1062" y="488" width="80" height="42" rx="2" fill="#DFEBFC"/>
-      <text x="1102" y="514">充电桩</text>
+      <text x="1102" y="514">终端</text>
     </g>
   </g>
 </svg>

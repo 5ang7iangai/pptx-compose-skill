@@ -50,6 +50,8 @@ pip install -r requirements.txt
 
 MIT，见 `LICENSE`。
 
-## 隐私
+## 公开发布注意
 
-包内没有 API 密钥、`config.yaml` 或本机路径。若往 `catalog/` 追加自有模板截图、logo 或落款，公开前请自行脱敏。
+对外发布前按 [references/公开发布脱敏.md](references/公开发布脱敏.md) 做全包自检。示例、图库和说明只用通用占位（如「一、背景与目标」「二、实施方案」，顶栏例「现状梳理 | 路径设计 | 试点验证 | 推广安排」），不写真实单位、课题、成稿题目、联系方式或本机路径。
+
+包内没有 API 密钥、`config.yaml` 或单位模板 pptx。若往 `catalog/` 追加自有模板截图、logo 或落款，公开前请自行脱敏。
