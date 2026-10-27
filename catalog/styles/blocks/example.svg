@@ -76,11 +76,11 @@
       <rect x="967" y="178" width="166" height="32" rx="2" fill="#C00000"/>
       <text x="1050" y="199">需求响应</text>
       <rect x="619" y="218" width="166" height="32" rx="2" fill="#C00000"/>
-      <text x="702" y="239">资源编排</text>
+      <text x="702" y="239">资源调度</text>
       <rect x="793" y="218" width="166" height="32" rx="2" fill="#C00000"/>
-      <text x="876" y="239">业务模型</text>
+      <text x="876" y="239">调度模型</text>
       <rect x="967" y="218" width="166" height="32" rx="2" fill="#C00000"/>
-      <text x="1050" y="239">业务协同</text>
+      <text x="1050" y="239">电力交易</text>
     </g>
 
     <!-- 能源管理组 -->

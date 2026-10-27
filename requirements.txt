@@ -1,0 +1,10 @@
+# pptx-unit 物理依赖（无云 API SDK）
+python-pptx>=1.0.0
+Pillow>=10.0.0
+PyYAML>=6.0
+lxml>=4.9.0
+# SVG → PNG（diagram/render.py）
+playwright>=1.40.0
+# 可选：材料抽取若用到
+# pypdf
+# python-docx

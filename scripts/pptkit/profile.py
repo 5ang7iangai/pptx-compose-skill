@@ -187,7 +187,7 @@ def image_features(data: bytes) -> dict:
 
 
 def classify_picture(box_in, slide_w, slide_h, feat: dict) -> tuple[str, str]:
-    """只自动判定有把握的类。其余标 review，由模型看图后改 kind。"""
+    """只自动判定有把握的类。其余标 review，由助手看图后改 kind。"""
     x, y, w, h = box_in
     if w >= slide_w * 0.85 and h <= slide_h * 0.55 and feat["edge"] < 20:
         return "decoration", "high"

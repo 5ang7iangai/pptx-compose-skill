@@ -282,23 +282,49 @@ def peer_equal_widths(sc: Scene, max_ratio: float = 0.12) -> list[str]:
 
 
 def card_title_body(sc: Scene) -> list[str]:
-    """并列卡内须有标题+至少一行说明，禁止只有标题的空壳卡。"""
+    """并列/流程卡内须有标题+至少一行说明；编号圆点不算说明。禁止细框空柱。"""
+    import re
     out = []
     for c in sc.cards:
         cw, ch = c[2] - c[0], c[3] - c[1]
-        if ch < sc.vh * 0.22 or cw < sc.vw * 0.08 or cw > sc.vw * 0.55:
+        if ch < sc.vh * 0.18 or cw < sc.vw * 0.06 or cw > sc.vw * 0.62:
             continue
         texts = [t for t, b in zip(sc.texts, sc.boxes)
                  if c[0] <= (b[0] + b[2]) / 2 <= c[2] and c[1] <= (b[1] + b[3]) / 2 <= c[3]]
         if not texts:
             continue
-        # 一行短标题且没有第二行 → 空壳
-        if len(texts) <= 1 and len((texts[0].get("text") or "").strip()) <= 48:
+        body = [t for t in texts if not re.fullmatch(r"\d{1,2}", (t.get("text") or "").strip())]
+        chars = sum(len((t.get("text") or "").strip()) for t in body)
+        # 只有编号+短标题，或有效字过少相对卡片面积 → 空壳/空柱
+        if len(body) <= 1 and chars <= 48:
+            name = label(body[0]) if body else label(texts[0])
             out.append(
-                f"卡片「{label(texts[0])}」（x {c[0]:.0f}–{c[2]:.0f}）只有标题无说明："
-                f"补至少一行正文，或改矮卡片；禁止只有标题的空壳卡"
+                f"卡片「{name}」（x {c[0]:.0f}–{c[2]:.0f}）只有标题无说明："
+                f"补至少一行正文（做法/要点），禁止细框空柱或大片留白"
             )
-    return out[:4]
+        elif ch > sc.vh * 0.35 and chars < 18:
+            name = label(body[0]) if body else label(texts[0])
+            out.append(
+                f"卡片「{name}」过高却字太少（{chars} 字）：加标题下说明行，或降低卡片高度填满信息"
+            )
+    return out[:6]
+
+
+def sparse_content(sc: Scene) -> list[str]:
+    """整图有效文字过稀：业务汇报结构图信息密度须接近正文页，禁止大片空洞。"""
+    chars = sum(len((t.get("text") or "").strip()) for t in sc.texts)
+    # 画布面积归一：以 1200×500 为参照，至少约 80 汉字量级
+    expect = max(60, int((sc.vw * sc.vh) / (1200 * 500) * 90))
+    if chars < expect and len(sc.texts) < 10:
+        return [
+            f"结构图文字过稀（约 {chars} 字 / {len(sc.texts)} 行，期望≥{expect} 字或≥10 行）："
+            f"流程/对照卡须标题+≥1 行说明，pipeline 多行写做法与特点，禁止三字格+大留白"
+        ]
+    if chars < expect * 0.7:
+        return [
+            f"结构图信息密度偏低（约 {chars} 字，期望约 {expect}）：补说明行与箭头旁注，贴近业务汇报密度"
+        ]
+    return []
 
 
 def contrast_hierarchy(sc: Scene) -> list[str]:

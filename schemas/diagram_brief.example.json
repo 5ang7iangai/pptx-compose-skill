@@ -1,0 +1,17 @@
+{
+  "_comment": "单页出图 brief；可与 pages[].diagram_data 合并",
+  "name": "结构图",
+  "title": "推进路径",
+  "brief": "三步：……",
+  "layout": "flow",
+  "style": "report",
+  "bbox": {
+    "l": 0.5,
+    "t": 2.2,
+    "w": 12.3,
+    "h": 4.5
+  },
+  "page_role": "body",
+  "fonts": {},
+  "feedback": []
+}

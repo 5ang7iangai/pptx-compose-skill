@@ -114,17 +114,20 @@ def main() -> None:
     from pptkit.layout_check import (
         text_diagram_overlaps, content_band_narrow,
         empty_shell_cards, peer_row_widths, section_tabs_gaps,
+        section_tabs_text_fit,
     )
     errors.extend(text_diagram_overlaps(parts))
     errors.extend(content_band_narrow(parts))
     errors.extend(empty_shell_cards(parts))
     errors.extend(peer_row_widths(parts))
     errors.extend(section_tabs_gaps(parts))
+    warnings = section_tabs_text_fit(parts)
     report = {
         "output": str(path),
         "slide_count": len(slide_order(parts)),
         "ok": not errors,
         "errors": errors,
+        "warnings": warnings,
     }
     print(json.dumps(report, ensure_ascii=False, indent=2))
     if errors:

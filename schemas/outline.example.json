@@ -1,0 +1,29 @@
+{
+  "_comment": "对齐旧 S3：narrative + pages；助手写入 run/S3_大纲.json",
+  "narrative": "一句话主线",
+  "title": "封面中文题目",
+  "pages": [
+    {
+      "section": "一、背景与目标",
+      "role": "body",
+      "clone_from": 3,
+      "title": "（一）总体思路",
+      "text_plan": {
+        "intro_chars": 80,
+        "bullets": 3,
+        "max_total_chars": 220
+      },
+      "key_facts_to_use": [
+        "F1",
+        "D1"
+      ],
+      "diagrams": [
+        {
+          "type": "flow",
+          "description": "三步推进",
+          "name": "结构图"
+        }
+      ]
+    }
+  ]
+}

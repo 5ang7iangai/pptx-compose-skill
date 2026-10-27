@@ -1,4 +1,4 @@
-"""从大模型返回里取出 SVG 并规整：箭头统一成标准三角、补白底。"""
+"""规整助手写出的 SVG：箭头统一成标准三角、补白底。"""
 
 from __future__ import annotations
 
@@ -10,7 +10,7 @@ from .svg_parse import SVG_NS, _local, _num
 
 
 def drop_comments(svg: str) -> str:
-    """模型常在注释里写命令行参数（--until），XML 注释不许含 --，解析会失败；注释对出图没用，一律删。"""
+    """注释里偶有命令行参数（如 --until），XML 注释不许含 --，解析会失败；注释对出图没用，一律删。"""
     return re.sub(r"<!--.*?-->", "", svg, flags=re.S)
 
 

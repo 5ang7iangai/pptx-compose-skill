@@ -324,7 +324,7 @@ def section_tabs_gaps(
         for s in absolute_shapes(root):
             if s["y"] > slide_h * 0.22 or s["h"] > 0.55 or s["h"] < 0.12:
                 continue
-            if s["w"] < 0.45 or s["w"] > 2.8:
+            if s["w"] < 0.45 or s["w"] > 4.0:
                 continue
             if not (s.get("text") or "").strip():
                 continue
@@ -360,3 +360,49 @@ def section_tabs_gaps(
                     f"重叠 {-gap:.3f}″（禁止互相覆盖）；请 relayout_section_tabs"
                 )
     return errors
+
+def section_tabs_text_fit(
+    parts: dict[str, bytes],
+    *,
+    pad: float = 0.18,
+) -> list[str]:
+    """页签文字相对槽宽明显不够则 warning（估算：中文 1em/字）。"""
+    warnings: list[str] = []
+    slide_w, slide_h = slide_size(parts)
+    from .slides import absolute_shapes, _tab_font_pt, _estimate_label_in
+    for i, row in enumerate(slide_order(parts), 1):
+        root = parse(parts[row["part"]])
+        cands = []
+        for s in absolute_shapes(root):
+            if s["y"] > slide_h * 0.22 or s["h"] > 0.65 or s["h"] < 0.12:
+                continue
+            if s["w"] < 0.45 or s["w"] > 4.0:
+                continue
+            if not (s.get("text") or "").strip():
+                continue
+            cands.append(s)
+        if len(cands) < 3:
+            continue
+        cands.sort(key=lambda s: s["x"])
+        cy0 = cands[0]["y"] + cands[0]["h"] / 2
+        row_tabs = [s for s in cands if abs((s["y"] + s["h"] / 2) - cy0) <= 0.08]
+        if len(row_tabs) < 3:
+            continue
+        row_tabs.sort(key=lambda s: s["x"])
+        deduped = []
+        for s in row_tabs:
+            if deduped and abs(s["x"] - deduped[-1]["x"]) < 0.02:
+                continue
+            deduped.append(s)
+        for s in deduped:
+            label = (s.get("text") or "").strip()
+            pt = _tab_font_pt(s["el"])
+            need = _estimate_label_in(label, pt, pad=pad)
+            if need > s["w"] + 0.02:
+                warnings.append(
+                    f"第 {i} 页顶栏页签「{label}」估宽 {need:.2f}″ > 槽宽 {s['w']:.2f}″，"
+                    f"可能截断；请 relayout_section_tabs(by_chars=True)"
+                )
+    return warnings
+
+

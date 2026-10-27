@@ -3,7 +3,7 @@
 
     python scripts/profile_deck.py 模板.pptx -o 风格卡.json
 
-字段说明见 docs/模板分析与风格卡.md。实现在 pptkit/profile.py。
+字段说明见 references/模板分析与风格卡.md。实现在 pptkit/profile.py。
 """
 
 from __future__ import annotations

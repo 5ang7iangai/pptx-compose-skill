@@ -106,7 +106,7 @@
   <rect x="0.0" y="0.0" width="1200.0" height="417.0" fill="#FFFFFF"/><!-- 左栏：输入 -->
   <rect x="24" y="24" width="220" height="260" rx="12" fill="#FAFAFA" stroke="#E4E4E7" stroke-width="1"/>
   <text x="44" y="52" font-size="17" font-weight="700" fill="#18181B">输入</text>
-  <text x="44" y="72" font-size="13" fill="#71717A">业务素材与企业模板</text>
+  <text x="44" y="72" font-size="13" fill="#71717A">业务素材与单位模板</text>
 
   <!-- 业务素材卡片 -->
   <rect x="40" y="84" width="188" height="88" rx="8" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="1"/>
@@ -115,10 +115,10 @@
   <text x="56" y="126" font-size="13" fill="#71717A">Word 方案、旧版 PPT</text>
   <text x="56" y="145" font-size="13" fill="#71717A">会议纪要、XMind 提纲</text>
 
-  <!-- 企业模板卡片 -->
+  <!-- 单位模板卡片 -->
   <rect x="40" y="184" width="188" height="88" rx="8" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="1"/>
   <use href="#ic-template" x="56" y="196"/>
-  <text x="76" y="200" font-size="15" font-weight="700" fill="#18181B">企业模板</text>
+  <text x="76" y="200" font-size="15" font-weight="700" fill="#18181B">单位模板</text>
   <text x="56" y="226" font-size="13" fill="#71717A">版式、配色、字体</text>
   <text x="56" y="245" font-size="13" fill="#71717A">页面节奏</text>
 

@@ -1,11 +1,10 @@
-"""任务脚本共用的出图流程：spec 里的 diagram → 出图任务 → SVG（复用 / 生成 / 修补）→ 图片版、可编辑版两份 pptx。
+"""任务脚本共用的出图流程：已有 SVG（助手写）→ 检查 / 渲染 → 图片版、可编辑版两份 pptx。
 
-add_chapter、redraw_pages、compose 都走这里，SVG 缓存、修补规则、两版写法只有一份。
+add_chapter、redraw_pages、stages/apply_diagrams 都走这里；不调用外部模型。
 """
 
 from __future__ import annotations
 
-import asyncio
 import shutil
 from pathlib import Path
 
@@ -13,7 +12,6 @@ from pptkit.ooxml import save_pptx, slide_order
 
 from .catalog import bind_styles
 from .checks import check_diagram
-from .generate import generate_svg
 from .normalize import drop_comments
 from .place import add_editable, add_picture
 from .render import render_png
@@ -62,32 +60,32 @@ def make_job(fig_dir: Path, slide: int, label: int, diag: dict, regen: bool = Fa
             "svg_path": fig_dir / f"{stem}.svg", "png_path": fig_dir / f"{stem}.png"}
 
 
-def prepare_svgs(jobs: list[dict], palette: dict, config: Path | str | None = None,
-                 regen: bool = False, fix: bool = False) -> None:
+def prepare_svgs(jobs: list[dict], palette: dict | None = None,
+                 regen: bool = False, fix: bool = False, svg_dir: Path | str | None = None) -> None:
     """每个 job 补上 svg 文本、problems，并渲染 png。
-    缺 SVG 或要求重画的并行调大模型；fix 时把有审阅意见或没过检查的已有 SVG 交给模型在原图上修补。"""
-    todo, starts = [], []
-    for j in jobs:
-        if regen or j.get("regen") or not j["svg_path"].exists():
-            todo.append(j)
-            starts.append(None)
-        elif fix:
-            old = j["svg_path"].read_text(encoding="utf-8")
-            if j["diagram"].get("feedback") or check_diagram(old, j["diagram"]):
-                todo.append(j)
-                starts.append(old)
-    if todo:
-        from llm.adapter import LLMAdapter
 
-        adapter = LLMAdapter(config)
-
-        async def go():
-            return await adapter.run_parallel(
-                [generate_svg(adapter, j["diagram"], palette, start=s) for j, s in zip(todo, starts)]
-            )
-
-        for job, svg in zip(todo, asyncio.run(go())):
-            job["svg_path"].write_text(svg, encoding="utf-8")
+    SVG 必须已由助手写到 job["svg_path"]（或 svg_dir 下同名文件）。
+    本函数不调用外部模型。palette 由调用方传入供后续扩展，当前检查不依赖它。
+    regen/fix 仅提示助手改文件，不自动生成。
+    """
+    if svg_dir:
+        svg_dir = Path(svg_dir)
+        for j in jobs:
+            alt = svg_dir / j["svg_path"].name
+            if alt.exists() and not j["svg_path"].exists():
+                j["svg_path"] = alt
+    missing = [str(j["svg_path"]) for j in jobs if not j["svg_path"].exists()]
+    if missing:
+        raise SystemExit(
+            "缺少助手写好的 SVG（pptx-unit 不调用外部模型）。"
+            "请按 prompts/diagram/generate_svg.md 写好后重试：\n  " + "\n  ".join(missing)
+        )
+    if regen or fix:
+        print(
+            "提示: --regen/--fix 在 pptx-unit 中不调模型；"
+            "请助手按 checks 问题（fix_svg.md）改写磁盘 SVG 后重跑。",
+            flush=True,
+        )
     for job in jobs:
         job["svg"] = drop_comments(job["svg_path"].read_text(encoding="utf-8"))
         job["problems"] = check_diagram(job["svg"], job["diagram"])

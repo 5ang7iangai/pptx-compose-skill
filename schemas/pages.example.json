@@ -1,0 +1,28 @@
+{
+  "_comment": "对齐旧 S4：逐页正文；助手写入 run/S4_页面正文.json",
+  "pages": [
+    {
+      "index": 1,
+      "section": "一、背景与目标",
+      "title": "（一）总体思路",
+      "intro": "导语一段……",
+      "bullets": [
+        "要点一",
+        "要点二",
+        "要点三"
+      ],
+      "notes": "",
+      "diagram_data": {
+        "brief": "……",
+        "layout": "flow",
+        "style": "report",
+        "bbox": {
+          "l": 0.5,
+          "t": 2.2,
+          "w": 12.3,
+          "h": 4.5
+        }
+      }
+    }
+  ]
+}
