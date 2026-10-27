@@ -1,4 +1,4 @@
-"""结构图检查：返回问题列表（中文、可直接发回大模型修补），空表示通过。
+"""结构图检查：返回问题列表（中文、交给助手按 fix_svg.md 改磁盘 SVG），空表示通过。
 
     structure  SVG 本身：viewBox、允许的元素、不用 class、文字够多
     style      风格硬性要求（catalog/styles/<id>/style.yaml）
@@ -42,6 +42,7 @@ def layout_problems(items: list[dict], vw: float, vh: float, limit: int = LIMIT,
         *layout.icons_in_cards(sc),
         *layout.peer_equal_widths(sc),
         *layout.card_title_body(sc),
+        *layout.sparse_content(sc),
         *layout.contrast_hierarchy(sc),
     ]
     return list(dict.fromkeys(out))[:limit]

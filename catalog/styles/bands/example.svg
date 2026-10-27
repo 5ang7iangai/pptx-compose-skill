@@ -88,10 +88,10 @@
   <text x="248" y="270" font-size="15" fill="#396A68">Word 方案、旧版 PPT</text>
   <text x="248" y="292" font-size="15" fill="#396A68">会议纪要、XMind 提纲</text>
 
-  <!-- 企业模板卡片 -->
+  <!-- 单位模板卡片 -->
   <rect x="503" y="218" width="295" height="96" rx="6" fill="#FFFFFF" stroke="#A5D4D2" stroke-width="1"/>
   <use href="#ic-template" x="539" y="252"/>
-  <text x="565" y="246" font-size="19" fill="#153231" font-weight="700">企业模板</text>
+  <text x="565" y="246" font-size="19" fill="#153231" font-weight="700">单位模板</text>
   <text x="565" y="270" font-size="15" fill="#396A68">版式、配色、字体</text>
   <text x="565" y="292" font-size="15" fill="#396A68">页面节奏</text>
 

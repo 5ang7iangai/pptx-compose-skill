@@ -1,0 +1,21 @@
+{
+  "_comment": "prepare 创建；各阶段更新 stages",
+  "template": "模板.pptx",
+  "materials": [
+    "材料/说明.docx"
+  ],
+  "title": "",
+  "run_dir": "run",
+  "stages": {
+    "prepare": "done",
+    "text": "pending",
+    "assemble": "pending",
+    "diagrams": "pending",
+    "apply": "pending",
+    "validate": "pending"
+  },
+  "outputs": {
+    "图片版": null,
+    "可编辑版": null
+  }
+}

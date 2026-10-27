@@ -82,7 +82,7 @@
   <rect x="24" y="24" width="300" height="300" rx="8" fill="#1B3231" stroke="#325D5B" stroke-width="1"/>
   <rect x="24" y="24" width="4" height="22" fill="#5AD8D4"/>
   <text x="36" y="42" font-size="18" fill="#5AD8D4" font-weight="700">输入</text>
-  <text x="86" y="42" font-size="14" fill="#A5D4D2">业务素材与企业模板</text>
+  <text x="86" y="42" font-size="14" fill="#A5D4D2">业务素材与单位模板</text>
 
   <!-- 业务素材卡片 -->
   <rect x="36" y="58" width="276" height="118" rx="6" fill="#1F3A39" stroke="#325D5B" stroke-width="1"/>
@@ -93,9 +93,9 @@
   <text x="66" y="140" font-size="14" fill="#D3EEED">会议纪要</text>
   <text x="66" y="160" font-size="14" fill="#D3EEED">XMind 提纲</text>
 
-  <!-- 企业模板卡片 -->
+  <!-- 单位模板卡片 -->
   <rect x="36" y="186" width="276" height="118" rx="6" fill="#1F3A39" stroke="#325D5B" stroke-width="1"/>
-  <text x="50" y="208" font-size="15" fill="#FFFFFF" font-weight="700">企业模板</text>
+  <text x="50" y="208" font-size="15" fill="#FFFFFF" font-weight="700">单位模板</text>
   <use href="#ic-template" x="50" y="232"/>
   <text x="66" y="228" font-size="14" fill="#D3EEED">版式</text>
   <text x="66" y="248" font-size="14" fill="#D3EEED">配色</text>

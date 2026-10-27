@@ -1,0 +1,20 @@
+# pptx-unit 检查项（与 validate_deck / layout_check / diagram.checks 对应）
+package:
+  - broken_targets          # 关系与幻灯片零件
+  - zip_open                # 可打开的 pptx
+content:
+  - require_text            # 可选：指定页须含句子
+  - diagram_group           # 可编辑版「结构图」组合（可选 --diagram-slide）
+layout:
+  - text_diagram_overlaps   # 导语/正文与结构图重叠或间隙 < 0.15″
+  - section_tabs_gaps       # 顶栏页签 edge-to-edge（gap=0）
+  - empty_shell_cards       # 并列卡须有标题+说明
+  - peer_row_widths         # 同行流程/时间轴节点等宽
+  - content_band_narrow     # 主内容带过窄 / 侧向大片空白
+fonts:
+  - font_roles              # 正文/强调/表格/图表角色一致
+diagram_svg:
+  - card_title_body
+  - peer_equal_widths
+  - contrast_hierarchy
+  - style_checks            # catalog/styles/<id>/style.yaml checks

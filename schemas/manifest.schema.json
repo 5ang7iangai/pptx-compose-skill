@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "template",
+    "stages"
+  ],
+  "properties": {
+    "template": {
+      "type": "string"
+    },
+    "materials": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "title": {
+      "type": "string"
+    },
+    "stages": {
+      "type": "object"
+    },
+    "outputs": {
+      "type": "object"
+    }
+  }
+}

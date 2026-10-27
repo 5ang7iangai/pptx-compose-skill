@@ -252,7 +252,7 @@ def _notes_part(parts: dict, slide_part: str) -> str | None:
 
 
 def cover_footers(root, title_el, slide_h: float) -> list[dict]:
-    """封面标题以下的短文字，通常是模板留下的组织落款和日期。页面上半部的标识文字不动。"""
+    """封面标题以下的短文字，通常是模板留下的单位和日期。页面上半部的标识文字不动。"""
     found = []
     for shape in absolute_shapes(root):
         if title_el is not None and shape["el"] is title_el:
@@ -281,7 +281,7 @@ def _one_paragraph(content: dict) -> str:
 
 def fill_page(parts: dict[str, bytes], index: int, content: dict, slide_w: float, slide_h: float,
               cover: bool = False, clear_captions: bool = False, body_style: dict | None = None) -> dict:
-    """cover=True 只换标题（封面标题常在页面中部）；没给 subtitle 时清掉标题下方的组织落款和日期。
+    """cover=True 只换标题（封面标题常在页面中部）；没给 subtitle 时清掉标题下方的单位和日期。
     页上有两级标题时，content["section"] 进顶栏、title 进本页标题。
     clear_captions=True（样例页旧图要清掉时）连同旧图的短说明文字一起删。返回填了哪些槽，写进任务报告方便核对。"""
     part = slide_order(parts)[index - 1]["part"]

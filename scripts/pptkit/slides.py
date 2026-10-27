@@ -255,16 +255,58 @@ def add_toc_label(
     return report
 
 
-def _toc_rows(shapes: list[dict]) -> list[tuple[dict, dict]]:
-    """目录条目行：编号（01、02…）+ 同一行右侧最近的章节名。"""
+def _toc_heading_names() -> set[str]:
+    return {"目录", "CONTENTS", "目录CONTENTS", "CONTENT"}
+
+
+_TOC_CHAPTER_RE = re.compile(r"^[一二三四五六七八九十百千]+、\s*.+")
+_CN_ORD = "一二三四五六七八九十"
+
+
+def _toc_badge_rows(shapes: list[dict]) -> list[tuple[dict, dict]]:
+    """模式 A：编号徽标（01、02… / 1、2…）+ 同一行右侧最近的章节名。"""
     rows = []
-    for num in (s for s in shapes if re.fullmatch(r"0?\d{1,2}", s["text"].strip())):
+    for num in (s for s in shapes if re.fullmatch(r"0?\d{1,2}", (s.get("text") or "").strip())):
         cy = num["y"] + num["h"] / 2
-        same = [s for s in shapes if s is not num and s["x"] > num["x"] and abs(s["y"] + s["h"] / 2 - cy) < 0.3
-                and len(s["text"].strip()) > 2]
+        same = [
+            s for s in shapes
+            if s is not num and s["x"] > num["x"] and abs(s["y"] + s["h"] / 2 - cy) < 0.3
+            and len((s.get("text") or "").strip()) > 2
+        ]
         if same:
             rows.append((num, min(same, key=lambda s: s["x"])))
     return sorted(rows, key=lambda r: r[0]["y"])
+
+
+def _toc_chapter_rows(shapes: list[dict]) -> list[dict]:
+    """模式 B：单行「一、章节名」条目（无独立编号徽标）。排除「目录 / CONTENTS」。"""
+    heads = _toc_heading_names()
+    rows = []
+    for s in shapes:
+        t = (s.get("text") or "").strip()
+        if not t:
+            continue
+        if "".join(t.split()).upper() in heads:
+            continue
+        if _TOC_CHAPTER_RE.match(t):
+            rows.append(s)
+    return sorted(rows, key=lambda s: s["y"])
+
+
+def _toc_rows(shapes: list[dict]) -> list[tuple[dict | None, dict]]:
+    """目录条目行。优先模式 A（徽标+章名）；否则模式 B（「一、」行，num 为 None）。"""
+    badge = _toc_badge_rows(shapes)
+    if badge:
+        return badge  # type: ignore[return-value]
+    return [(None, s) for s in _toc_chapter_rows(shapes)]
+
+
+def toc_mode(shapes: list[dict]) -> str:
+    if _toc_badge_rows(shapes):
+        return "badge"
+    if _toc_chapter_rows(shapes):
+        return "chapter"
+    return "none"
 
 
 def _shift_y(sp: etree._Element, dy_in: float) -> None:
@@ -274,7 +316,7 @@ def _shift_y(sp: etree._Element, dy_in: float) -> None:
 
 
 def toc_entry_count(parts: dict[str, bytes], index: int) -> int:
-    """目录页上 fill_toc 能认出的条目行数；为 0 时换不了条目，整套新编不保留这页。"""
+    """目录页上 fill_toc 能认出的条目行数（模式 A 或 B）；为 0 时不可静默交付旧章。"""
     return len(_toc_rows(absolute_shapes(parse(parts[slide_order(parts)[index - 1]["part"]]))))
 
 
@@ -290,9 +332,14 @@ def _style_key(el: etree._Element) -> bytes:
     return b"|".join(chunks)
 
 
-def _toc_prototypes(rows: list[tuple[dict, dict]]) -> tuple[tuple[dict, dict], tuple[dict, dict]]:
+def _toc_prototypes(rows: list[tuple[dict | None, dict]]) -> tuple[tuple[dict | None, dict], tuple[dict | None, dict]]:
     """多数条目是普通样式，少数那一条是当前章样式。只有一套时两套相同。"""
-    keys = [_style_key(num["el"]) + b"#" + _style_key(name["el"]) for num, name in rows]
+    keys = []
+    for num, name in rows:
+        if num is None:
+            keys.append(_style_key(name["el"]))
+        else:
+            keys.append(_style_key(num["el"]) + b"#" + _style_key(name["el"]))
     counts: dict[bytes, int] = {}
     for key in keys:
         counts[key] = counts.get(key, 0) + 1
@@ -303,73 +350,183 @@ def _toc_prototypes(rows: list[tuple[dict, dict]]) -> tuple[tuple[dict, dict], t
     return rest, current
 
 
+def _cn_chapter_label(chapter: str, index: int) -> str:
+    """写成「一、xxx」。已有中文序则原样保留；否则按下标补前缀。"""
+    t = (chapter or "").strip()
+    if _TOC_CHAPTER_RE.match(t):
+        return t
+    body = re.sub(r"^\d+[\.、．]\s*", "", t)
+    body = re.sub(r"^[一二三四五六七八九十百千]+、\s*", "", body)
+    if index < 10:
+        prefix = _CN_ORD[index]
+    elif index == 10:
+        prefix = "十一"
+    elif index < 19:
+        prefix = "十" + _CN_ORD[index - 10]
+    else:
+        prefix = str(index + 1)
+    return f"{prefix}、{body}" if body else f"{prefix}、"
+
+
+def _clone_shape_abs(
+    root: etree._Element,
+    proto: etree._Element,
+    *,
+    text: str,
+    x: float,
+    y: float,
+    w: float,
+    h: float,
+    next_id: int,
+    want_solid: bool,
+) -> int:
+    """把样板形状拷到 spTree，按幻灯片绝对英寸写 xfrm（避开组合内 chOff 缩放）。"""
+    el = etree.fromstring(etree.tostring(proto))
+    for tags in el.iter(q(P, "custDataLst")):
+        tags.getparent().remove(tags)
+    nv = el.find(".//" + q(P, "cNvPr"))
+    if nv is not None:
+        nv.set("id", str(next_id))
+    next_id += 1
+    xfrm = el.find(f"{q(P, 'spPr')}/{q(A, 'xfrm')}")
+    if xfrm is None:
+        sp_pr = _sp_pr(el)
+        if sp_pr is not None:
+            xfrm = etree.SubElement(sp_pr, q(A, "xfrm"))
+    if xfrm is not None:
+        off = xfrm.find(q(A, "off"))
+        if off is None:
+            off = etree.SubElement(xfrm, q(A, "off"))
+        ext = xfrm.find(q(A, "ext"))
+        if ext is None:
+            ext = etree.SubElement(xfrm, q(A, "ext"))
+        off.set("x", str(int(round(x * EMU))))
+        off.set("y", str(int(round(y * EMU))))
+        ext.set("cx", str(int(round(w * EMU))))
+        ext.set("cy", str(int(round(h * EMU))))
+    _replace_all_text(el, text)
+    _sanitize_sp_fill(el, want_solid=want_solid)
+    sp_tree = root.find(q(P, "cSld")).find(q(P, "spTree"))
+    sp_tree.append(el)
+    return next_id
+
+
 def fill_toc(parts: dict[str, bytes], index: int, chapters: list[str], current: int = 0) -> dict:
-    """整套新编：把模板目录页的条目换成这份稿的章节。普通条目用模板里出现最多的那套样式，
-    current 这一条用当前章样式。间距沿用原条目间距，排不下时在原条目区到页面 85% 高度内均分。"""
+    """整套新编：把模板目录页的条目换成这份稿的章节。
+
+    模式 A（徽标+章名）：章名去掉「一、」前缀（编号在徽标里）。
+    模式 B（「一、」行）：整行写成「一、xxx」，并从现有条目学少数派样式作当前章。
+    条目可能落在组合内；填充时一律拆到 spTree 并用绝对坐标排布，避免 chOff 缩放把间距算炸。
+    """
     slide_w, slide_h = _canvas(parts)
     part = slide_order(parts)[index - 1]["part"]
     root = parse(parts[part])
-    rows = _toc_rows(absolute_shapes(root))
+    shapes = absolute_shapes(root)
+    mode = toc_mode(shapes)
+    rows = _toc_rows(shapes)
     if not rows or not chapters:
-        return {"slide": index, "status": "no-entries"}
+        return {"slide": index, "status": "no-entries", "mode": mode or "none"}
     rest, marked = _toc_prototypes(rows)
     num0, name0 = rest
     current = min(max(current, 0), len(chapters) - 1)
     sz = next((int(r.get("sz")) for r in name0["el"].iter(q(A, "rPr")) if r.get("sz")), 1800) / 100
-    room = int((slide_w - name0["x"] - 0.3) / (sz / 72))  # 一行能放的汉字数；不缩字号，放不下先去掉括号注释
+    room = int((slide_w - name0["x"] - 0.3) / max(sz / 72, 0.01))
     labels, too_long = [], []
-    for chapter in chapters:
-        label = re.sub(r"^[一二三四五六七八九十]+、\s*", "", chapter)  # 编号已在徽标里
+    for i, chapter in enumerate(chapters):
+        if mode == "badge":
+            label = re.sub(r"^[一二三四五六七八九十百千]+、\s*", "", chapter)
+            label = re.sub(r"^\d+[\.、．]\s*", "", label)
+        else:
+            label = _cn_chapter_label(chapter, i)
         if len(label) > room:
             label = re.sub(r"[（(][^（(]*[)）]$", "", label)
         if len(label) > room:
             too_long.append(label)
         labels.append(label)
-    top = rows[0][0]["y"]
-    step = rows[1][0]["y"] - top if len(rows) > 1 else rows[0][0]["h"] * 1.8
-    bottom = max(rows[-1][0]["y"] + rows[-1][0]["h"], slide_h * 0.85)
+
+    # 锚点与行距一律用绝对英寸（absolute_shapes）
+    top = rows[0][1]["y"] if rows[0][0] is None else rows[0][0]["y"]
+    if len(rows) > 1:
+        y1 = rows[1][1]["y"] if rows[1][0] is None else rows[1][0]["y"]
+        step = y1 - top
+    else:
+        step = rows[0][1]["h"] * 1.8
+    last = rows[-1][1]
+    bottom = max(last["y"] + last["h"], slide_h * 0.85)
     if len(chapters) > 1:
-        step = min(step, (bottom - top - rows[0][0]["h"]) / (len(chapters) - 1))
-    plain = [etree.fromstring(etree.tostring(num0["el"])), etree.fromstring(etree.tostring(name0["el"]))]
-    marked_pair = [etree.fromstring(etree.tostring(marked[0]["el"])), etree.fromstring(etree.tostring(marked[1]["el"]))]
-    tree = num0["el"].getparent()
+        step = min(step, (bottom - top - rows[0][1]["h"]) / (len(chapters) - 1))
+
+    # 删掉旧条目（徽标+章名或单行）
     for num, name in rows:
-        for el in (num["el"], name["el"]):
+        for el in ((num["el"], name["el"]) if num is not None else (name["el"],)):
             if el.getparent() is not None:
                 el.getparent().remove(el)
+
     next_id = max_shape_id(root) + 1
-    marked_anchor = marked[0]["y"]
-    for i, label in enumerate(labels):
-        protos = marked_pair if i == current else plain
-        # 当前章样板原来不在第一行，要先挪回第一条的位置再按行距排
-        anchor = marked_anchor if i == current else num0["y"]
-        for proto, text in zip(protos, (f"{i + 1:02d}", label)):
-            el = etree.fromstring(etree.tostring(proto))
-            for tags in el.iter(q(P, "custDataLst")):  # 插件标签部件只能被一个形状引用，克隆后 PowerPoint 打不开
-                tags.getparent().remove(tags)
-            nv = el.find(".//" + q(P, "cNvPr"))
-            if nv is not None:
-                nv.set("id", str(next_id))
-            next_id += 1
-            _shift_y(el, top + i * step - anchor)
-            _replace_all_text(el, text)
-            _sanitize_sp_fill(el, want_solid=(i == current))
-            tree.append(el)
+    if mode == "chapter":
+        for i, label in enumerate(labels):
+            proto_shape = marked[1] if i == current else name0
+            y = top + i * step
+            next_id = _clone_shape_abs(
+                root, proto_shape["el"],
+                text=label, x=proto_shape["x"], y=y,
+                w=proto_shape["w"], h=proto_shape["h"],
+                next_id=next_id,
+                want_solid=(i == current) or _is_solid(proto_shape["el"]),
+            )
+    else:
+        for i, label in enumerate(labels):
+            protos = (marked[0], marked[1]) if i == current else (num0, name0)
+            y = top + i * step
+            for proto_shape, text in zip(protos, (f"{i + 1:02d}", label)):
+                next_id = _clone_shape_abs(
+                    root, proto_shape["el"],
+                    text=text, x=proto_shape["x"], y=y,
+                    w=proto_shape["w"], h=proto_shape["h"],
+                    next_id=next_id,
+                    want_solid=(i == current),
+                )
+
     parts[part] = dump(root)
     centered = center_toc(parts, index)
-    return {"slide": index, "status": "filled", "entries": len(chapters), "current": current + 1,
-            "step": round(step, 2), "crowded": step < rows[0][0]["h"] + 0.05, "too_long": too_long,
-            "centered": centered}
+    return {
+        "slide": index, "status": "filled", "mode": mode, "entries": len(chapters),
+        "current": current + 1, "step": round(step, 2),
+        "crowded": step < rows[0][1]["h"] + 0.05, "too_long": too_long, "centered": centered,
+    }
+
 
 
 def _toc_heading_box(shapes: list[dict], left_of: float) -> tuple[float, float] | None:
     """目录页上「目录 / CONTENTS」这组字的纵向范围（只看条目左侧的）。"""
-    heads = [s for s in shapes if s["x"] < left_of
-             and "".join(s["text"].split()).upper() in ("目录", "CONTENTS", "目录CONTENTS", "CONTENT")]
+    heads = [
+        s for s in shapes if s["x"] < left_of
+        and "".join(s["text"].split()).upper() in _toc_heading_names()
+    ]
     if not heads:
         return None
     return min(s["y"] for s in heads), max(s["y"] + s["h"] for s in heads)
 
+
+
+def _tab_font_pt(el: etree._Element) -> float:
+    for rpr in el.iter(q(A, "rPr")):
+        sz = rpr.get("sz")
+        if sz:
+            try:
+                return int(sz) / 100.0
+            except ValueError:
+                pass
+    return 12.0
+
+
+def _estimate_label_in(label: str, font_pt: float, pad: float = 0.40) -> float:
+    """中文约 1.2em/字（含加粗与字体回退余量），ASCII 约 0.55em；pad 含左右内边距。单位英寸。"""
+    em = font_pt / 72.0
+    units = 0.0
+    for ch in label or "":
+        units += 0.55 if ord(ch) < 128 else 1.2
+    return units * em + pad
 
 
 def relayout_section_tabs(
@@ -386,52 +543,133 @@ def relayout_section_tabs(
     rest_text: str = "62A7A4",
     by_chars: bool = False,
     gap: float = 0.0,
+    max_x1: float | None = None,
 ) -> dict:
     """改完页签文字后按槽位重排：相邻外框 edge-to-edge（默认 gap=0），禁止留缝与重叠。
 
     labels 从左到右；current 为高亮下标。未给 slot 时用量到的现有页签外包框。
     by_chars=True 时按字数加权分宽。用整数 EMU 累加，保证第 i+1 左缘 = 第 i 右缘 + gap。
     页签描边改为 noFill，避免居中描边在 gap=0 时仍显出「缝」。
+
+    宽度须能单行放下各 label：不够时优先向右扩展（不压 logo，默认 slide_w-2.2″），
+    仍不够再略缩字号（不低于原字号 85%）。不静默截断文字。
     """
     part = slide_order(parts)[index - 1]["part"]
     root = parse(parts[part])
     shapes = absolute_shapes(root)
     tabs = [s for s in shapes if (s.get("text") or "").strip() in set(labels)]
     if len(tabs) < len(labels):
-        tabs = [s for s in shapes if s["y"] < 1.6 and 0.5 < s["w"] < 2.5 and s["h"] < 0.6
-                and (s.get("text") or "").strip()]
-        tabs = sorted(tabs, key=lambda s: s["x"])[: len(labels)]
+        # 回退：在顶栏找「同行多枚」页签带，避开单独的页题（宽标题常在另一行）
+        cands = [s for s in shapes if s["y"] < 1.6 and 0.4 < s["w"] < 4.0 and s["h"] < 0.65
+                 and (s.get("text") or "").strip()]
+        bands: dict[float, list] = {}
+        for s in cands:
+            key = round(s["y"] / 0.05) * 0.05
+            bands.setdefault(key, []).append(s)
+        # 优先成员数 ≥ 所需页签数的最密行；否则取成员最多的一行（且 ≥2，避免单页题）
+        ranked = sorted(bands.values(), key=lambda g: (-len(g), g[0]["y"]))
+        band = next((g for g in ranked if len(g) >= len(labels)), None)
+        if band is None:
+            band = next((g for g in ranked if len(g) >= 2), ranked[0] if ranked else [])
+        tabs = sorted(band, key=lambda s: s["x"])[: len(labels)]
+        leftovers = sorted(band, key=lambda s: s["x"])[len(labels):]
     else:
         tabs = sorted(tabs, key=lambda s: s["x"])[: len(labels)]
+        leftovers = []
     if len(tabs) != len(labels):
         return {"slide": index, "status": "tab-count", "n": len(tabs)}
     if slot_x0 is None:
         slot_x0 = tabs[0]["x"]
+    orig_slot_x1 = max(s["x"] + s["w"] for s in tabs)
     if slot_x1 is None:
-        slot_x1 = max(s["x"] + s["w"] for s in tabs)
+        slot_x1 = orig_slot_x1
     if y is None:
         y = tabs[0]["y"]
     if h is None:
         h = tabs[0]["h"]
-    span = slot_x1 - slot_x0
+    slide_w, _ = _canvas(parts)
+    if max_x1 is None:
+        max_x1 = max(orig_slot_x1, slide_w - 2.2)
     n = len(labels)
+    font_pt = _tab_font_pt(tabs[0]["el"])
+    orig_font_pt = font_pt
+    expanded = False
+    font_scaled = False
+    need_confirm = False
+
+    def _needed(pt: float) -> list[float]:
+        return [_estimate_label_in(L, pt) for L in labels]
+
+    needed = _needed(font_pt)
+    min_total = sum(needed) + gap * (n - 1)
+    # 1) 向右扩展槽位
+    if slot_x1 - slot_x0 < min_total - 1e-6:
+        new_x1 = min(slot_x0 + min_total, max_x1)
+        if new_x1 > slot_x1 + 1e-6:
+            slot_x1 = new_x1
+            expanded = True
+    span = slot_x1 - slot_x0
+    usable_in = span - gap * (n - 1)
+    # 2) 仍不够 → 略缩字号（≥85%）
+    if usable_in + 1e-6 < sum(needed):
+        for scale in (0.95, 0.90, 0.85):
+            font_pt = orig_font_pt * scale
+            needed = _needed(font_pt)
+            if sum(needed) <= usable_in + 1e-6:
+                font_scaled = True
+                break
+        else:
+            font_pt = orig_font_pt * 0.85
+            needed = _needed(font_pt)
+            font_scaled = True
+            # 再扩一次到 max_x1
+            min_total = sum(needed) + gap * (n - 1)
+            if slot_x0 + min_total <= max_x1 + 1e-6:
+                slot_x1 = slot_x0 + min_total
+                expanded = True
+                span = slot_x1 - slot_x0
+                usable_in = span - gap * (n - 1)
+            if usable_in + 1e-6 < sum(needed):
+                need_confirm = True
+
+    # 3) 分配宽度：至少满足各 label 所需；剩余按字数或等分
     if by_chars:
         weights = [max(len(L), 3) for L in labels]
-        total_w = sum(weights)
-        raw = [span * wt / total_w for wt in weights]
     else:
-        raw = [span / n] * n
-    # 整数 EMU：先定各宽，末块吃掉余数，再按 gap 累加左缘
+        weights = [1] * n
+    tw = sum(weights) or n
+    # 先按权重，再抬到 needed 下限
+    raw = [usable_in * (wt / tw) for wt in weights]
+    raw = [max(r, nd) for r, nd in zip(raw, needed)]
+    if sum(raw) > usable_in + 1e-6:
+        # 需要的下限之和已超过 usable：再向右扩（若还能），否则按 needed 比例压缩到 usable
+        deficit = sum(raw) - usable_in
+        room = max_x1 - slot_x1
+        if room > 1e-6:
+            grow = min(deficit, room)
+            slot_x1 += grow
+            expanded = True
+            span = slot_x1 - slot_x0
+            usable_in = span - gap * (n - 1)
+            raw = [usable_in * (wt / tw) for wt in weights]
+            raw = [max(r, nd) for r, nd in zip(raw, needed)]
+        if sum(raw) > usable_in + 1e-6:
+            # 保底：按 needed 比例占满 usable（可能略挤，已 try 缩字号）
+            nt = sum(needed) or 1.0
+            raw = [usable_in * (nd / nt) for nd in needed]
+            need_confirm = True
+
     gap_emu = int(round(gap * EMU))
     span_emu = int(round(slot_x1 * EMU)) - int(round(slot_x0 * EMU))
     usable = span_emu - gap_emu * (n - 1)
-    widths_emu = [max(1, int(round(usable * (w / span)))) for w in raw] if span > 0 else [1] * n
+    widths_emu = [max(1, int(round(usable * (w / sum(raw))))) for w in raw] if sum(raw) > 0 else [1] * n
     drift = usable - sum(widths_emu)
     widths_emu[-1] = max(1, widths_emu[-1] + drift)
     x_emu = int(round(slot_x0 * EMU))
     y_emu = int(round(y * EMU))
     h_emu = int(round(h * EMU))
     widths_out = []
+    sz_hundredths = str(int(round(font_pt * 100)))
     for i, (sp, label) in enumerate(zip(tabs, labels)):
         w_emu = widths_emu[i]
         widths_out.append(round(w_emu / EMU, 4))
@@ -447,6 +685,23 @@ def relayout_section_tabs(
                 ext.set("cy", str(h_emu))
         x_emu += w_emu + gap_emu
         _replace_all_text(el, label)
+        # 单行平铺、垂直居中；去掉 autofit；收紧默认 inset，避免字被挤换行
+        body = el.find(f"{q(P, 'txBody')}/{q(A, 'bodyPr')}")
+        if body is None:
+            body = el.find(f".//{q(A, 'bodyPr')}")
+        if body is not None:
+            body.set("wrap", "none")
+            body.set("anchor", "ctr")
+            body.set("lIns", str(int(0.04 * EMU)))
+            body.set("rIns", str(int(0.04 * EMU)))
+            body.set("tIns", str(int(0.02 * EMU)))
+            body.set("bIns", str(int(0.02 * EMU)))
+            for child in list(body):
+                if child.tag in (q(A, "spAutoFit"), q(A, "normAutofit"), q(A, "noAutofit")):
+                    body.remove(child)
+            etree.SubElement(body, q(A, "noAutofit"))
+        for pPr in el.iter(q(A, "pPr")):
+            pPr.set("algn", "ctr")
         pr = _sp_pr(el)
         if pr is not None:
             for child in list(pr):
@@ -464,13 +719,11 @@ def relayout_section_tabs(
                 anchor.addnext(sf)
             else:
                 pr.insert(0, sf)
-            # 描边 noFill：gap=0 时居中描边不会再画出「缝」
             old_ln = pr.find(q(A, "ln"))
             if old_ln is not None:
                 pr.remove(old_ln)
             ln = etree.Element(q(A, "ln"))
             etree.SubElement(ln, q(A, "noFill"))
-            # 放在 solidFill 后
             fill_el = pr.find(q(A, "solidFill"))
             if fill_el is not None:
                 fill_el.addnext(ln)
@@ -478,6 +731,8 @@ def relayout_section_tabs(
                 pr.append(ln)
         _sanitize_sp_fill(el, want_solid=True)
         for rpr in list(el.iter(q(A, "rPr"))) + list(el.iter(q(A, "endParaRPr"))):
+            if font_scaled:
+                rpr.set("sz", sz_hundredths)
             old = rpr.find(q(A, "solidFill"))
             if old is not None:
                 rpr.remove(old)
@@ -486,8 +741,37 @@ def relayout_section_tabs(
                 sc = etree.SubElement(fill, q(A, "schemeClr")); sc.set("val", "bg1")
             else:
                 c = etree.SubElement(fill, q(A, "srgbClr")); c.set("val", rest_text)
+    # 模板页签多于本章数时清空多余槽，避免残留「产品特色」等旧词
+    for sp in leftovers:
+        el = sp["el"]
+        _replace_all_text(el, "")
+        pr = _sp_pr(el)
+        if pr is not None:
+            for child in list(pr):
+                if child.tag in (q(A, "solidFill"), q(A, "noFill")):
+                    pr.remove(child)
+            etree.SubElement(pr, q(A, "noFill"))
+            old_ln = pr.find(q(A, "ln"))
+            if old_ln is not None:
+                pr.remove(old_ln)
+            ln = etree.Element(q(A, "ln"))
+            etree.SubElement(ln, q(A, "noFill"))
+            pr.append(ln)
     parts[part] = dump(root)
-    return {"slide": index, "status": "ok", "widths": widths_out, "gap": gap, "current": current}
+    return {
+        "slide": index,
+        "status": "ok",
+        "widths": widths_out,
+        "gap": gap,
+        "current": current,
+        "expanded": expanded,
+        "font_pt": round(font_pt, 2),
+        "font_scaled": font_scaled,
+        "min_needed": [round(x, 4) for x in needed],
+        "slot_x0": round(slot_x0, 4),
+        "slot_x1": round(slot_x1, 4),
+        "need_confirm": need_confirm,
+    }
 
 
 
@@ -501,7 +785,7 @@ def center_toc(parts: dict[str, bytes], index: int) -> dict:
     rows = _toc_rows(shapes)
     if not rows:
         return {"status": "no-entries"}
-    els = [s for row in rows for s in row]
+    els = [s for num, name in rows for s in ((num, name) if num is not None else (name,))]
     top = min(s["y"] for s in els)
     bottom = max(s["y"] + s["h"] for s in els)
     head = _toc_heading_box(shapes, min(s["x"] for s in els))
@@ -515,6 +799,7 @@ def center_toc(parts: dict[str, bytes], index: int) -> dict:
         parts[part] = dump(root)
     return {"status": "centered", "anchor": "heading" if head else "page", "dy": round(dy, 2),
             "center": round(new_top + (bottom - top) / 2, 2)}
+
 
 
 def delete_matching(parts: dict[str, bytes], index: int, match: str) -> int:
