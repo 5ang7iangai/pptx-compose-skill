@@ -12,14 +12,14 @@
     <marker id="arrowOrange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.00" markerHeight="6.00" orient="auto-start-reverse" markerUnits="strokeWidth">
       <path d="M 0 0 L 10 5 L 0 10 z" fill="#F0A04B"/></marker>
 
-    <!-- 水滴图标：国家级 -->
+    <!-- 水滴图标：总部级 -->
     <g id="drop-national">
       <path d="M64,34 A38,38 0 1,0 102,72 L102,34 Z" fill="#0E7A6E"/>
       <circle cx="64" cy="72" r="20" fill="#FFFFFF"/>
       <path d="M56,78 L64,64 L72,78" stroke="#0E7A6E" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
       <line x1="54" y1="82" x2="74" y2="82" stroke="#0E7A6E" stroke-width="2.5" stroke-linecap="round"/>
     </g>
-    <!-- 水滴图标：集团级 -->
+    <!-- 水滴图标：区域级 -->
     <g id="drop-group">
       <path d="M64,194 A38,38 0 1,0 102,232 L102,194 Z" fill="#1C9FA9"/>
       <circle cx="64" cy="232" r="20" fill="#FFFFFF"/>
@@ -28,7 +28,7 @@
       <rect x="56" y="233" width="7" height="7" fill="none" stroke="#1C9FA9" stroke-width="2.5"/>
       <rect x="65" y="233" width="7" height="7" fill="none" stroke="#1C9FA9" stroke-width="2.5"/>
     </g>
-    <!-- 水滴图标：电站级 -->
+    <!-- 水滴图标：站点级 -->
     <g id="drop-station">
       <path d="M64,354 A38,38 0 1,0 102,392 L102,354 Z" fill="#F0A04B"/>
       <circle cx="64" cy="392" r="20" fill="#FFFFFF"/>
@@ -36,12 +36,12 @@
       <line x1="55" y1="402" x2="73" y2="402" stroke="#F0A04B" stroke-width="2.5" stroke-linecap="round"/>
     </g>
 
-    <!-- 小线条图标：国家级 -->
+    <!-- 小线条图标：总部级 -->
     <g id="ic-national-small">
       <path d="M-8,4 L-4,-4 L0,0 L4,-4 L8,4" stroke="#0E7A6E" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
       <line x1="-8" y1="8" x2="8" y2="8" stroke="#0E7A6E" stroke-width="2" stroke-linecap="round"/>
     </g>
-    <!-- 小线条图标：集团级 -->
+    <!-- 小线条图标：区域级 -->
     <g id="ic-group-small">
       <rect x="-8" y="-8" width="16" height="16" rx="2" fill="none" stroke="#1C9FA9" stroke-width="2"/>
       <circle cx="0" cy="0" r="3" fill="#1C9FA9"/>
@@ -50,7 +50,7 @@
       <line x1="-4" y1="4" x2="-8" y2="8" stroke="#1C9FA9" stroke-width="1.5"/>
       <line x1="4" y1="4" x2="8" y2="8" stroke="#1C9FA9" stroke-width="1.5"/>
     </g>
-    <!-- 小线条图标：电站级 -->
+    <!-- 小线条图标：站点级 -->
     <g id="ic-station-small">
       <rect x="-8" y="-8" width="16" height="16" rx="2" fill="none" stroke="#F0A04B" stroke-width="2"/>
       <path d="M-4,4 L0,-4 L4,4" stroke="#F0A04B" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
@@ -93,113 +93,113 @@
   <rect x="0" y="0" width="1200" height="492" fill="#FFFFFF"/>
 
   <!-- ==================== 左侧说明列 ==================== -->
-  <!-- 国家级 y0=8 -->
+  <!-- 总部级 y0=8 -->
   <use href="#drop-national" x="0" y="0"/>
   <line x1="64" y1="110" x2="64" y2="126" stroke="#0E7A6E" stroke-width="2"/>
   <line x1="50" y1="126" x2="78" y2="126" stroke="#0E7A6E" stroke-width="2"/>
-  <text x="205" y="66" font-size="20" font-weight="700" fill="#0E7A6E" text-anchor="middle">国家级平台</text>
+  <text x="205" y="66" font-size="20" font-weight="700" fill="#0E7A6E" text-anchor="middle">总部级平台</text>
   <text x="205" y="94" font-size="16" fill="#0E7A6E" text-anchor="middle">（核心层级）</text>
 
   <use href="#ic-national-small" x="316" y="24"/>
   <text x="334" y="32" font-size="18" font-weight="700" fill="#0E7A6E">数据的调用和使用方</text>
   <line x1="312" y1="44" x2="596" y2="44" stroke="#0E7A6E" stroke-width="1.2"/>
-  <text x="314" y="68" font-size="16" fill="#1A232E"><tspan fill="#0E7A6E" font-weight="700">•</tspan><tspan dx="8">由行业协会牵头，委托成员单位建</tspan></text>
-  <text x="330" y="91" font-size="16" fill="#1A232E">投资建设，聚焦服务政府辅助决策、</text>
-  <text x="330" y="114" font-size="16" fill="#1A232E">服务行业高质量发展，</text>
-  <text x="330" y="137" font-size="16" fill="#1A232E"><tspan fill="#0E7A6E" font-weight="700">存储电站行业统计数据、安全汇总数</tspan></text>
-  <text x="330" y="160" font-size="16" fill="#1A232E"><tspan fill="#0E7A6E" font-weight="700">据等静态信息，并根据需要调用电站</tspan></text>
+  <text x="314" y="68" font-size="16" fill="#1A232E"><tspan fill="#0E7A6E" font-weight="700">•</tspan><tspan dx="8">由总部机构牵头，委托相关单位建</tspan></text>
+  <text x="330" y="91" font-size="16" fill="#1A232E">投资建设，聚焦服务管理辅助决策、</text>
+  <text x="330" y="114" font-size="16" fill="#1A232E">服务组织高质量发展，</text>
+  <text x="330" y="137" font-size="16" fill="#1A232E"><tspan fill="#0E7A6E" font-weight="700">存储站点运行统计数据、安全汇总数</tspan></text>
+  <text x="330" y="160" font-size="16" fill="#1A232E"><tspan fill="#0E7A6E" font-weight="700">据等静态信息，并根据需要调用站点</tspan></text>
   <text x="330" y="183" font-size="16" fill="#1A232E"><tspan fill="#0E7A6E" font-weight="700">实时数据</tspan></text>
 
-  <!-- 集团级 y0=196 -->
+  <!-- 区域级 y0=196 -->
   <use href="#drop-group" x="0" y="0"/>
   <line x1="64" y1="270" x2="64" y2="286" stroke="#1C9FA9" stroke-width="2"/>
   <line x1="50" y1="286" x2="78" y2="286" stroke="#1C9FA9" stroke-width="2"/>
-  <text x="205" y="254" font-size="20" font-weight="700" fill="#1C9FA9" text-anchor="middle">集团级（区域级）平台</text>
+  <text x="205" y="254" font-size="20" font-weight="700" fill="#1C9FA9" text-anchor="middle">区域级平台</text>
   <text x="205" y="282" font-size="16" fill="#1C9FA9" text-anchor="middle">（中坚层级）</text>
 
   <use href="#ic-group-small" x="316" y="212"/>
   <text x="334" y="220" font-size="18" font-weight="700" fill="#1C9FA9">数据的存储和调用方</text>
   <line x1="312" y1="232" x2="596" y2="232" stroke="#1C9FA9" stroke-width="1.2"/>
-  <text x="314" y="256" font-size="16" fill="#1A232E"><tspan fill="#1C9FA9" font-weight="700">•</tspan><tspan dx="8">由电站业主投资建设，聚焦服务企业</tspan></text>
+  <text x="314" y="256" font-size="16" fill="#1A232E"><tspan fill="#1C9FA9" font-weight="700">•</tspan><tspan dx="8">由区域单位投资建设，聚焦服务企业</tspan></text>
   <text x="330" y="279" font-size="16" fill="#1A232E">或区域站点的建设运行及运维运营，</text>
   <text x="330" y="302" font-size="16" fill="#1A232E">服务生产经营管理，</text>
-  <text x="330" y="325" font-size="16" fill="#1A232E"><tspan fill="#1C9FA9" font-weight="700">实时存储电站安全生产信息</tspan></text>
+  <text x="330" y="325" font-size="16" fill="#1A232E"><tspan fill="#1C9FA9" font-weight="700">实时存储站点运行安全信息</tspan></text>
 
-  <!-- 电站级 y0=346 -->
+  <!-- 站点级 y0=346 -->
   <use href="#drop-station" x="0" y="0"/>
   <line x1="64" y1="430" x2="64" y2="446" stroke="#F0A04B" stroke-width="2"/>
   <line x1="50" y1="446" x2="78" y2="446" stroke="#F0A04B" stroke-width="2"/>
-  <text x="205" y="404" font-size="20" font-weight="700" fill="#F0A04B" text-anchor="middle">电站级平台</text>
+  <text x="205" y="404" font-size="20" font-weight="700" fill="#F0A04B" text-anchor="middle">站点级平台</text>
   <text x="205" y="432" font-size="16" fill="#F0A04B" text-anchor="middle">（基础层级）</text>
 
   <use href="#ic-station-small" x="316" y="362"/>
   <text x="334" y="370" font-size="18" font-weight="700" fill="#F0A04B">数据的发源端</text>
   <line x1="312" y1="382" x2="596" y2="382" stroke="#F0A04B" stroke-width="1.2"/>
-  <text x="314" y="406" font-size="16" fill="#1A232E"><tspan fill="#F0A04B" font-weight="700">•</tspan><tspan dx="8">由电站业主投资建设，聚焦服务电站</tspan></text>
-  <text x="330" y="429" font-size="16" fill="#1A232E">电池及能量管理、安全防控，</text>
+  <text x="314" y="406" font-size="16" fill="#1A232E"><tspan fill="#F0A04B" font-weight="700">•</tspan><tspan dx="8">由站点单位投资建设，聚焦服务站点</tspan></text>
+  <text x="330" y="429" font-size="16" fill="#1A232E">设备与运行管理、安全防控，</text>
   <text x="330" y="452" font-size="16" fill="#1A232E"><tspan fill="#F0A04B" font-weight="700">实现实时数据就地采集、处理与存储</tspan></text>
 
   <!-- ==================== 右侧架构 ==================== -->
   <!-- 外部系统 -->
   <rect x="620" y="12" width="270" height="50" rx="6" fill="#DCE9F5" stroke="#2E75B6" stroke-width="1.2" filter="url(#shadow)"/>
-  <text x="755" y="42" font-size="19" fill="#1A232E" text-anchor="middle">政府部门应用信息系统</text>
+  <text x="755" y="42" font-size="19" fill="#1A232E" text-anchor="middle">管理部门应用信息系统</text>
 
   <rect x="914" y="12" width="270" height="50" rx="6" fill="#DCE9F5" stroke="#2E75B6" stroke-width="1.2" filter="url(#shadow)"/>
-  <text x="1049" y="42" font-size="19" fill="#1A232E" text-anchor="middle">行业公共信息平台</text>
+  <text x="1049" y="42" font-size="19" fill="#1A232E" text-anchor="middle">组织公共信息平台</text>
 
-  <!-- 国家级平台 -->
+  <!-- 总部级平台 -->
   <rect x="620" y="102" width="564" height="50" rx="6" fill="#FFFFFF" stroke="#0E7A6E" stroke-width="1.2" filter="url(#shadow)"/>
-  <text x="902" y="132" font-size="19" fill="#1A232E" text-anchor="middle">国家级平台</text>
+  <text x="902" y="132" font-size="19" fill="#1A232E" text-anchor="middle">总部级平台</text>
 
-  <!-- 国家级到外部系统箭头 -->
+  <!-- 总部级到外部系统箭头 -->
   <line x1="755" y1="102" x2="755" y2="62" stroke="#123D6A" stroke-width="8" marker-end="url(#arrowDark)"/>
   <text x="767" y="86" font-size="13" fill="#405163">保持接口兼容性</text>
   <line x1="1049" y1="102" x2="1049" y2="62" stroke="#123D6A" stroke-width="8" marker-end="url(#arrowDark)"/>
   <text x="1061" y="86" font-size="13" fill="#405163">信息联通</text>
 
-  <!-- 集团级平台 -->
+  <!-- 区域级平台 -->
   <rect x="620" y="192" width="340" height="50" rx="6" fill="#E2EFDA" stroke="#1C9FA9" stroke-width="1.2" filter="url(#shadow)"/>
-  <text x="790" y="222" font-size="19" fill="#1A232E" text-anchor="middle">集团级/区域级平台</text>
+  <text x="790" y="222" font-size="19" fill="#1A232E" text-anchor="middle">区域级平台</text>
 
-  <!-- 集团级到国家级箭头 -->
+  <!-- 区域级到总部级箭头 -->
   <line x1="790" y1="192" x2="790" y2="152" stroke="#123D6A" stroke-width="8" marker-end="url(#arrowDark)"/>
   <text x="802" y="176" font-size="13" fill="#405163">档案数据、运行数据、告警数据</text>
 
-  <!-- 电站级平台1 -->
+  <!-- 站点级平台1 -->
   <rect x="750" y="292" width="210" height="50" rx="6" fill="#FFF2CC" stroke="#F0A04B" stroke-width="1.2" filter="url(#shadow)"/>
-  <text x="855" y="322" font-size="19" fill="#1A232E" text-anchor="middle">电站级平台</text>
+  <text x="855" y="322" font-size="19" fill="#1A232E" text-anchor="middle">站点级平台</text>
 
-  <!-- 电站级平台2 -->
+  <!-- 站点级平台2 -->
   <rect x="984" y="292" width="200" height="50" rx="6" fill="#FFF2CC" stroke="#F0A04B" stroke-width="1.2" filter="url(#shadow)"/>
-  <text x="1084" y="322" font-size="19" fill="#1A232E" text-anchor="middle">电站级平台</text>
+  <text x="1084" y="322" font-size="19" fill="#1A232E" text-anchor="middle">站点级平台</text>
 
-  <!-- 右侧电站级直达国家级 -->
+  <!-- 右侧站点级直达总部级 -->
   <line x1="1084" y1="292" x2="1084" y2="152" stroke="#123D6A" stroke-width="8" marker-end="url(#arrowDark)"/>
 
-  <!-- 左侧电站级到集团级 -->
+  <!-- 左侧站点级到区域级 -->
   <line x1="855" y1="292" x2="855" y2="242" stroke="#123D6A" stroke-width="8" marker-end="url(#arrowDark)"/>
 
   <!-- 设备框 -->
   <rect x="620" y="382" width="564" height="98" rx="6" fill="#FAFAFA" stroke="#2E75B6" stroke-width="1.2"/>
   <use href="#ic-battery" x="676" y="414"/>
-  <text x="676" y="466" font-size="16" fill="#1A232E" text-anchor="middle">电池</text>
+  <text x="676" y="466" font-size="16" fill="#1A232E" text-anchor="middle">设备</text>
   <use href="#ic-bms" x="789" y="414"/>
-  <text x="789" y="466" font-size="16" fill="#1A232E" text-anchor="middle">BMS</text>
+  <text x="789" y="466" font-size="16" fill="#1A232E" text-anchor="middle">采集</text>
   <use href="#ic-pcs" x="902" y="414"/>
-  <text x="902" y="466" font-size="16" fill="#1A232E" text-anchor="middle">PCS</text>
+  <text x="902" y="466" font-size="16" fill="#1A232E" text-anchor="middle">控制</text>
   <use href="#ic-fire" x="1015" y="414"/>
-  <text x="1015" y="466" font-size="16" fill="#1A232E" text-anchor="middle">消防系统</text>
+  <text x="1015" y="466" font-size="16" fill="#1A232E" text-anchor="middle">安防系统</text>
   <use href="#ic-ac" x="1128" y="414"/>
-  <text x="1128" y="466" font-size="16" fill="#1A232E" text-anchor="middle">空调系统</text>
+  <text x="1128" y="466" font-size="16" fill="#1A232E" text-anchor="middle">环境系统</text>
 
-  <!-- 设备到左侧电站级 -->
+  <!-- 设备到左侧站点级 -->
   <line x1="855" y1="382" x2="855" y2="342" stroke="#123D6A" stroke-width="8" marker-end="url(#arrowDark)"/>
   <text x="867" y="366" font-size="13" fill="#405163">档案数据、运行数据、告警数据</text>
 
-  <!-- 设备到右侧电站级 -->
+  <!-- 设备到右侧站点级 -->
   <line x1="1084" y1="382" x2="1084" y2="342" stroke="#123D6A" stroke-width="8" marker-end="url(#arrowDark)"/>
 
-  <!-- 设备直达集团级 -->
+  <!-- 设备直达区域级 -->
   <line x1="660" y1="382" x2="660" y2="242" stroke="#123D6A" stroke-width="8" marker-end="url(#arrowDark)"/>
   <text x="672" y="280" font-size="13" fill="#405163">档案数据、</text>
   <text x="672" y="298" font-size="13" fill="#405163">运行数据、</text>
